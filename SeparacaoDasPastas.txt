@@ -1,0 +1,25 @@
+/project-root
+│
+├── /public          # Arquivos estáticos que são entregues diretamente aos usuários
+│   ├── /images      # Imagens do site
+│   ├── /css         # Arquivos de estilo (CSS)
+│   ├── /js          # Arquivos JavaScript que são carregados no front-end
+│   └── /fonts       # Arquivos de fontes utilizadas no site
+│
+├── /src             # Arquivos principais do desenvolvimento (código-fonte)
+│   ├── /components  # Componentes reutilizáveis (HTML, JSX, Vue, etc.)
+│   ├── /pages       # Arquivos para cada página do site
+│   ├── /styles      # Arquivos de estilos principais (Sass/SCSS ou CSS)
+│   ├── /scripts     # Arquivos JavaScript principais (lógica do site)
+│   └── /utils       # Funções utilitárias e scripts de apoio
+│
+├── /config          # Configurações do projeto (configurações de ambiente, variáveis, etc.)
+│
+├── /tests           # Arquivos de testes automatizados
+│
+├── /node_modules    # Dependências instaladas (gerenciado automaticamente pelo npm/yarn)
+│
+├── .gitignore       # Arquivo que especifica arquivos/pastas que o Git deve ignorar
+├── package.json     # Arquivo que gerencia as dependências e scripts do projeto
+├── README.md        # Documentação do projeto
+└── index.html       # Arquivo HTML principal (ponto de entrada do site)

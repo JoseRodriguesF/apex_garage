@@ -1,0 +1,152 @@
+
+main{
+    width: 1536px;
+    height: 944px;
+}
+
+.container{
+    position: relative;
+}
+
+#imgDeFundoInicial{
+    width: 1536px;
+    height: auto;
+    filter: brightness(0.25);
+    margin-top: 100px;
+}
+
+#txtServicos{
+    position: absolute;
+    margin-top: -700px;
+    margin-left: 120px;
+    color: #FFF;
+    font-size: 36px;
+}
+
+#txtPromocao{
+    position: absolute;
+    margin-top: -605px;
+    margin-left: 160px;
+    font-size: 20px;
+}
+
+.linhaFirst{
+    position: absolute;
+    border: #FF0000;
+    background-color: #FF0000;
+    width: 4px;
+    height: 300px;
+    margin-top: -600px;
+    margin-left: 125px;
+    border: 5px;
+}
+
+.linhaSecond{
+    position: absolute;
+    border: #FFF;
+    background-color: #FFF;
+    width: 4px;
+    height: 200px;
+    margin-top: -600px;
+    margin-left: 145px;
+}
+
+.txtFrase{
+    margin-left: -75px;
+}
+
+#txtFraseInical{
+    position: absolute;
+    color: #FFF;
+    font-size: 26px;
+    margin-right: 20px;
+    margin-top: -340px;
+    margin-left: 1000px;
+    text-align: right;
+}
+
+.carroTxt{
+    color:#FF0000;
+}
+
+.donoTxt{
+    color: #FF0000;
+}
+
+/* Usando Media-Query */
+@media screen and (max-width: 1920px) {
+    
+main{
+    width: 1920px;
+    height: 1080px;
+}
+
+.container{
+    position: relative;
+}
+
+#imgDeFundoInicial{
+    width: 1920px;
+    height: auto;
+    filter: brightness(0.25);
+    margin-top: 100px;
+}
+
+#txtServicos{
+    position: absolute;
+    margin-top: -810px;
+    margin-left: 120px;
+    color: #FFF;
+    font-size: 39px;
+}
+
+#txtPromocao{
+    position: absolute;
+    margin-top: -700px;
+    margin-left: 160px;
+    font-size: 20px;
+}
+
+.linhaFirst{
+    position: absolute;
+    border: #FF0000;
+    background-color: #FF0000;
+    width: 4px;
+    height: 300px;
+    margin-top: -700px;
+    margin-left: 125px;
+    border: 5px;
+}
+
+.linhaSecond{
+    position: absolute;
+    border: #FFF;
+    background-color: #FFF;
+    width: 4px;
+    height: 200px;
+    margin-top: -700px;
+    margin-left: 145px;
+}
+
+.txtFrase{
+    margin-left: -75px;
+}
+
+#txtFraseInical{
+    position: absolute;
+    color: #FFF;
+    font-size: 36px;
+    margin-right: 20px;
+    margin-top: -470px;
+    margin-left: 1170px;
+    text-align: right;
+}
+
+.carroTxt{
+    color:#FF0000;
+}
+
+.donoTxt{
+    color: #FF0000;
+}
+}

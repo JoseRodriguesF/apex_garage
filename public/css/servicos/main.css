@@ -1,0 +1,21 @@
+@media screen and (max-width: 1920px) {
+    .container{
+        position: relative;
+    }
+    
+    .imgMain{
+        width: 1920px;
+        height: 1080px;
+        filter: brightness(0.25);
+        z-index: 1;
+    }
+
+    .hServicos{
+        position: absolute;
+        z-index: 2;
+        color: #fff;
+        top: 230px;
+        left: 775px;
+        font-size: 48px;
+    }
+}

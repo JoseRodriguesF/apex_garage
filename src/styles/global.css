@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap');
+
+*{
+    font-family: 'Lexend Zetta', 'Bold';
+    margin: 0px;
+}
+
+body{
+    color: #000;
+    width: 1536px;
+    height: 944px;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 1920px){
+    *{
+        font-family: 'Lexend Zetta', 'Bold';
+        margin: 0px;
+    }
+    
+    body{
+        color: #000;
+        width: 1920px;
+        height: 1080px;
+        overflow-x: hidden;
+    }
+}
