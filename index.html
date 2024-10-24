@@ -4,51 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/styles/style.css">
-    <link href="../output.css" rel="stylesheet">
     <link class="iconImg" rel="icon" href="public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
     <title>ApexGarage</title>
 </head>
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage"></a>
+        <a href="index.html"><img class="logo" src="public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
         <nav>
             <ul>
                 <li><a href="index.html"><p class="inicio">Início</p></a></li>
-                <li><a href="/src/pages/servicos.html"><p class="servicos">Serviços</p></a></li>
-                <li><a href="#sobre"><p class="sobre">Sobre</p></a></li>
+                <li><a href="/src/pages/agendamento.html"><p class="servicos">Agendamento</p></a></li>
                 <li><a href="#contato"><p class="contato">Contato</p></a></li>
-                <li><a class="globo" href="google.com"><img src="public/images/Ícones/globo.svg" alt=""></a></li>
-                <li><a class="user" href="user.html"><img src="public/images/Ícones/user.svg" alt=""></a></li>
+                <li><a class="globo" href="google.com"><img src="public/images/Ícones/globo.svg" draggable="false" alt=""></a></li>
+                <li><a class="user" href="user.html"><img src="public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
             </ul>
         </nav>
     </header>
-    <main class="main">
-        <div class="container">
-            <img id="imgDeFundoInicial" src="public/images/ImagensMecanica/TelaInicial.webp" alt="">
-            <div>
-                <h1 id="txtServicos">Agende seu<br> serviço agora</h1>
-                <p id="txtPromocao">Promoção: 10% de<br> desconto na primeira<br> revisão</p>
-                <hr class="linhaFirst">
-                <hr class="linhaSecond">
-                <div class="txtFrase">
-                    <p id="txtFraseInical">Um <span class="carroTxt">carro bem</span> cuidado<br>é um reflexo do seu <span class="donoTxt">dono</span></p>
-                </div>
+    <main>
+        <div>
+            <img class="imgInicio" src="public/images/ImagensMecanica/TelaInicial.png" alt="imagem principal" draggable="false">
+        </div>
+        <div class="text-overlay">
+            <h1 class="titleMain">Agende seu<br> serviço agora</h1>
+            <p class="pMain">Promoção: 10% de<br> desconto na primeira revisão</p>
+            <div class="container">
+                <hr class="linhaUm">
+                <hr class="linhaDois">
             </div>
         </div>
-    </main>
-    <footer class="footer">
-        <img id="imgDeFundoInicialFooter" src="public/images/Ícones/logoApexGarage.jpeg" alt="">
-        <hr class="linhaFooter">
+        <div class="text-overlay-1">
+        <p class="pMainFrase"><strong>Um <span class="red">carro bem</span> 
+            cuidado<br> é um reflexo do seu <span class="red">dono</span></strong></p>
+        </div>
+        <div class="containerImgMarcas">
+            <img draggable="false" class="liqui" src="public/images/LogosDeMarcas/pngwing.com.png" alt="">
+            <img draggable="false" class="pirelli" src="public/images/LogosDeMarcas/pngwing.com (1).png" alt="">
+            <img draggable="false" class="motul" src="public/images/LogosDeMarcas/motul.png" alt="">
+            <img draggable="false" class="brid" src="public/images/LogosDeMarcas/bridgestone.png" alt="">
+            <img draggable="false" class="good" src="public/images/LogosDeMarcas/goodyear.png" alt="">
+            <img draggable="false" class="cofab" src="public/images/LogosDeMarcas/cofap.svg" alt="">
+        </div>
 
-        <nav class="navfooter">
-            <ul class="ulfooter">
-                <li><a href="https://facebook.com"><img src="/public/images/Ícones/facebook.svg" alt=""></a></li>
-                <li><a href="https://instagram.com"><img src="/public/images/Ícones/instagram.svg" alt=""></a></li>
-                <li><a href="https://"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
-                <li><a href="https://"><img src="/public/images/Ícones/mail.svg" alt=""></a></li>
-            </ul>
-        </nav>
-        <p class="pFooter">© 2024 ApexGarage</p>
-    </footer>
+        <div class="containerServicos">
+            <div>
+                <img class="imgServicos" src="public/images/ImagensMecanica/TelaServicos.jpg" alt="">
+            </div>
+            <h2 class="titleServicos">Serviços</h2> 
+        </div>
+    </main>
 </body>
 </html>
