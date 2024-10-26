@@ -1,152 +1,142 @@
-
 main{
-    width: 1536px;
-    height: 944px;
+    margin: 0 auto;
+    padding: 100px 0px;
+    height: 2911px;
 }
 
-.container{
-    position: relative;
-}
-
-#imgDeFundoInicial{
-    width: 1536px;
+.imgInicio {
+    max-width: 100vw;
     height: auto;
     filter: brightness(0.25);
-    margin-top: 100px;
+    z-index: 1;
 }
 
-#txtServicos{
+.text-overlay{
     position: absolute;
-    margin-top: -700px;
-    margin-left: 120px;
-    color: #FFF;
-    font-size: 36px;
+    top: 20%;
+    left: 10%;
+    transform: translate(-10%, -20%);
+    text-align: left;
+    max-width: 90%;
+    z-index: 2; /* Coloca o texto sobre a imagem */
 }
 
-#txtPromocao{
-    position: absolute;
-    margin-top: -605px;
-    margin-left: 160px;
-    font-size: 20px;
+.titleMain{
+    font-size: 2.25em;
+    color: #fff;
+    margin-top: 160px;
+    margin-right: 180px;
 }
 
-.linhaFirst{
-    position: absolute;
-    border: #FF0000;
-    background-color: #FF0000;
-    width: 4px;
-    height: 300px;
-    margin-top: -600px;
-    margin-left: 125px;
-    border: 5px;
+.pMain{
+    font-size: 1em;
+    margin-left: 40px;
+    margin-top: 1vh;
 }
 
-.linhaSecond{
-    position: absolute;
-    border: #FFF;
-    background-color: #FFF;
-    width: 4px;
-    height: 200px;
-    margin-top: -600px;
-    margin-left: 145px;
-}
-
-.txtFrase{
-    margin-left: -75px;
-}
-
-#txtFraseInical{
-    position: absolute;
-    color: #FFF;
-    font-size: 26px;
-    margin-right: 20px;
-    margin-top: -340px;
-    margin-left: 1000px;
+.pMainFrase{
     text-align: right;
+    margin-left: 870px;
+    margin-top: -290px;
+    font-size: 1.7em;
+    z-index: 2;
+    position: absolute;
 }
 
-.carroTxt{
-    color:#FF0000;
-}
-
-.donoTxt{
+.red{
     color: #FF0000;
 }
 
-/* Usando Media-Query */
-@media screen and (max-width: 1920px) {
+
+.container{
+    display: flex;
+    gap: 7px;
+    margin-top: -40px;
+    margin-right: 15px;
+}
+
+hr {
+    border: none; /* Remove as bordas padrões */
+    height: 50vh; /* Altura da linha */
+    background-color: #FF0000; /* Cor da linha */
+    width: 4px; /* Largura da linha */
+    margin: 5px; /* Centraliza e adiciona margens */
+}
+
+.container .linhaDois{
+    background-color: #fff;
+    height: 40vh;
+}
+
+.containerImgMarcas{
+    margin-top: -4px;
+    background-color: #000;
+    width: 100vw;
+    height: 173px;
+    display: flex;
+    gap: 140px;
+    align-items: center;
+    padding: 0px 35px;
+}
+
+.liqui{
+    width: 80px;
+    height: 52px;
+}
+.pirelli{
+    width: 140;
+    height: 93px;
+}
+
+.motul{
+    width: 140px;
+    height: 140px;
+}
+
+.brid{
+    width: 55px;
+    height: 55px;
+}
+
+.good{
+    width: 175px;
+    height: 34px;
+}
+
+.cofab{
+    width: 160px;
+    height: 32px;
+}
+
+.imgServicos{
+    width: 100vw;
+    height: 900px;
+    filter: brightness(0.25);
+}
+
+
+.titleServicos{
+    position: absolute;
+    z-index: 2;
+    font-size: 2.5em;
+    color: #fff;
+    margin-top: -800px;
+    margin-left: 620px;
+}
+
+@media screen and (max-width: 760px) {
+    header nav{
+        display: none;
+    }
+
+    main{
+        margin: 0 auto;
+        padding: 100px 0px;
+        height: 2911px;
+    }
     
-main{
-    width: 1920px;
-    height: 1080px;
-}
-
-.container{
-    position: relative;
-}
-
-#imgDeFundoInicial{
-    width: 1920px;
-    height: auto;
-    filter: brightness(0.25);
-    margin-top: 100px;
-}
-
-#txtServicos{
-    position: absolute;
-    margin-top: -810px;
-    margin-left: 120px;
-    color: #FFF;
-    font-size: 39px;
-}
-
-#txtPromocao{
-    position: absolute;
-    margin-top: -700px;
-    margin-left: 160px;
-    font-size: 20px;
-}
-
-.linhaFirst{
-    position: absolute;
-    border: #FF0000;
-    background-color: #FF0000;
-    width: 4px;
-    height: 300px;
-    margin-top: -700px;
-    margin-left: 125px;
-    border: 5px;
-}
-
-.linhaSecond{
-    position: absolute;
-    border: #FFF;
-    background-color: #FFF;
-    width: 4px;
-    height: 200px;
-    margin-top: -700px;
-    margin-left: 145px;
-}
-
-.txtFrase{
-    margin-left: -75px;
-}
-
-#txtFraseInical{
-    position: absolute;
-    color: #FFF;
-    font-size: 36px;
-    margin-right: 20px;
-    margin-top: -470px;
-    margin-left: 1170px;
-    text-align: right;
-}
-
-.carroTxt{
-    color:#FF0000;
-}
-
-.donoTxt{
-    color: #FF0000;
-}
+    .imgInicio {
+        max-width: 100vw;
+        height: auto;
+    }
 }
