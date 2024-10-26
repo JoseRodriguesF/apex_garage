@@ -1,4 +1,4 @@
-/project-root
+/APEX_GARAGE    
 │
 ├── /public          # Arquivos estáticos que são entregues diretamente aos usuários
 │   ├── /images      # Imagens do site
