@@ -1,5 +1,5 @@
 // Requisições do Node.js
-require('dotenv').config(); // Puxa as variáveis presentes no .ENV
+require('dotenv').config({ path: __dirname + '/../../config/.env' });// Puxa as variáveis presentes no .ENV
 const express = require('express'); // Importa o express para facilitar as conexões e requisições HTTP
 const mysql = require('mysql'); // Importa o módulo de conexão MySQL
 const bodyParser = require('body-parser'); // Body parser ajuda a extrair as informações presentes nos arquivos JSON
@@ -12,13 +12,18 @@ const porta = process.env.PORTA || 3000; // Variável que puxa do .ENV a porta d
 app.use(bodyParser.urlencoded({ extended: true })); // Usar os valores de express para manipulação de HTTP e body parser para ler URL codificada
 app.use(bodyParser.json()); // Usa os valores de body parser para ler valores JSON
 
+console.log('BD_HOST:', process.env.BD_HOST);
+console.log('BD_USER:', process.env.BD_USER);
+console.log('BD_PASSWORD:', process.env.BD_PASSWORD);
+console.log('BD_NAME:', process.env.BD_NAME);
+
 // Importação das informações do DB presentes no .ENV
-const banco = mysql.createConnection({  
+const banco = mysql.createConnection({
     host: process.env.BD_HOST,
     user: process.env.BD_USER,
     password: process.env.BD_PASSWORD,
     database: process.env.BD_NAME
-}); // Armazena os valores do banco de dados presentes no .env
+}); 
 
 // Verifica conexão com o banco
 banco.connect(err => { // err é um valor que representa um erro na conexão 
