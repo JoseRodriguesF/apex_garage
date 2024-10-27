@@ -1,0 +1,77 @@
+.icon {
+    display: flex;                /* Usar flexbox para centralização */
+    justify-content: center;      /* Centralizar horizontalmente */
+    align-items: center;          /* Centralizar verticalmente */
+    height: 100px;                /* Defina uma altura para a div */
+    width: 100px;                 /* Defina uma largura para a div */
+    margin: auto;                 /* Centralizar a div na página, se necessário */
+}
+
+.userImg {
+    margin-top: 300px;
+    width: 120px;
+    height: 120px; 
+}
+
+.textNameUser  {
+    display: flex;                /* Usar flexbox para centralização */
+    flex-direction: column;       /* Coloca os itens em coluna */
+    justify-content: center;      /* Centraliza horizontalmente */
+    align-items: center;          /* Centraliza verticalmente */
+    height: 64vh;                /* Define a altura da div para 100% da altura da tela */
+    text-align: center;           /* Centraliza o texto dentro da div */
+}
+
+.nameUser  {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.textServicosAgendados {
+    margin-top: 15px; 
+    font-size: 1rem;
+}
+
+.containerdeservicos{
+    width: 90vw;
+    height: 300px;
+    background-color: #373737;
+    border-radius: 7px;
+    margin: auto;
+    margin-top: -170px;
+}
+
+@media (max-width: 767px){
+    .icon {
+        display: flex;                /* Usar flexbox para centralização */
+        justify-content: center;      /* Centralizar horizontalmente */
+        align-items: center;          /* Centralizar verticalmente */
+        width: 100px;                 /* Defina uma largura para a div */
+        height: 80px;                /* Defina uma altura para a div */
+        margin: auto;                 /* Centralizar a div na página, se necessário */
+    }
+
+    .userImg{
+        width: 100px;
+        height: 100px;
+    }
+
+    .nameUser  {
+        margin-bottom: 7px;
+        font-size: 1em;
+    }
+    
+    .textServicosAgendados {
+        margin-top: 7px; 
+        font-size: 0.9rem;
+    }
+
+    .containerdeservicos{
+        width: 85vw;
+        height: 300px;
+        background-color: #373737;
+        border-radius: 7px;
+        margin: auto;
+        margin-top: -170px;
+    }
+}

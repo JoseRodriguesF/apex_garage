@@ -1,31 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap');
 
 *{
-    font-family: 'Lexend Zetta', 'Bold';
-    margin: 0px;
+    font-family: 'Lexend Zetta';
+    font-weight: bold;
+    margin: 0 auto;
     -webkit-user-select: none;  /* Safari/Chrome */
     -moz-user-select: none;     /* Firefox */
     -ms-user-select: none;      /* Internet Explorer/Edge */
     user-select: none;          /* Standard */
 }
 
-body{
-    color: #000;
-    width: 1536px;
-    height: 944px;
-    overflow-x: hidden;
+html, body{
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-@media screen and (max-width: 1920px){
-    *{
-        font-family: 'Lexend Zetta', 'Bold';
-        margin: 0px;
-    }
-    
-    body{
-        color: #000;
-        width: 1920px;
-        height: 1080px;
-        overflow-x: hidden;
-    }
+body{
+    color: #000;
+    width: 100%;
+    height: 3270px;
+    overflow-x: hidden;
 }

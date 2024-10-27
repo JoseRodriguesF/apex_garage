@@ -84,6 +84,10 @@ nav a{
         z-index: 90;
     }
     
+    header nav{
+        display: none;
+    }
+
     .logo{
         margin-top: 20px;
         width: 230px;
