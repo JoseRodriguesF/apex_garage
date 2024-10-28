@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexGarage Admin</title>
+    <title>ApexGarage</title>
+    <link rel="stylesheet" href="/public/css/user/styleUser.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
-    <link rel="stylesheet" href="/public/css/admin/styleAdmin.css">
+    <script src="/public/js/fetchServicos.js" defer></script> <!-- Carrega o script aqui -->
 </head>
 <body>
     <header>
@@ -27,15 +28,10 @@
         </div>
         <div class="textNameUser">
             <p class="nameUser">Olá, Admin</p>
-            <p class="textServicosAgendados">Serviços a fazer</p>
+            <p class="textServicosAgendados">Serviços pendentes</p>
         </div>
         <div class="containerdeservicos">
-            <!-- Adicionar o tabela de serviços agendados -->
-
-
-            <!-- Linha verticalmente -->
-             <p class="textFeito">Feitos</p>
-             <hr class="linhaSeparamento">
+            <!-- Os serviços serão exibidos aqui -->
         </div>
     </main>
     <footer>
@@ -46,8 +42,8 @@
             <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
             <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
         </ul>
-            <p class="copy">&copy 2024 ApexGarage</p>
-            <hr class="linhaFooter">
+        <p class="copy">&copy 2024 ApexGarage</p>
+        <hr class="linhaFooter">
     </footer>
 </body>
 </html>

@@ -1,6 +1,7 @@
 // Requisições do Node.js
-require('dotenv').config(); // Puxa as variáveis presentes no .ENV
+require('dotenv').config({ path: __dirname + '/../../config/.env' });// Puxa as variáveis presentes no .ENV
 const express = require('express'); // Importa o express para facilitar as conexões e requisições HTTP
+const cors = require('cors'); // Importa o cors
 const mysql = require('mysql'); // Importa o módulo de conexão MySQL
 const bodyParser = require('body-parser'); // Body parser ajuda a extrair as informações presentes nos arquivos JSON
 
@@ -9,16 +10,18 @@ const app = express(); // Adiciona os valores do express na variável app
 const porta = process.env.PORTA || 3000; // Variável que puxa do .ENV a porta do server.js ou armazena o valor da porta onde o server.js rodará 
 
 // Middleware
+app.use(cors()); // Habilita o CORS para todas as origens
 app.use(bodyParser.urlencoded({ extended: true })); // Usar os valores de express para manipulação de HTTP e body parser para ler URL codificada
 app.use(bodyParser.json()); // Usa os valores de body parser para ler valores JSON
+app.use(express.static(__dirname + '/public/js/fetchServicos.js'));
 
 // Importação das informações do DB presentes no .ENV
-const banco = mysql.createConnection({  
+const banco = mysql.createConnection({
     host: process.env.BD_HOST,
     user: process.env.BD_USER,
     password: process.env.BD_PASSWORD,
     database: process.env.BD_NAME
-}); // Armazena os valores do banco de dados presentes no .env
+}); 
 
 // Verifica conexão com o banco
 banco.connect(err => { // err é um valor que representa um erro na conexão 
@@ -88,6 +91,18 @@ app.post('/login', (req, res) => {
         }
 
         res.send('Login realizado com sucesso!');
+    });
+});
+
+app.get('/api/servicos', (req, res) => {
+    const queryServicos = 'SELECT id, nome, descricao, preco FROM servicos';
+    
+    banco.query(queryServicos, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar serviços:', err);s
+            return res.status(500).json({ message: 'Erro ao buscar serviços' });
+        }
+        res.json(results);
     });
 });
 
