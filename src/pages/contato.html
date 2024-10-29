@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexGarage</title>
-    <link rel="stylesheet" href="/public/css/user/styleUser.css">
+    <title>ApexGarage Contato</title>
+    <link rel="stylesheet" href="/public/css/contato/stylecnt.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
     <script src="/src/scripts/menu.js" defer></script>
 </head>
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
+        <a href="/index.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
         <nav class="nav-desktop">
             <ul class="ul-desktop">
                 <li class="li-desktop"><a href="/index.html"><p class="inicio">Início</p></a></li>
@@ -41,28 +41,44 @@
     </header>
 
     <main>
-        <div class="icon">
-            <img class="userImg" src="/public/images/Ícones/account_circle.svg" alt="Icone de usuário">
+        <div class="titulo-h1">
+            <h1 class="titulo-contato">Contato</h1>
         </div>
-        <div class="textNameUser">
-            <p class="nameUser">Olá, (Nome do usuário)</p>
-            <p class="textServicosAgendados">Serviços Agendados</p>
+        <div class="titulo-h2">
+            <h2 class="titulo-apex">Fale com a Apex<span class="red-apex">Garage</span></h2>
         </div>
-        <div class="containerdeservicos">
-            <!-- Adicionar o tabela de serviços agendados -->
+        <form class="form-input">
+            <label for="input1">Nome:</label>
+            <input type="text" id="input1" name="input1" placeholder="Nome">
+          
+            <label for="input2">Email:</label>
+            <input type="email" id="input2" name="input2" placeholder="Email">
+          
+            <label for="input3">Mensagem:</label>
+            <input type="text" id="input3" name="input3" placeholder="Mensagem">
+          
+            <button type="submit">Enviar</button>
+          </form>
 
-        </div>
+          <div class="texts">
+            <div class="txtsContato">
+                <p class="p-contato">Caso você tenha alguma duvida ou<br> sugestão, preencha o formulário ao lado<br> que a equipe Apex<span class="red-apex">Garage</span> irá entrar em<br> contato com você o mais rápido possível!<br> Se preferir, você pode entrar em contato<br> por telefone também:</p>
+              </div>
+              <div class="txtTelefone">
+                <img class="imgCall" src="/public/images/Ícones/call.svg" alt="telefone">
+                <p class="p-telefone">Telefone e WhatsApp</p>
+            </div>
+            <div  class="txtTelefone2">
+                <p class="p-call">(11) 99999-8888</p>
+            </div>
+            <div class="locale">
+                <img src="/public/images/Ícones/localizacao-endereco.svg" alt="" class="localeImg">
+                <p class="p-locale-endereco">Endereço</p>
+            </div>
+            <div class="endereco">
+                <p class="p-endereco">R. Bento Branco de Andrade Filho, 379</p>
+            </div>
+          </div>
     </main>
-    <footer>
-        <img id="logoFooter" src="/public/images/Ícones/Frame 1.png" alt="logoApexGarage">
-        <ul class="listadecontatos">
-            <li><a href="https://facebook.com"><img src="/public/images/Ícones/facebook.svg" alt=""></a></li>
-            <li><a href="https://instagram.com"><img src="/public/images/Ícones/instagram.svg" alt=""></a></li>
-            <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
-            <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
-        </ul>
-            <p class="copy">&copy 2024 ApexGarage</p>
-            <hr class="linhaFooter">
-    </footer>
 </body>
 </html>

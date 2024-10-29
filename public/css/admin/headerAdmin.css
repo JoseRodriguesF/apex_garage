@@ -18,7 +18,7 @@ p{
     color: #FFF;
 }
 
-nav{
+.nav-desktop{
     padding: 10px;
     z-index: 2;
     margin-top: -78px;
@@ -26,18 +26,18 @@ nav{
     right: 0;
 }
 
-nav ul{
+.nav-desktop .ul-desktop{
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-nav li{
+.nav-desktop .li-desktop{
     margin: 0 15px;
 }
 
-nav p{
+.nav-desktop p{
     margin-top: 0;
     padding: 2px;
     background-color: #000;
@@ -45,13 +45,13 @@ nav p{
     transition: 0.3s;
 }
 
-nav p:hover{
+.nav-desktop p:hover{
     background-color: #1f1f1f;
     padding: 10px 20px;
     border-radius: 4px;
 }
 
-nav img {
+.nav-desktop img {
     margin-top: 18px;
     width: 30px;
     height: 27px;
@@ -60,18 +60,28 @@ nav img {
     transition: 0.2s;
 }
 
-nav img:hover{
+.nav-desktop img:hover{
     background-color: #1f1f1f;
     padding: 10px 10px;
     border-radius: 4px;
 }
 
-nav a{
+.nav-desktop a{
     border-radius: 2px;
     color: #FFF;
     text-decoration: none;
     padding: 0.1px;
     font-size: 12px;
+}
+
+@media (min-width: 780px) and (max-width: 3920px) {
+    .menu-mobile{
+        display: none;
+    }
+
+    .btn-abrir-menu{
+        display: none;
+    }
 }
 
 @media (max-width: 568px){
@@ -91,20 +101,78 @@ nav a{
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .logo{
         width: 150px;
         height: 50px;
     }
-    
-    nav p{
+
+    .nav-desktop{
         display: none;
     }
 
-    nav img {
-        margin-top: 30px;
-        width: 30px;
-        height: 27px;
+    /* Estilo menu mobile */
+    .right {
+        position: absolute; /* ou fixed, dependendo do efeito desejado */
+        right: 6%; /* ajuste a distância do canto direito */
+        top: 30%; /* ajuste a distância do topo */
     }
+
+    .menu-mobile{
+        background-color: #000;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 90;
+        width: 0%;
+        overflow: hidden;
+        transition: .3s;
+    }
+/* config JS */
+
+    .menu-mobile.abrir-menu{
+        width: 65%;
+    }
+
+    .menu-mobile.abrir-menu ~ .overlay-menu{
+        display: block;
+    }
+/* config JS */
+    .menu-mobile .btn-fechar{
+        padding: 10px 8%;
+    }
+    
+    .menu-mobile .nav-mobile .ul-mobile{
+        text-align: right;
+        list-style: none;
+    }
+
+    .menu-mobile .nav-mobile .ul-mobile li a p{
+        font-size: 0.925rem;
+        font-weight: bold;
+        padding: 10px 8%;
+        display: block;
+        color: #fff;
+    }
+    .menu-mobile .nav-mobile .ul-mobile li a{
+          text-decoration: none;
+    }
+    
+    .menu-mobile nav ul li a:hover{
+        background-color: #383737;
+    }
+
+    .overlay-menu{
+        background-color: #00000084;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        
+        z-index: 80;
+        display: none;
+    }
+
 }
+
 
