@@ -15,7 +15,7 @@
             <ul class="ul-desktop">
                 <li class="li-desktop"><a href="/index.html"><p class="inicio">Início</p></a></li>
                 <li class="li-desktop"><a href="/src/pages/agendamento.html"><p class="servicos">Agendamento</p></a></li>
-                <li class="li-desktop"><a href="#contato"><p class="contato">Contato</p></a></li>
+                <li class="li-desktop"><a href="/src/pages/contato.html"><p class="contato">Contato</p></a></li>
                 <li class="li-desktop"><a class="globo" href="google.com"><img src="/public/images/Ícones/globo.svg" draggable="false" alt=""></a></li>
                 <li class="li-desktop"><a class="user" href="user.html"><img src="/public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
             </ul>
@@ -39,46 +39,28 @@
             </nav>
             <div class="overlay-menu" id="overlay-menu"></div>
     </header>
-
-    <main>
-        <div class="titulo-h1">
-            <h1 class="titulo-contato">Contato</h1>
-        </div>
-        <div class="titulo-h2">
-            <h2 class="titulo-apex">Fale com a Apex<span class="red-apex">Garage</span></h2>
-        </div>
-        <form class="form-input">
-            <label for="input1">Nome:</label>
-            <input type="text" id="input1" name="input1" placeholder="Nome">
-          
-            <label for="input2">Email:</label>
-            <input type="email" id="input2" name="input2" placeholder="Email">
-          
-            <label for="input3">Mensagem:</label>
-            <input type="text" id="input3" name="input3" placeholder="Mensagem">
-          
-            <button type="submit">Enviar</button>
-          </form>
-
-          <div class="texts">
-            <div class="txtsContato">
-                <p class="p-contato">Caso você tenha alguma duvida ou<br> sugestão, preencha o formulário ao lado<br> que a equipe Apex<span class="red-apex">Garage</span> irá entrar em<br> contato com você o mais rápido possível!<br> Se preferir, você pode entrar em contato<br> por telefone também:</p>
-              </div>
-              <div class="txtTelefone">
-                <img class="imgCall" src="/public/images/Ícones/call.svg" alt="telefone">
-                <p class="p-telefone">Telefone e WhatsApp</p>
+    <main class="main">
+         <h1 id="cont">Contato</h1>
+        </p>
+        <div class="link">
+             <p class="p-fale">
+                Fale com a Apex<span class="red-garage-">Garage</span>
+            <form class="form-contato" action="http://localhost:3000/login" method="post">
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Mensagem">
+                <button class="btn-enviar">Enviar</button>
+            </form>
+            <div class="texts-contato">
+                <p class="text-contato">
+                    Caso você tenha alguma duvida ou<br> 
+                    sugestão, preencha o formulário ao lado<br> 
+                    que a equipe Apex<span class="red-garage-">Garage</span> irá entrar em<br> 
+                    contato com você o mais rápido possível!<br> 
+                    Se preferir, você pode entrar em contato<br> por telefone também:
+                </p>
             </div>
-            <div  class="txtTelefone2">
-                <p class="p-call">(11) 99999-8888</p>
-            </div>
-            <div class="locale">
-                <img src="/public/images/Ícones/localizacao-endereco.svg" alt="" class="localeImg">
-                <p class="p-locale-endereco">Endereço</p>
-            </div>
-            <div class="endereco">
-                <p class="p-endereco">R. Bento Branco de Andrade Filho, 379</p>
-            </div>
-          </div>
+         </div>
     </main>
 </body>
 </html>
