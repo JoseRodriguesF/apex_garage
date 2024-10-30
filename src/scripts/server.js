@@ -1,19 +1,20 @@
 // Requisições do Node.js
-require('dotenv').config({ path: __dirname + '/../../config/.env' });// Puxa as variáveis presentes no .ENV
-const express = require('express'); // Importa o express para facilitar as conexões e requisições HTTP
-const cors = require('cors'); // Importa o cors
-const mysql = require('mysql'); // Importa o módulo de conexão MySQL
-const bodyParser = require('body-parser'); // Body parser ajuda a extrair as informações presentes nos arquivos JSON
+require('dotenv').config({ path: __dirname + '/../../config/.env' });
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser'); // Importa o cookie-parser
 
 // Iniciação do server.js
-const app = express(); // Adiciona os valores do express na variável app
-const porta = process.env.PORTA || 3000; // Variável que puxa do .ENV a porta do server.js ou armazena o valor da porta onde o server.js rodará 
+const app = express();
+const porta = process.env.PORTA || 3000;
 
 // Middleware
-app.use(cors()); // Habilita o CORS para todas as origens
-app.use(bodyParser.urlencoded({ extended: true })); // Usar os valores de express para manipulação de HTTP e body parser para ler URL codificada
-app.use(bodyParser.json()); // Usa os valores de body parser para ler valores JSON
-app.use(express.static(__dirname + '/public/js/fetchServicos.js'));
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser()); // Adiciona o cookie-parser
 
 // Importação das informações do DB presentes no .ENV
 const banco = mysql.createConnection({
@@ -24,7 +25,7 @@ const banco = mysql.createConnection({
 }); 
 
 // Verifica conexão com o banco
-banco.connect(err => { // err é um valor que representa um erro na conexão 
+banco.connect(err => {
     if (err) {
         return console.error('Erro ao conectar ao banco de dados:', err);
     }
@@ -41,12 +42,10 @@ app.get('/login', (req, res) => res.sendFile(`${__dirname}/login.html`));
 app.post('/register', (req, res) => {
     const { user, email, tel, senha, senha_confirm } = req.body;
 
-    // Verificar se a senha e a confirmação de senha estão iguais
     if (senha !== senha_confirm) {
         return res.status(400).send('As senhas não coincidem');
     }
 
-    // Verificar se o usuário já existe no banco
     const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE username = ? OR email = ?';
     banco.query(verificaExistenciaUser, [user, email], (err, results) => {
         if (err) {
@@ -57,7 +56,6 @@ app.post('/register', (req, res) => {
             return res.status(400).send('Usuário ou email já registrado');
         }
 
-        // Registrar o usuário 
         const registroUser = 'INSERT INTO usuarios (username, email, telefone, senha) VALUES (?, ?, ?, ?)';
         banco.query(registroUser, [user, email, tel, senha], (err) => {
             if (err) {
@@ -72,7 +70,6 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Verificar se o usuário existe no banco de dados
     const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE username = ?';
     banco.query(verificaExistenciaUser, [username], (err, results) => {
         if (err) {
@@ -85,25 +82,38 @@ app.post('/login', (req, res) => {
 
         const user = results[0];
 
-        // Comparar a senha digitada com a senha armazenada
         if (password !== user.senha) {
             return res.status(400).send('Senha incorreta');
         }
 
+        // Define um cookie de sessão
+        res.cookie('username', user.username, { maxAge: 3600000 }); // 1 hora
         res.send('Login realizado com sucesso!');
     });
 });
 
+// Rota de serviços
 app.get('/api/servicos', (req, res) => {
     const queryServicos = 'SELECT id, nome, descricao, preco FROM servicos';
-    
+
+    // Verifica se o usuário está autenticado
+    if (!req.cookies.username) {
+        return res.status(401).json({ message: 'Você precisa estar logado para acessar os serviços' });
+    }
+
     banco.query(queryServicos, (err, results) => {
         if (err) {
-            console.error('Erro ao buscar serviços:', err);s
+            console.error('Erro ao buscar serviços:', err);
             return res.status(500).json({ message: 'Erro ao buscar serviços' });
         }
         res.json(results);
     });
+});
+
+// Rota de logout
+app.post('/logout', (req, res) => {
+    res.clearCookie('username'); // Limpa o cookie
+    res.send('Logout realizado com sucesso!');
 });
 
 // Inicializar o servidor
