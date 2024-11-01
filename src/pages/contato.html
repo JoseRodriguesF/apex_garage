@@ -6,9 +6,10 @@
     <title>ApexGarage Contato</title>
     <link rel="stylesheet" href="/public/css/contato/stylecnt.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="/src/scripts/menu.js" defer></script>
 </head>
-<body>
+<body style="background-color: #000;">
     <header>
         <a href="/index.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
         <nav class="nav-desktop">
@@ -16,7 +17,6 @@
                 <li class="li-desktop"><a href="/index.html"><p class="inicio">Início</p></a></li>
                 <li class="li-desktop"><a href="/src/pages/agendamento.html"><p class="servicos">Agendamento</p></a></li>
                 <li class="li-desktop"><a href="/src/pages/contato.html"><p class="contato">Contato</p></a></li>
-                <li class="li-desktop"><a class="globo" href="google.com"><img src="/public/images/Ícones/globo.svg" draggable="false" alt=""></a></li>
                 <li class="li-desktop"><a class="user" href="user.html"><img src="/public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
             </ul>
         </nav>
@@ -41,26 +41,51 @@
     </header>
     <main class="main">
          <h1 id="cont">Contato</h1>
-        </p>
-        <div class="link">
-             <p class="p-fale">
-                Fale com a Apex<span class="red-garage-">Garage</span>
-            <form class="form-contato" action="http://localhost:3000/login" method="post">
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Mensagem">
-                <button class="btn-enviar">Enviar</button>
-            </form>
-            <div class="texts-contato">
-                <p class="text-contato">
-                    Caso você tenha alguma duvida ou<br> 
-                    sugestão, preencha o formulário ao lado<br> 
-                    que a equipe Apex<span class="red-garage-">Garage</span> irá entrar em<br> 
-                    contato com você o mais rápido possível!<br> 
-                    Se preferir, você pode entrar em contato<br> por telefone também:
-                </p>
+        <div class="container-main mt-5">
+            <div class="container-colunm">
+                <h1 class="fale-apex h2">Fale com a Apex<span style="color:#ff0909;">Garage</span></h1>
+                <form class="form-contato" action="http://localhost:3000/login" method="post">
+                    <input type="text" placeholder="Nome">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Mensagem">
+                    <button class="btn-enviar">Enviar</button>
+                </form> 
             </div>
-         </div>
+            <div class="container-colunm">
+                <p class="text-center line-height-2 ml-2 fale-apex">
+                    Caso você tenha alguma duvida<br> 
+                    ou sugestão, preencha o formulário ao lado que a
+                    equipe Apex<span style="color: #ff0909;">Garage</span> irá entrar em
+                    contato com você o mais rápido possível!<br>
+                    <br>Se preferir, você pode 
+                    entrar em contato por telefone também:</p>
+                    <div class="divisao-colunm-1">
+                        <img class="img-telefone" src="/public/images/Ícones/call.svg" alt="Telefone">
+                        <div class="block">
+                            <p style="color: gray;" class="mt-1 ml-3">Telefone e WhatsApp:</p>
+                            <p class="telefone ml-3">(11) 99999-8888</p>
+                        </div>
+                    </div>
+                    <div class="divisao-colunm-2">
+                        <img class="img-gps" src="/public/images/Ícones/endereco.svg" alt="endereço">
+                        <div class="block">
+                            <p style="color: gray;" class="mt-1 ml-3 telefone-whatsapp">Endereço:</p>
+                            <p class="telefone ml-3">R. Bento Branco de Andrade Filho, 379</p>
+                        </div>
+                    </div>
+                    <div class="divisao-colunm-2 mt-3">
+                        <img class="img-email" src="/public/images/Ícones/mail.svg" alt="email">
+                        <div class="block">
+                            <p style="color: gray;" class="mt-1 ml-3">E-mail</p>
+                            <p class="telefone ml-3">contato@apexgarage.com.br</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

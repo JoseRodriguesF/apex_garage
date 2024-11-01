@@ -1,9 +1,25 @@
 .main{
     margin-top: 150px;
+    width: 100%;
 }
 
-.link{
-    margin-top: 5%;
+.container-main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 150px;
+    width: 80%;
+    margin: auto;
+}
+
+/* Algumas váriaves criadas */
+.line-height-1{
+    line-height: 1rem;
+}
+.line-height-1-75{
+    line-height: 1.75rem;
+}
+.line-height-2{
+    line-height: 2rem;
 }
 
 #cont{
@@ -12,19 +28,16 @@
     color: #fff;
 }
 
-.p-fale{
+.fale-apex{
     font-size: 1.745rem;
     text-align: left;
     margin-left: 4%;
     margin-top: 2.5%;
-}
-
-.red-garage-{
-    color: #ff0909;
+    color: #fff;
+    text-wrap: nowrap;
 }
 
 .form-contato{
-    display: block;
     margin-left: 4%;
 }
 
@@ -32,7 +45,7 @@
     display: block;
     color: #fff;
     margin-bottom: 10px;
-    width: 40%;
+    width: 70%;
     background: none;
     border: none;
     border-bottom: 1px solid #d9d9d9;
@@ -51,28 +64,87 @@
     border-radius: 7px;
 }
 input:focus {
-    width: 45%;
-    transition: 0.3s;
-    border-bottom: 2.5px solid #ff0909; /* Muda a cor da linha para branco */
+    width: 85%;
+    transition: 0.5s;
+    border-bottom: 3.5px solid #ff0909; /* Muda a cor da linha para branco */
 }
 
 .btn-enviar:hover{
-    transition: 0.3s;
+    transition: 0.5s;
     background-color: #ff0909;
+    color: #000;
 }
 
-.texts-contato{
-    margin-left: 41%;
-    margin-top: -22%;
+.img-telefone{
+    width: 35px;
+    height: 35px;
+}
+.img-mail{
+    width: 48px;
+    height: 61px;
+}
+.img-gps{
+    width: 35px;
+    height: 40px;
 }
 
-.text-contato{
-    text-align: right;
-    margin-right: 4%;
+.divisao-colunm-1{
+    display: flex;
+    gap: 10px;
+}
+.divisao-colunm-2{
+    display: flex;
+    gap: 10px;
 }
 
-@media (max-width: 1024px){
-    .text-contato{
+
+
+@media (max-width: 768px){
+    #cont{
+        font-size: 2.745rem;
+    }
+
+    .fale-apex{
+        text-wrap: wrap;
+        margin: auto;
+        display: none;
+    }
+
+    .container-colunm{
+       margin: auto;
+    }
+
+    .divisao-colunm-1{
+        margin-top: 10px;
+    }
+
+    .container-main{
+        grid-template-columns: 1fr;
+    }
+
+    .form-contato{
+        margin-top: 0%;
+        margin-left: 4%;
+        margin: auto;
+    }
+
+    .form-contato input{
+        width: 75%;
+    }
+
+    .divisao-colunm-1, .divisao-colunm-2{
+        text-align: start;
+    }
+
+    /* Ajeitar a parte de caso */
+
+    .img-telefone{
+        display: none;
+    }
+    .img-email{
+        display: none;
+    }
+    .img-gps{
         display: none;
     }
 }
