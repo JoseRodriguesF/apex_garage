@@ -22,6 +22,8 @@
     line-height: 2rem;
 }
 
+
+
 #cont{
     text-align: center;
     font-size: 2rem;
@@ -29,7 +31,7 @@
 }
 
 .fale-apex{
-    font-size: 1.745rem;
+    font-size: 2rem;
     text-align: left;
     margin-left: 4%;
     margin-top: 2.5%;
@@ -99,7 +101,7 @@ input:focus {
 
 
 
-@media (max-width: 768px){
+@media (max-width: 1340px){
     #cont{
         font-size: 2.745rem;
     }
@@ -107,7 +109,7 @@ input:focus {
     .fale-apex{
         text-wrap: wrap;
         margin: auto;
-        display: none;
+        font-size: 1.5rem;
     }
 
     .container-colunm{
@@ -129,11 +131,69 @@ input:focus {
     }
 
     .form-contato input{
-        width: 75%;
+        width: 100%;
     }
 
     .divisao-colunm-1, .divisao-colunm-2{
         text-align: start;
+    }
+
+    input:focus {
+        width: 115%;
+        transition: 0.5s;
+        border-bottom: 3.5px solid #ff0909; /* Muda a cor da linha para branco */
+    }
+}
+
+/*  */
+@media (max-width: 768px){
+    #cont{
+        font-size: 2.745rem;
+    }
+
+    .form-contato{
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    .fale-apex{
+        font-size: 1.080rem;
+        text-wrap: wrap;
+    }
+
+    .text-apex{
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .container-colunm{
+        margin-bottom: 60px;
+        font-size: 0.9rem;
+    }
+
+    .divisao-colunm-1{
+        margin-top: 10px;
+        font-size: 0.7rem;
+    }
+
+    .container-main{
+        grid-template-columns: 1fr;
+    }
+
+    .form-contato{
+        margin-top: 0%;
+        margin-left: 4%;
+        margin: auto;
+    }
+
+    .form-contato input{
+        width: 90%;
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    .divisao-colunm-1, .divisao-colunm-2{
+        font-size: 0.7rem;
     }
 
     /* Ajeitar a parte de caso */
@@ -146,5 +206,9 @@ input:focus {
     }
     .img-gps{
         display: none;
+    }
+
+    .btn-enviar{
+        margin-right: 100%;
     }
 }

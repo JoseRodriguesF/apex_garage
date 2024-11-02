@@ -14,21 +14,18 @@
 }
 
 .textNameUser  {
-    display: flex;                /* Usar flexbox para centralização */
-    flex-direction: column;       /* Coloca os itens em coluna */
-    justify-content: center;      /* Centraliza horizontalmente */
-    align-items: center;          /* Centraliza verticalmente */
     height: 64vh;                /* Define a altura da div para 100% da altura da tela */
     text-align: center;           /* Centraliza o texto dentro da div */
+    margin-top: 190px;
 }
 
 .nameUser  {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size: 1.8em;
 }
 
 .textServicosAgendados {
-    margin-top: 15px; 
+    margin-top: 25px; 
     font-size: 1rem;
 }
 
@@ -38,7 +35,6 @@
     background-color: #373737;
     border-radius: 7px;
     margin: auto;
-    margin-top: -170px;
 }
 
 @media (max-width: 767px){
@@ -57,12 +53,12 @@
     }
 
     .nameUser  {
-        margin-bottom: 7px;
+        margin-bottom: 20px;
         font-size: 1em;
     }
     
     .textServicosAgendados {
-        margin-top: 7px; 
+        margin-top: 20px; 
         font-size: 0.9rem;
     }
 
@@ -122,4 +118,5 @@
         margin: auto;
         margin-top: -200px;
     } */
+
 }

@@ -42,8 +42,8 @@
     <main class="main">
          <h1 id="cont">Contato</h1>
         <div class="container-main mt-5">
-            <div class="container-colunm">
-                <h1 class="fale-apex h2">Fale com a Apex<span style="color:#ff0909;">Garage</span></h1>
+            <div class="container-colunm container-form">
+                <h1 class="fale-apex">Fale com a Apex<span style="color:#ff0909;">Garage</span></h1>
                 <form class="form-contato" action="http://localhost:3000/login" method="post">
                     <input type="text" placeholder="Nome">
                     <input type="email" placeholder="Email">
@@ -52,13 +52,14 @@
                 </form> 
             </div>
             <div class="container-colunm">
-                <p class="text-center line-height-2 ml-2 fale-apex">
-                    Caso você tenha alguma duvida<br> 
+                <p class="text-left line-height-2 ml-2 mt-3 text-apex">
+                    Caso você tenha alguma duvida 
                     ou sugestão, preencha o formulário ao lado que a
                     equipe Apex<span style="color: #ff0909;">Garage</span> irá entrar em
                     contato com você o mais rápido possível!<br>
-                    <br>Se preferir, você pode 
-                    entrar em contato por telefone também:</p>
+                    <br>Se preferir, você pode
+                    entrar em <br>contato por telefone também:
+                </p>
                     <div class="divisao-colunm-1">
                         <img class="img-telefone" src="/public/images/Ícones/call.svg" alt="Telefone">
                         <div class="block">
@@ -83,6 +84,17 @@
             </div>
         </div>
     </main>
+    <footer>
+        <img id="logoFooter" src="/public/images/Ícones/Frame 1.png" alt="logoApexGarage">
+        <ul class="listadecontatos">
+            <li><a href="https://facebook.com"><img src="/public/images/Ícones/facebook.svg" alt=""></a></li>
+            <li><a href="https://instagram.com"><img src="/public/images/Ícones/instagram.svg" alt=""></a></li>
+            <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
+            <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
+        </ul>
+            <p class="copy">&copy 2024 ApexGarage</p>
+            <hr class="linhaFooter">
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
