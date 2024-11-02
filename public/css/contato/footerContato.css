@@ -48,7 +48,8 @@ ul li a img:hover{
 
 @media (max-width: 767px){
     footer{
-        margin-top: 125px;
+        width: 100%;
+        margin-top: 225px;
         height: 220px;
     }
 
@@ -74,5 +75,9 @@ ul li a img:hover{
         margin-top: 20px;
         background-color: #fff;
         align-items: center;
+    }
+
+    #logoFooter{
+        display: none;
     }
 }

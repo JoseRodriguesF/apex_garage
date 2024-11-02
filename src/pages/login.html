@@ -3,22 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Garage - Login</title>
-    <link rel="stylesheet" href="/public/css/login-registro/login.css">
+    <title>ApexGarage</title>
+    <link rel="stylesheet" href="/public/css/login-registro/login/styleLogin.css">
+    <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
-
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 ApexGarage</p>
-            <div class="social-icons">
-                <a href="#"><img src="/public/images/Ícones/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="/public/images/Ícones/facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="icons\whatsapp" alt="WhatsApp"></a>
-                <a href="#"><img src="/public/images/Ícones/mail.svg" alt="Email"></a>
+    <main>
+        <div class="container-img">
+            <div class="imgFundo" alt="Mecanica"></div>
+            <a href="/index.html"><img class="imgLogo" src="/public/images/Ícones/Frame 1.png" alt=""></a>
+            <p class="p-login">Faça login</p>
+            <div class="container-form p-4">
+                <form>
+                    <div class="mb-3">
+                      <p for="email" class="form-label text-left p-label">Email</p>
+                      <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                    </div>
+                    <div class="mb-3">
+                      <p for="senha" class="form-label text-left p-label">Senha</p>
+                      <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div class="mb-3">
+                        <p for="email" class="form-label text-left p-label">Novo usuário? <a class="linkConta" href="/src/pages/registro.html">Crie sua conta</a></p>
+                      </div>
+                    <div class="mb-3 checks">
+                      <input class="form-check-input checkbox-1" type="checkbox" value="" id="" />
+                      <label class="form-check-label checkbox-2" for="">Aceito os Termos de Serviço...</label>
+                    </div>
+                    <button class="btn-entrar text-center">Entrar</button>
+                </form>
             </div>
         </div>
+
+    </main>
+
+    <footer>
+        <img class="img-logo-footer" src="/public/images/Ícones/Frame 1.png" alt="">
+        <ul class="listadecontatos d-flex">
+            <li><a href="https://facebook.com"><img src="/public/images/Ícones/facebook.svg" alt=""></a></li>
+            <li><a href="https://instagram.com"><img src="/public/images/Ícones/instagram.svg" alt=""></a></li>
+            <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
+            <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
+        </ul>
+        <p class="copy">&copy 2024 ApexGarage</p>
+        <hr class="linhaFooter">
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

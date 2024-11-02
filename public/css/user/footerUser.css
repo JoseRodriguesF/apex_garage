@@ -8,7 +8,7 @@ footer{
 #logoFooter{
     padding: 30px 30px;
     width: 330px;
-    height: 110px;
+    height: 100px;
 }
 
 .listadecontatos{
@@ -48,33 +48,30 @@ ul li a img:hover{
 
 @media (max-width: 767px){
     footer{
-        margin-top: 105px;
-        height: 220px;
+        display: none;
     }
 
-    #logoFooter{
+    /* #logoFooter{
         width: 180px;
         height: 60px;
         margin-top: 15px;
         margin-left: 0;
         z-index: 90;
-    }
+    } */
 
     .listadecontatos{
         display: none;
     }
 
     .copy{
-        margin-top: 50px;
-        margin: auto;
-        text-align: center;
+        display: none;
     }
     
     .linhaFooter{
-        width: 85vw;
-        height: 0.4px;
-        margin-top: 20px;
-        background-color: #fff;
-        align-items: center;
+        display: none;
+    }
+
+    #logoFooter{
+        display: none;
     }
 }

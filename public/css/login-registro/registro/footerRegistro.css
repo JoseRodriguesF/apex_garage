@@ -1,0 +1,49 @@
+footer{
+    width: 100%;
+    height: 26%;
+    background-color: #000;
+}
+
+.img-logo-footer{
+    width: 390px;
+    height: 180px;
+    padding: 40px 30px;
+}
+
+.listadecontatos{
+    list-style: none;
+    gap: 20px;
+    justify-content: end;
+    margin-top: -120px;
+    margin-right: 40px;
+}
+
+.mail{
+    margin-top: -3px;
+}
+
+.copy{
+    margin-top: 50px;
+    text-align: right;
+    margin-right: 40px; 
+    color: #fff;
+}
+
+.linhaFooter{
+    width: 95vw;
+    height: 0.4px;
+    margin-top: 30px;
+    background-color: #fff;
+    align-items: center;
+}
+
+
+ul li a img{
+    transition: 0.3s;
+}
+
+ul li a img:hover{
+    background-color: #1f1f1f;
+    padding: 10px 10px;
+    border-radius: 4px;
+}

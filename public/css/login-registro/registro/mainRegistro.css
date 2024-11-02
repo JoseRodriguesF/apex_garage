@@ -1,0 +1,123 @@
+.container-img{
+    position: relative;
+    text-align: center;
+}
+
+.imgFundo{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/public/images/ImagensMecanica/TelaLogin-Registro.jpg');
+    background-size: cover;
+    filter: brightness(0.25);
+}
+
+.imgLogo{
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.container-form{
+    position: absolute;
+    margin: auto;
+    width: 35%;
+    height: 510px;
+    background-color: #1f1f1f;
+    top: 27%;
+    left: 32%;
+    border-radius: 7px;
+}
+
+.p-login{
+    font-size: 2rem;
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 32%;
+}
+
+.p-label{
+    color: #fff;
+}
+
+.checks{
+    margin-right: 35px;
+    color: #fff;
+}
+
+.linkConta{
+    text-decoration: underline;
+    color: #d9d9d9;
+}
+
+.btn-entrar{
+    background-color: #484848;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    margin-left: 50%;
+    
+    width: 45%;
+    font-size: 0.745rem;
+    padding: 10px 5px;
+    transition: 0.5s;
+}
+
+.btn-entrar:hover{
+    width: 50%;
+    background-color: #fff;
+    color: #484848;
+    box-shadow: 0 0px 8px rgba(255, 255, 255, 0.904);
+}
+
+@media (max-width: 768px){
+    .imgLogo{
+        width: 215px;
+        height: 72px;
+    }
+
+    .imgFundo{
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .p-login{
+        font-size: 1.325rem;
+        margin-left: -15px;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+    }
+
+    .container-form{
+        position: absolute;
+        margin: auto;
+        width: 83%;
+        height: 59%;
+        background-color: #1f1f1f;
+        top: 40%;
+        left: 8%;
+        border-radius: 7px;
+    }
+
+    .btn-entrar{
+        background-color: #484848;
+        color: #fff;
+        border-radius: 7px;
+        border: none;
+        margin-right: 75%;
+        margin-top: 1px;
+        font-size: 0.7rem;
+    }
+    
+    .btn-entrar:hover{
+        transition: 0.5s;
+        background-color: #fff;
+        color: #484848;
+    }
+}
