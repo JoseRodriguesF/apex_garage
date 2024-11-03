@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/public/css/contato/stylecnt.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/src/scripts/menu.js" defer></script>
+    <script src="/public/js/menu.js" defer></script>
 </head>
 <body style="background-color: #000;">
     <header>
-        <a href="/index.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
+        <a href="home.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
         <nav class="nav-desktop">
             <ul class="ul-desktop">
                 <li class="li-desktop"><a href="/index.html"><p class="inicio">Início</p></a></li>
@@ -30,7 +30,7 @@
             </div>
                 <nav class="nav-mobile">
                 <ul  class="ul-mobile">
-                    <li><a href="/index.html"><p class="inicio">Início</p></a></li>
+                    <li><a href="/src/pages/home.html"><p class="inicio">Início</p></a></li>
                     <li><a href="/src/pages/agendamento.html"><p class="servicos">Agendamento</p></a></li>
                     <li><a href="#contato"><p class="contato">Contato</p></a></li>
                     <li><a href="#idioma"><p>Idioma</p></a></li>
@@ -44,7 +44,7 @@
         <div class="container-main mt-5">
             <div class="container-colunm container-form">
                 <h1 class="fale-apex">Fale com a Apex<span style="color:#ff0909;">Garage</span></h1>
-                <form class="form-contato" action="http://localhost:3000/login" method="post">
+                <form class="form-contato">
                     <input type="text" placeholder="Nome">
                     <input type="email" placeholder="Email">
                     <input type="text" placeholder="Mensagem">

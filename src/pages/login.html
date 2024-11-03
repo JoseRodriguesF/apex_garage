@@ -15,14 +15,14 @@
             <a href="/index.html"><img class="imgLogo" src="/public/images/Ícones/Frame 1.png" alt=""></a>
             <p class="p-login">Faça login</p>
             <div class="container-form p-4">
-                <form>
+                <form  action="http://localhost:3000/login" method="POST" id="login-form">
                     <div class="mb-3">
                       <p for="email" class="form-label text-left p-label">Email</p>
-                      <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                      <input type="email" class="form-control" id="email" name="email"placeholder="Digite seu email">
                     </div>
                     <div class="mb-3">
                       <p for="senha" class="form-label text-left p-label">Senha</p>
-                      <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                      <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
                     </div>
                     <div class="mb-3">
                         <p for="email" class="form-label text-left p-label">Novo usuário? <a class="linkConta" href="/src/pages/registro.html">Crie sua conta</a></p>
@@ -31,7 +31,7 @@
                       <input class="form-check-input checkbox-1" type="checkbox" value="" id="" />
                       <label class="form-check-label checkbox-2" for="">Aceito os Termos de Serviço...</label>
                     </div>
-                    <button class="btn-entrar text-center">Entrar</button>
+                    <button class="btn-entrar text-center" type="submit">Entrar</button>
                 </form>
             </div>
         </div>
@@ -53,5 +53,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/public/js/login.js"></script>
 </body>
 </html>

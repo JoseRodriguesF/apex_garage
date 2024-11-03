@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/public/css/login-registro/registro/styleRegistro.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
-    <script src="/src/scripts/verificarSenhaLogin-CriarConta.js" defer></script>
 </head>
 <body>
     <main>
@@ -16,41 +15,37 @@
             <a href="/index.html"><img class="imgLogo" src="/public/images/Ícones/Frame 1.png" alt=""></a>
             <p class="p-login">Crie sua conta</p>
             <div class="container-form p-4">
-                <form>
+                <form action="http://localhost:3000/register" method="POST" id="form-registro">
                     <div class="mb-3">
                       <p for="nome" class="form-label text-left p-label">Usuário</p>
-                      <input type="name" class="form-control" id="nome" placeholder="Digite seu nome de usuário">
+                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome de usuário">
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <p for="email" class="form-label text-left p-label">Email</p>
-                            <input type="email" class="form-control" id="email" placeholder="Seu email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Seu email">
                           </div>
                           <div class="mb-3 col-md-6">
                             <p for="telefone" class="form-label text-left p-label">Telefone</p>
-                            <input type="tel" class="form-control" id="telefone" placeholder="(11) 99999-8888">
+                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(11) 99999-8888">
                           </div>
                         </div>
                         <div class="mb-3">
                             <p class="form-label text-left p-label">Senha</p>
-                            <input type="password" id="senha" class="form-control" placeholder="Digite sua senha">
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
                         </div>
                         <div class="mb-3">
                             <p class="form-label text-left p-label">Confirme sua senha</p>
-                            <input type="password" id="confirmarSenha" class="form-control" placeholder="Confirme sua senha">
-                            <!-- Mensagem de erro -->
-                            <p id="error-message" style="color: red; display: none; font-size: 1.845rem;">As senhas não coincidem.</p>
+                            <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha">
                         </div>
                         <div class="mb-3 checks">
                             <input class="form-check-input checkbox-1" type="checkbox" value="" id="" />
                             <label class="form-check-label checkbox-2" for="">Aceito os Termos de Serviço...</label>
                           </div>
                           <div class="mb-2">
-                              <button class="btn-entrar text-center" onclick="confirmarSenha()">Criar conta</button>
+                              <button class="btn-entrar text-center" type="submit">Criar conta</button>
                               <p class="text-left" style="margin-top: -35px; color: #fff; font-size: 0.8rem; text-wrap: wrap;">Já é usuário?<br><a style="color: #fff; text-decoration: underline;" href="/src/pages/login.html">Faça login</a></p>
                         </div>
-
-                        <!-- Botão de criação -->
                 </form>
             </div>
         </div>
@@ -72,5 +67,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/public/js/registro.js"></script>
 </body>
 </html>

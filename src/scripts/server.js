@@ -1,6 +1,7 @@
 // Requisições do Node.js
-require('dotenv').config(); // Puxa as variáveis presentes no .ENV
+require('dotenv').config({ path: __dirname + '/../../config/.env' });// Puxa as variáveis presentes no .ENV
 const express = require('express'); // Importa o express para facilitar as conexões e requisições HTTP
+const cors = require('cors'); // Importa o cors
 const mysql = require('mysql'); // Importa o módulo de conexão MySQL
 const bodyParser = require('body-parser'); // Body parser ajuda a extrair as informações presentes nos arquivos JSON
 
@@ -9,16 +10,19 @@ const app = express(); // Adiciona os valores do express na variável app
 const porta = process.env.PORTA || 3000; // Variável que puxa do .ENV a porta do server.js ou armazena o valor da porta onde o server.js rodará 
 
 // Middleware
+app.use(cors()); // Habilita o CORS para todas as origens
 app.use(bodyParser.urlencoded({ extended: true })); // Usar os valores de express para manipulação de HTTP e body parser para ler URL codificada
 app.use(bodyParser.json()); // Usa os valores de body parser para ler valores JSON
+app.use(express.static(__dirname + '/public/js/buscarServicos.js'));
+
 
 // Importação das informações do DB presentes no .ENV
-const banco = mysql.createConnection({  
+const banco = mysql.createConnection({
     host: process.env.BD_HOST,
     user: process.env.BD_USER,
     password: process.env.BD_PASSWORD,
     database: process.env.BD_NAME
-}); // Armazena os valores do banco de dados presentes no .env
+}); 
 
 // Verifica conexão com o banco
 banco.connect(err => { // err é um valor que representa um erro na conexão 
@@ -29,23 +33,23 @@ banco.connect(err => { // err é um valor que representa um erro na conexão
 });
 
 // Resgata os valores do formulário de registro 
-app.get('/register', (req, res) => res.sendFile(`${__dirname}/register.html`));
+app.get('/register', (req, res) => res.sendFile(`${__dirname}/registro.html`));
 
 // Resgata os valores do formulário de login
 app.get('/login', (req, res) => res.sendFile(`${__dirname}/login.html`));
 
 // Registro de usuários no banco
 app.post('/register', (req, res) => {
-    const { user, email, tel, senha, senha_confirm } = req.body;
+    const { nome, email, telefone, senha, confirmarSenha} = req.body;
 
     // Verificar se a senha e a confirmação de senha estão iguais
-    if (senha !== senha_confirm) {
+    if (senha !== confirmarSenha) {
         return res.status(400).send('As senhas não coincidem');
     }
 
     // Verificar se o usuário já existe no banco
-    const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE username = ? OR email = ?';
-    banco.query(verificaExistenciaUser, [user, email], (err, results) => {
+    const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE nome = ? OR email = ?';
+    banco.query(verificaExistenciaUser, [nome, email], (err, results) => {
         if (err) {
             return res.status(500).send('Erro ao verificar o usuário');
         }
@@ -55,39 +59,51 @@ app.post('/register', (req, res) => {
         }
 
         // Registrar o usuário 
-        const registroUser = 'INSERT INTO usuarios (username, email, telefone, senha) VALUES (?, ?, ?, ?)';
-        banco.query(registroUser, [user, email, tel, senha], (err) => {
+        const registroUser = 'INSERT INTO usuarios (nome, email, telefone, senha) VALUES (?, ?, ?, ?)';
+        banco.query(registroUser, [nome, email, telefone, senha], (err) => {
             if (err) {
                 return res.status(500).send('Erro ao registrar o usuário');
             }
-            res.send('Usuário registrado com sucesso!');
+            res.json({ success: true, redirectUrl: '/src/pages/home.html' });
         });
     });
 });
 
+
 // Autenticação de login
 app.post('/login', (req, res) => {
-    const { username, password } = req.body;
+    const { email, senha } = req.body;
 
-    // Verificar se o usuário existe no banco de dados
-    const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE username = ?';
-    banco.query(verificaExistenciaUser, [username], (err, results) => {
+    const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE email = ?';
+    banco.query(verificaExistenciaUser, [email], (err, results) => {
         if (err) {
-            return res.status(500).send('Erro ao buscar o usuário');
+            return res.status(500).json({ success: false, message: 'Erro ao buscar o usuário' });
         }
 
         if (results.length === 0) {
-            return res.status(400).send('Usuário não encontrado');
+            return res.status(400).json({ success: false, message: 'Usuário não encontrado' });
         }
 
         const user = results[0];
 
-        // Comparar a senha digitada com a senha armazenada
-        if (password !== user.senha) {
-            return res.status(400).send('Senha incorreta');
+        if (senha !== user.senha) {
+            return res.status(400).json({ success: false, message: 'Senha incorreta' });
         }
 
-        res.send('Login realizado com sucesso!');
+        // Se tudo estiver correto, redirecione
+        res.json({ success: true, redirectUrl: '/src/pages/home.html' });
+    });
+});
+
+app.get('/api/servicos', (req, res) => {
+    const queryServicos = 'SELECT id, nome, descricao, preco FROM servicos';
+    
+    banco.query(queryServicos, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar serviços:', err);
+            return res.status(500).json({ message: 'Erro ao buscar serviços' });
+        }
+        res.json(results);
     });
 });
 
