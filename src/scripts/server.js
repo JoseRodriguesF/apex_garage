@@ -94,7 +94,7 @@ app.post('/login', (req, res) => {
         res.json({ success: true, redirectUrl: '/src/pages/home.html' });
     });
 });
-
+// resgata as informações de serviço
 app.get('/api/servicos', (req, res) => {
     const queryServicos = 'SELECT id_servico, nome, servicos, preco FROM servicos';
     
