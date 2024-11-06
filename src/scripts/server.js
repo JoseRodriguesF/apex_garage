@@ -96,7 +96,7 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/api/servicos', (req, res) => {
-    const queryServicos = 'SELECT id, nome, descricao, preco FROM servicos';
+    const queryServicos = 'SELECT id_servico, nome, servicos, preco FROM servicos';
     
     banco.query(queryServicos, (err, results) => {
         if (err) {

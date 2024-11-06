@@ -23,7 +23,7 @@
     position: absolute;
     margin: auto;
     width: 35%;
-    height: 380px;
+    height: 340px;
     background-color: #1f1f1f;
     top: 40%;
     left: 32%;
@@ -35,7 +35,7 @@
     text-align: left;
     color: #fff;
     position: absolute;
-    top: 27%;
+    top: 30%;
     left: 32%;
 }
 
@@ -86,18 +86,19 @@
     }
 
     .p-login{
-        font-size: 1.325rem;
-        margin-left: -15px;
+        font-size: 1.525rem;
+        margin-left: -36px;
         text-align: center;
         color: #fff;
         position: absolute;
+        margin-top: -10px;
     }
 
     .container-form{
         position: absolute;
         margin: auto;
         width: 83%;
-        height: 59%;
+        height: 52.4%;
         background-color: #1f1f1f;
         top: 40%;
         left: 8%;
@@ -112,6 +113,7 @@
         margin-right: 75%;
         margin-top: 1px;
         font-size: 0.7rem;
+        width: 35%;
     }
     
     .btn-entrar:hover{

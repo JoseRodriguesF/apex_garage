@@ -21,7 +21,7 @@ async function buscarServicos() {
 
             servicoElement.innerHTML = `
                 <h3>${servico.nome}</h3>
-                <p>Descrição: ${servico.descricao}</p>
+                <p>serviço: ${servico.servicos}</p>
                 <p>Preço: R$${servico.preco.toFixed(2)}</p>
             `;
 
