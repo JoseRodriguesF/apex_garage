@@ -35,6 +35,30 @@
     background-color: #373737;
     border-radius: 7px;
     margin: auto;
+    margin-top: 25px;
+}
+
+.table-admin{
+    background-color: #353535;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    height: 100%;
+}
+
+.table-admin tbody {
+    color: #fff;
+}
+
+.table-admin tbody td{
+    color: #fff;
+    font-size: 0.845rem;
+}
+
+.table-admin thead{
+    font-size: 1.35rem;
+    background-color: #000;
 }
 
 .textFeito{

@@ -12,17 +12,19 @@ async function buscarServicos() {
 
         console.log('Serviços recebidos:', servicos); // Log para ver os serviços recebidos
 
-        const container = document.querySelector('.containerdeservicos');
-        container.innerHTML = ''; // Limpar qualquer conteúdo pré-existente
+        const container = document.querySelector('.list-services');
+        // container.innerHTML = ''; // Limpar qualquer conteúdo pré-existente
 
         servicos.forEach(servico => {
-            const servicoElement = document.createElement('div');
+            const servicoElement = document.createElement('tr');
             servicoElement.classList.add('servico');
 
             servicoElement.innerHTML = `
-                <h3>${servico.nome}</h3>
-                <p>serviço: ${servico.servicos}</p>
-                <p>Preço: R$${servico.preco.toFixed(2)}</p>
+                        <td style="background-color: #352335;">${servico.id_servico}</td>
+                        <td style="background-color: #352335;">${servico.nome}</td>
+                        <td style="background-color: #352335;">${servico.servicos}</td>
+                        <td style="background-color: #352335;">${servico.preco}</td>
+                        <td><button style="background-color: #353535;"><img src="/public/images/Ícones/mail.svg" alt=""></button></td>
             `;
 
             container.appendChild(servicoElement);
