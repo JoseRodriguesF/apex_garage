@@ -3,6 +3,47 @@ main{
     height: 2911px;
 }
 
+/* Contêiner da imagem de serviços */
+.containerImgServices {
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Garante que nenhum conteúdo "vaze" para fora */
+}
+
+/* Imagem de serviços */
+.imgServices {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.25);
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Classe genérica para imagens de largura total */
+.imgFull {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.25);
+    display: block;
+}
+
+/* Outras configurações específicas */
+.imgInicio {
+    position: relative;
+    z-index: 1;
+}
+
+.imgServices {
+    margin: 4px;
+    z-index: 1;
+}
+
 .imgInicio {
     width: 100vw; /* Garante que a imagem ocupe toda a largura da viewport */
     height: 100vh; /* Ajusta a altura para ocupar toda a viewport */
@@ -78,7 +119,7 @@ hr {
     width: 100vw;
     height: 173px;
     display: flex;
-    gap: 140px;
+    gap: 60px;
     align-items: center;
     padding: 0px 35px;
 }
@@ -140,22 +181,59 @@ hr {
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
-    margin-top: -650px;
+    margin-top: -15px;
     left: 40%;
     right: 41%;
     z-index: 3;
     white-space: nowrap; 
 }
 
-.ulButtonsServices{
-    list-style: none;
-    display: flex;
-    gap: 140px;
+/* Estilização da imagem de fundo e contêiner */
+.containerImgServices {
+    position: relative;
+    text-align: center;
 }
 
-.ulButtonsServices li{
-    flex-wrap: wrap;
+.imgServices {
+    width: 100%;
+    margin: 4px;
+    height: auto;
 }
+
+/* Título "Serviços" posicionado na imagem */
+.textServicesTitle {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 32px;
+}
+
+/* Lista de serviços posicionada dentro da imagem */
+.service-list {
+    position: absolute;
+    top: 30%; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 200px 150px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    width: 80%;
+}
+
+/* Estilização de cada item de serviço como texto simples */
+.service-item {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    width: 140px; /* Define uma largura fixa para melhor alinhamento */
+}
+
+
+
+
 
 @media screen and (max-width: 760px) {
     main { padding: 50px 0; height: auto; }
