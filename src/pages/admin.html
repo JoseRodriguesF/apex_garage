@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="/public/css/admin/styleAdmin.css">
     <script src="/public/js/menu.js" defer></script>
     <script src="/public/js/buscarServicos.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #000;">
     <header>
         <a href="home.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
         <nav class="nav-desktop">
             <ul class="ul-desktop">
                 <li class="li-desktop"><a href="/src/pages/home.html"><p class="inicio">Início</p></a></li>
                 <li class="li-desktop"><a href="/src/pages/agendamento.html"><p class="servicos">Agendamento</p></a></li>
-                <li class="li-desktop"><a href="#contato"><p class="contato">Contato</p></a></li>
+                <li class="li-desktop"><a href="contato.html"><p class="contato">Contato</p></a></li>
                 <li class="li-desktop"><a class="user" href="user.html"><img src="/public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
             </ul>
         </nav>
@@ -47,7 +48,7 @@
         <div class="textNameUser">
             <p class="nameUser">Olá, Admin</p>
             <p class="textServicosAgendados">Serviços a fazer</p>
-            <div class="containerdeservicos">
+            <div class="table-responsive container">
                 <!-- Adicionar o tabela de serviços agendados -->
                 <table class="table-admin">
                     <thead>
@@ -74,8 +75,13 @@
             <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
             <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
         </ul>
-            <p class="copy">&copy 2024 ApexGarage</p>
-            <hr class="linhaFooter">
+        <p class="copy">&copy 2024 ApexGarage</p>
+        <hr class="linhaFooter">
     </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/public/js/login.js"></script>
 </body>
 </html>

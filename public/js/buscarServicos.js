@@ -20,11 +20,11 @@ async function buscarServicos() {
             servicoElement.classList.add('servico');
 
             servicoElement.innerHTML = `
-                        <td style="background-color: #352335;">${servico.id_servico}</td>
-                        <td style="background-color: #352335;">${servico.nome}</td>
-                        <td style="background-color: #352335;">${servico.servicos}</td>
-                        <td style="background-color: #352335;">${servico.preco}</td>
-                        <td><button style="background-color: #353535;"><img src="/public/images/Ícones/mail.svg" alt=""></button></td>
+                        <td class="td-body">${servico.id_servico}</td>
+                        <td class="td-body">${servico.nome}</td>
+                        <td class="td-body">${servico.servicos}</td>
+                        <td class="td-body">${servico.preco}</td>
+                        <td class="td-body"><button class="button-img-check"><img class="check-services" src="/public/images/ícones/circle-check-regular.svg" alt="check"></img></button></td>
             `;
 
             container.appendChild(servicoElement);

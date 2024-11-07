@@ -21,8 +21,11 @@ footer{
     cursor: pointer;
 }
 
-ul li a img:hover{
+.listadecontatos img{
     transition: 0.5s;
+}
+
+.listadecontatos img:hover{
     background-color: #1f1f1f;
     padding: 10px 10px;
     border-radius: 4px;

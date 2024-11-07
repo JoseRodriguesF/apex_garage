@@ -8,7 +8,7 @@ footer{
 #logoFooter{
     padding: 30px 30px;
     width: 330px;
-    height: 110px;
+    height: 140px;
 }
 
 .listadecontatos{
@@ -16,13 +16,16 @@ footer{
     display: flex;
     gap: 20px;
     justify-content: flex-end;
-    margin-top: -120px;
+    margin-top: -90px;
     margin-right: 40px;
     cursor: pointer;
 }
 
-ul li a img:hover{
+.listadecontatos img:hover{
     transition: 0.5s;
+}
+
+.listadecontatos img:hover{
     background-color: #1f1f1f;
     padding: 10px 10px;
     border-radius: 4px;
