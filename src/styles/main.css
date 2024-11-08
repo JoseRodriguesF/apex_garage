@@ -158,9 +158,7 @@ hr {
     height: 872px;
 }
 
-.containerImgServices{
-    margin-top: -4px;
-}
+
 
 .services{
     position: relative;
@@ -192,18 +190,24 @@ hr {
 .containerImgServices {
     position: relative;
     text-align: center;
+    margin-left: -4px;
 }
 
 .imgServices {
     width: 100%;
     margin: 4px;
-    height: auto;
+    height: 962px;
+}
+
+.containerImgServices{
+    margin-top: -4px;
+    
 }
 
 /* Título "Serviços" posicionado na imagem */
 .textServicesTitle {
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 50%;
     transform: translateX(-50%);
     color: #fff;
@@ -213,13 +217,13 @@ hr {
 /* Lista de serviços posicionada dentro da imagem */
 .service-list {
     position: absolute;
-    top: 30%; /* Ajuste conforme necessário */
+    top: 26%; /* Ajuste conforme necessário */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 200px 150px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    gap: 270px 138px; /* Controla o espaçamento entre itens (horizontal e vertical) */
     width: 80%;
 }
 
@@ -231,6 +235,79 @@ hr {
     width: 140px; /* Define uma largura fixa para melhor alinhamento */
 }
 
+.service-icones {
+    display: flex;               /* Usamos flexbox para alinhar o conteúdo */
+    justify-content: center;     /* Alinha as imagens horizontalmente ao centro */
+    align-items: center;         /* Alinha as imagens verticalmente ao centro */
+    width: 150px;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+    height: 150px;               /* Define uma altura fixa para as divs (ajuste conforme necessário) */
+    cursor: pointer;            /* Adiciona um cursor de ponteiro para indicar que é clicável */
+}
+
+.service-icones img {
+    width: 130px;                  /* Define o tamanho das imagens em relação ao tamanho da div */
+    height: 130px;                 /* Mantém a proporção e ajusta a altura */
+    object-fit: contain;         /* Garante que a imagem se ajuste corretamente dentro da div */
+}
+
+.service-icons {
+    position: absolute;
+    top: 31%; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 190px 144px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    width: 80%;
+}
+
+.containerImgMarcasDeCarro{
+    margin-top: -4px;
+    background-color: #000;
+    width: 100vw;
+    height: 173px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.bmw{
+    width: 80px;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+    height: 80px;
+    margin-right: 110px;
+}
+
+.containerImgSobre {
+    position: relative;
+    text-align: center;
+    margin-left: -4px;
+    margin-top: 267px;
+}
+
+.imgSobre{
+    width: 100%;
+    height: 962px;
+}
+
+.Sobre{
+    width: 100vw;
+    height: 872px;
+}
+
+.textSobreTitle{
+    text-align: center;
+    position: absolute;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: -46.5%;
+    left: 40%;
+    right: 35%;
+    z-index: 3;
+    white-space: nowrap; 
+}
 
 
 
@@ -238,7 +315,7 @@ hr {
 @media screen and (max-width: 760px) {
     main { padding: 50px 0; height: auto; }
     
-    .imgInicio, .text-overlay, .titleMain, .pMain, .pMainFrase, .textServicesTitle {
+    .imgInicio, .text-overlay, .titleMain, .pMain, .pMainFrase, .textServicesTitle, .textSobreTitle {
         font-size: 1em;
         text-align: center;
     }
