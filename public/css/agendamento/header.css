@@ -1,0 +1,164 @@
+header{
+    background-color: #000;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    position: fixed;
+    z-index: 90;
+}
+
+.logo{
+    margin-top: 20px;
+    width: 230px;
+    height: 68px;
+    margin-left: 25px;
+}
+
+p{
+    color: #FFF;
+}
+
+.nav-desktop{
+    padding: 10px;
+    z-index: 2;
+    margin-top: -78px;
+    position: fixed;
+    right: 0;
+}
+
+.nav-desktop .ul-desktop{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-desktop .li-desktop{
+    margin: 0 15px;
+}
+
+.nav-desktop p{
+    margin-top: 0;
+    padding: 2px;
+    background-color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-desktop p:hover{
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.nav-desktop img {
+    margin-top: 18px;
+    width: 30px;
+    height: 27px;
+    cursor: pointer;
+    background-color: #000;
+    transition: 0.2s;
+}
+
+.nav-desktop img:hover{
+    background-color: #1f1f1f;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.nav-desktop a{
+    border-radius: 2px;
+    color: #FFF;
+    padding: 0.1px;
+    font-size: 12px;
+}
+
+@media (min-width: 780px) and (max-width: 3920px) {
+    .menu-mobile{
+        display: none;
+    }
+
+    .btn-abrir-menu{
+        display: none;
+    }
+}
+
+@media (max-width: 568px){
+    .logo{
+        width: 150px;
+        height: 50px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .logo{
+        width: 150px;
+        height: 50px;
+    }
+
+    .nav-desktop{
+        display: none;
+    }
+
+    /* Estilo menu mobile */
+    .right {
+        position: absolute; /* ou fixed, dependendo do efeito desejado */
+        right: 6%; /* ajuste a distância do canto direito */
+        top: 30%; /* ajuste a distância do topo */
+    }
+
+    .menu-mobile{
+        background-color: #000;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 90;
+        width: 0%;
+        overflow: hidden;
+        transition: .3s;
+    }
+/* config JS */
+
+    .menu-mobile.abrir-menu{
+        width: 65%;
+    }
+
+    .menu-mobile.abrir-menu ~ .overlay-menu{
+        display: block;
+    }
+/* config JS */
+    .menu-mobile .btn-fechar{
+        padding: 10px 8%;
+    }
+    
+    .menu-mobile .nav-mobile .ul-mobile{
+        text-align: right;
+        list-style: none;
+    }
+
+    .menu-mobile .nav-mobile .ul-mobile li a{
+        text-decoration: none;
+        font-size: 0.925rem;
+        font-weight: bold;
+        padding: 10px 8%;
+        display: block;
+    }
+    
+    .menu-mobile nav ul li a:hover{
+        background-color: #383737;
+    }
+
+    .overlay-menu{
+        background-color: #00000084;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        
+        z-index: 80;
+        display: none;
+    }
+
+}
+

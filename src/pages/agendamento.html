@@ -4,8 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApexGarage</title>
+    <link rel="stylesheet" href="/public/css/agendamento/styleAgenda.css">
+    <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link para o CSS do Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Link para o CSS do Flatpickr -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <script src="/public/js/agendamento.js" defer></script>
+    <script src="/public/js/menu.js" defer></script>
 </head>
 <body>
+    <header>
+        <a href="home.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
+        <nav class="nav-desktop">
+            <ul class="ul-desktop">
+                <li class="li-desktop"><a href="/index.html" class="text-decoration-none"><p class="inicio">Início</p></a></li>
+                <li class="li-desktop"><a href="/src/pages/agendamento.html" class="text-decoration-none"><p class="servicos">Agendamento</p></a></li>
+                <li class="li-desktop"><a href="/src/pages/contato.html" class="text-decoration-none"><p class="contato">Contato</p></a></li>
+                <li class="li-desktop"><a href="user.html" class="text-decoration-none"><img src="/public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
+            </ul>
+        </nav>
+
+        <div class="btn-abrir-menu right" id="btn-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30.25" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+        </div>
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="btn-fechar">
+                <svg xmlns="http://www.w3.org/2000/svg" height="90" width="30" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>            
+            </div>
+                <nav class="nav-mobile">
+                <ul  class="ul-mobile">
+                    <li><a href="/src/pages/home.html" class="text-decoration-none"><p class="inicio">Início</p></a></li>
+                    <li><a href="/src/pages/agendamento.html" class="text-decoration-none"><p class="servicos">Agendamento</p></a></li>
+                    <li><a href="#contato"><p class="contato" class="text-decoration-none">Contato</p></a></li>
+                    <li><a href="/src/pages/user.html" class="text-decoration-none"><p>Perfil</p></a></li>
+                </ul>
+            </nav>
+            <div class="overlay-menu" id="overlay-menu"></div>
+    </header>
+    <main>
+        <div class="img-main"></div>
+        <div>
+            <p class="agendar">Agendar</p>
+            <p class="service">(Serviço selecionado)</p>
+        </div>
+        <div class="container-form">
+            <p class="escolha-date-horario">
+                Escolha sua data
+                e<br> horário 
+                de atendimento
+            </p>
+            <form class="form-agenda mt-4" action="" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                      <!-- Campo de Data com Flatpickr -->
+                      <input type="text" id="data" class="form-1" placeholder="Data">
+                    </div>
+                    <div class="col-md-6">
+                      <!-- Campo de Hora com Flatpickr -->
+                      <input type="text" id="hora" class="form-2" placeholder="Hora">
+                    </div>
+                  </div>
+                  <button class="btn-agendar mt-4">Agendar</button>
+            </form>
+            
+        </div>
+    </main>
     
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script do Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>
