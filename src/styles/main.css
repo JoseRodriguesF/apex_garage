@@ -142,8 +142,8 @@ hr.linhaQuatro {
 .container2 {
     display: flex;
     gap: 7px;
-    margin-top: 122.5vw;
-    margin-left: 1.2%;
+    margin-top: 120.6vw;
+    margin-left: 1.51%;
     height: 50vh;
     width: 65vw;
 }
@@ -160,14 +160,13 @@ hr.linhaQuatro {
 }
 
 .containerImgMarcas{
-    margin-top: -4px;
     background-color: #000;
     width: 100vw;
-    height: 173px;
+    height: 18.82vh;
     display: flex;
-    gap: 60px;
+    gap: 4%;
     align-items: center;
-    padding: 0px 35px;
+    padding: 0% -1%;
 }
 
 .liqui{
@@ -269,7 +268,7 @@ hr.linhaQuatro {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 270px 138px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    gap: 270px 140px; /* Controla o espaçamento entre itens (horizontal e vertical) */
     width: 80%;
 }
 
@@ -304,41 +303,40 @@ hr.linhaQuatro {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 190px 144px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    gap: 190px 191px; /* Controla o espaçamento entre itens (horizontal e vertical) */
     width: 80%;
 }
 
 .containerImgMarcasDeCarro{
-    margin-top: -4px;
     background-color: #000;
     width: 100vw;
-    height: 173px;
+    height: 18.82vh;
     display: flex;
-    gap: 60px;
+    gap: 4%;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0% -1%;
+    margin-top: -0.4vh;
 }
 
 .bmw{
-    width: 80px;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
-    height: 80px;
-    margin-right: 110px;
+    width: 4.16vw;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+    height: 8.70vh;
+    margin-right: 4.3%;
 }
 
 
 .imgSobre{
     width: 100%;
-    height: 962px;
+    height: 104.67vh;
     position: relative;
     text-align: center;
-    
-    margin-top: 267px;
+    margin-top: 14%;
 }
 
 
 .Sobre{
     width: 100vw;
-    height: 872px;
+    height: 94.88vh;
 }
 
 .textSobreTitle{
@@ -370,8 +368,8 @@ hr.linhaQuatro {
 }
 .historia_empresa{
     font-size: 1rem;
-    margin-top: -670px;
-    margin-left: 10.7%;
+    margin-top: -35.1%;
+    margin-left: 10.9%;
     position:absolute;
     color: #fff;
 

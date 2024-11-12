@@ -2,15 +2,14 @@ footer{
     position: absolute;
     width: 100%;
     height: 24vh;
-    margin-top: 33vh;
-    
+    margin-top: 30.1vh;
     background-color: #000;
 }
 
 #logoFooter{
-    padding: 10px 10px;
-    width: 330px;
-    height: 150px;
+    padding: 10px 35px;
+    width: 17.1875vw;
+    height: 15.4vh;
 }
 
 .listadecontatos{
@@ -18,9 +17,10 @@ footer{
     display: flex;
     gap: 20px;
     justify-content: flex-end;
+    width:  10vw;
     margin-top: -120px;
     margin-right: 40px;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 .listadecontatos img{
@@ -50,6 +50,9 @@ footer{
     background-color: #fff;
     align-items: center;
 }
+
+
+  
 
 @media (max-width: 767px){
     footer{
