@@ -1,0 +1,88 @@
+footer{
+    position: absolute;
+    width: 100%;
+    height: 24vh;
+    margin-top: 33vh;
+    
+    background-color: #000;
+}
+
+#logoFooter{
+    padding: 10px 10px;
+    width: 330px;
+    height: 150px;
+}
+
+.listadecontatos{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: -120px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.listadecontatos img{
+    transition: 0.5s;
+}
+
+.listadecontatos img:hover{
+    background-color: #1f1f1f;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.mail{
+    margin-top: -3px;
+}
+
+.copy{
+    margin-top: 50px;
+    text-align: right;
+    margin-right: 40px; 
+}
+
+.linhaFooter{
+    width: 95vw;
+    height: 0.4px;
+    margin-top: 30px;
+    background-color: #fff;
+    align-items: center;
+}
+
+@media (max-width: 767px){
+    footer{
+        width: 100%;
+        margin-top: 225px;
+        height: 220px;
+    }
+
+    #logoFooter{
+        width: 180px;
+        height: 60px;
+        margin-top: 45px;
+    }
+
+    .listadecontatos{
+        display: none;
+    }
+
+    .copy{
+        margin-top: 50px;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .linhaFooter{
+        width: 85vw;
+        height: 0.4px;
+        margin-top: 20px;
+        background-color: #fff;
+        align-items: center;
+    }
+
+    #logoFooter{
+        display: none;
+    }
+}

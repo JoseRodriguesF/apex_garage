@@ -26,7 +26,7 @@ main{
 
 /* Classe genérica para imagens de largura total */
 .imgFull {
-    width: 100vw;
+    width: 100%;
     height: auto;
     object-fit: cover;
     filter: brightness(0.25);
@@ -70,6 +70,7 @@ main{
     margin-right: 180px;
 }
 
+
 .pMain{
     font-size: 1em;
     margin-left: 40px;
@@ -100,17 +101,62 @@ main{
     margin-right: 15px;
 }
 
-hr {
-    border: none; /* Remove as bordas padrões */
-    height: 50vh; /* Altura da linha */
-    background-color: #FF0000; /* Cor da linha */
-    width: 4px; /* Largura da linha */
-    margin: 5px; /* Centraliza e adiciona margens */
+
+/* Estilos para as linhas verticais */
+hr.linhaUm {
+    border: none;           /* Remove as bordas padrão */
+    width: 0.2vw;             /* Largura da linha */
+    background-color: #FF0000; /* Cor vermelha */
+    margin: 5px;            /* Espaçamento */
+    height: 50vh; 
 }
 
-.container .linhaDois{
-    background-color: #fff;
-    height: 40vh;
+hr.linhaDois {
+    border: none;           /* Remove as bordas padrão */
+    width: 0.2vw;             /* Largura da linha */
+    background-color: #fff; /* Cor vermelha */
+    margin: 5px;            /* Espaçamento */
+    height: 40vh;   
+}
+
+
+hr.linhaTres {
+    border: none;          /* Remove as bordas padrão */
+    position: absolute;
+    border-top: 1px solid #fff; /* Cor vermelha e espessura */
+    width: 65vh;
+    height: 0vh;            /* Largura total da tela */
+    margin: 20px 0;
+    margin-top: 0vh;             /* Espaçamento */
+}
+/* Estilos para as linhas horizontais */
+hr.linhaQuatro {
+    border: none;          /* Remove as bordas padrão */
+    position: absolute;
+    border-top: 1px solid #fff; /* Cor vermelha e espessura */
+    width: 45vh;            /* Largura total da tela *        /* Espaçamento vertical entre as linhas */
+    height: 0%;
+}
+
+/* Para garantir que a linha não se sobreponha ao conteúdo ao redor */
+.container2 {
+    display: flex;
+    gap: 7px;
+    margin-top: 122.5vw;
+    margin-left: 1.2%;
+    height: 50vh;
+    width: 65vw;
+}
+
+.linhaQuatro {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    margin: 10px 0px;
 }
 
 .containerImgMarcas{
@@ -279,17 +325,16 @@ hr {
     margin-right: 110px;
 }
 
-.containerImgSobre {
-    position: relative;
-    text-align: center;
-    margin-left: -4px;
-    margin-top: 267px;
-}
 
 .imgSobre{
     width: 100%;
     height: 962px;
+    position: relative;
+    text-align: center;
+    
+    margin-top: 267px;
 }
+
 
 .Sobre{
     width: 100vw;
@@ -307,6 +352,29 @@ hr {
     right: 35%;
     z-index: 3;
     white-space: nowrap; 
+}
+
+.text-overlay-2{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 2; /* Coloca o texto sobre a imagem */
+}
+
+.titleMain1{
+    font-size: 2.25em;
+    color: #fff;
+    position: absolute;
+    margin-top: -740px;
+    margin-left: 10.7%;
+}
+.historia_empresa{
+    font-size: 1rem;
+    margin-top: -670px;
+    margin-left: 10.7%;
+    position:absolute;
+    color: #fff;
+
 }
 
 
