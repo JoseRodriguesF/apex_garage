@@ -29,8 +29,42 @@
     font-size: 1rem;
 }
 
+.table-user{
+    background-color: #373737;
+    border-collapse: separate;
+    width: 100%;
+    color: #fff;
+    height: 100%;
+    text-align: center;
+}
+
+thead{
+    font-size: 1.550em;
+    background-color: #000;
+}
+tbody{
+    font-size: 1.2em;
+    background-color: #000;
+}
 
 @media (max-width: 767px){
+    .table-user{
+        background-color: #373737;
+        border-collapse: separate;
+        width: 100%;
+        color: #fff;
+        height: 100%;
+        text-align: center;
+    }
+    
+    thead{
+        font-size: 1em;
+        background-color: #000;
+    }
+    tbody{
+        font-size: 0.745em;
+        background-color: #000;
+    }
     .icon {
         display: flex;                /* Usar flexbox para centralização */
         justify-content: center;      /* Centralizar horizontalmente */

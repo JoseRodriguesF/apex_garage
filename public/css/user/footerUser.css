@@ -8,7 +8,7 @@ footer{
 #logoFooter{
     padding: 30px 30px;
     width: 330px;
-    height: 100px;
+    height: 130px;
 }
 
 .listadecontatos{
@@ -19,6 +19,10 @@ footer{
     margin-top: -120px;
     margin-right: 40px;
     cursor: pointer;
+}
+
+ul li a img{
+    transition: 0.5s;
 }
 
 ul li a img:hover{

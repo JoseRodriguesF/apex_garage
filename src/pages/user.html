@@ -6,10 +6,11 @@
     <title>ApexGarage</title>
     <link rel="stylesheet" href="/public/css/user/styleUser.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="/public/js/menu.js" defer></script>
     <script src="/public/js/buscarServicosUsuario.js"></script>
 </head>
-<body>
+<body style="background-color: #000;">
     <header>
         <a href="home.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
         <nav class="nav-desktop">
@@ -50,14 +51,30 @@
                 <table class="table-user">
                     <thead>
                         <tr>
-                            <td>ID</td>
-                            <td>Nome</td>
-                            <td>Serviços</td>
-                            <td>Preço</td>
+                            <td class="w-50">Serviços</td>
+                            <td class="w-50">Preço</td>
                         </tr>
                     </thead>
                     <tbody class="list-servicos-usuario">
                         <!-- Os serviços do usuário serão inseridos aqui -->
+                         <tr>
+                            <td>Limpeza de Pneus</td>
+                            <td>R$ 150</td>
+                         </tr>
+                         <!-- Outros serviços serão inseridos aqui -->
+                          <tr>
+                            <td>Troca de óleo</td>
+                            <td>R$ 180</td>
+                          </tr>
+                          <!-- Outros serviços serão inseridos aqui -->
+                           <tr>
+                            <td>Pintura de paredes</td>
+                            <td>R$ 200</td>
+                           </tr>
+                           <tr>
+                            <td>Construção de portas</td>
+                            <td>R$ 220</td>
+                           </tr>
                     </tbody>
                 </table>
             </div>
@@ -74,5 +91,9 @@
             <p class="copy">&copy 2024 ApexGarage</p>
             <hr class="linhaFooter">
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
