@@ -78,3 +78,38 @@ input::placeholder{
     font-size: 1.3rem;
     color: #fff;
 }
+
+@media screen and (max-width: 1280px) {
+    .container-form{
+        width: 50%;
+        top: 50%;
+    }
+
+    .agendar{
+        top: 28%;
+    }
+
+    .service{
+        top: 39%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-form{
+        width: 70%;
+        top: 50%;
+        
+    }
+
+    .agendar{
+        top: 22%;
+        text-align: center;
+    }
+
+    .service{
+        top: 33%;
+        text-align: center;
+        font-size: 1.100em;
+    }
+
+}
