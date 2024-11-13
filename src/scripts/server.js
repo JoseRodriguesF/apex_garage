@@ -4,6 +4,7 @@ const express = require('express'); // Importa o express para facilitar as conex
 const cors = require('cors'); // Importa o cors
 const mysql = require('mysql'); // Importa o módulo de conexão MySQL
 const bodyParser = require('body-parser'); // Body parser ajuda a extrair as informações presentes nos arquivos JSON
+const session = require('express-session');
 
 // Iniciação do server.js
 const app = express(); // Adiciona os valores do express na variável app
@@ -14,7 +15,12 @@ app.use(cors()); // Habilita o CORS para todas as origens
 app.use(bodyParser.urlencoded({ extended: true })); // Usar os valores de express para manipulação de HTTP e body parser para ler URL codificada
 app.use(bodyParser.json()); // Usa os valores de body parser para ler valores JSON
 app.use(express.static(__dirname + '/public/js/buscarServicos.js'));
-
+app.use(session({
+    secret: ' ', // Altere para um segredo forte
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Altere para true se usar HTTPS
+}));
 
 // Importação das informações do DB presentes no .ENV
 const banco = mysql.createConnection({
@@ -69,13 +75,19 @@ app.post('/register', (req, res) => {
     });
 });
 
-
 // Autenticação de login
 app.post('/login', (req, res) => {
     const { email, senha } = req.body;
 
-    const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE email = ?';
-    banco.query(verificaExistenciaUser, [email], (err, results) => {
+    // Verifica se é o login de administrador
+    if (email === 'admin@admin' && senha === 'admin') {
+        req.session.user = { nome: 'admin', email }; // Armazena informações na sessão
+        return res.json({ success: true, redirectUrl: '/src/pages/admin.html' });
+    }
+
+    // Caso não seja o login de administrador, verifica no banco de dados
+    const verificaExistenciaUser  = 'SELECT * FROM usuarios WHERE email = ?';
+    banco.query(verificaExistenciaUser , [email], (err, results) => {
         if (err) {
             return res.status(500).json({ success: false, message: 'Erro ao buscar o usuário' });
         }
@@ -90,7 +102,8 @@ app.post('/login', (req, res) => {
             return res.status(400).json({ success: false, message: 'Senha incorreta' });
         }
 
-        // Se tudo estiver correto, redirecione
+        // Se tudo estiver correto, armazena o usuário na sessão
+        req.session.user = { id: user.id_usuario, nome: user.nome, email: user.email };
         res.json({ success: true, redirectUrl: '/src/pages/home.html' });
     });
 });
@@ -102,6 +115,23 @@ app.get('/api/servicos', (req, res) => {
         if (err) {
             console.error('Erro ao buscar serviços:', err);
             return res.status(500).json({ message: 'Erro ao buscar serviços' });
+        }
+        res.json(results);
+    });
+});
+//para buscar os servicos de usurio
+app.get('/api/servicos-usuario', (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({ message: 'Usuário não autenticado' });
+    }
+
+    // Seleciona serviços onde o nome corresponde ao nome do usuário logado
+    const queryServicosUsuario = 'SELECT id_servico, nome, servicos, preco FROM servicos WHERE nome = ?';
+    
+    banco.query(queryServicosUsuario, [req.session.user.nome], (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar serviços do usuário:', err);
+            return res.status(500).json({ message: 'Erro ao buscar serviços do usuário' });
         }
         res.json(results);
     });

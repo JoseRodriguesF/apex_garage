@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/public/css/user/styleUser.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
     <script src="/public/js/menu.js" defer></script>
+    <script src="/public/js/buscarServicosUsuario.js"></script>
 </head>
 <body>
     <header>
@@ -21,18 +22,17 @@
         </nav>
 
         <div class="btn-abrir-menu right" id="btn-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30.25" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30.25" viewBox="0 0 448 512"><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
         </div>
         <div class="menu-mobile" id="menu-mobile">
             <div class="btn-fechar">
-                <svg xmlns="http://www.w3.org/2000/svg" height="90" width="30" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>            
+                <svg xmlns="http://www.w3.org/2000/svg" height="90" width="30" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>            
             </div>
                 <nav class="nav-mobile">
                 <ul  class="ul-mobile">
                     <li><a href="/src/pages/home.html"><p class="inicio">Início</p></a></li>
                     <li><a href="/src/pages/agendamento.html"><p class="servicos">Agendamento</p></a></li>
                     <li><a href="/src/pages/contato.html"><p class="contato">Contato</p></a></li>
-                    <li><a href="#idioma"><p>Idioma</p></a></li>
                     <li><a href="/src/pages/user.html"><p>Perfil</p></a></li>
                 </ul>
             </nav>
@@ -46,10 +46,20 @@
         <div class="textNameUser">
             <p class="nameUser">Olá, (Nome do usuário)</p>
             <p class="textServicosAgendados">Serviços Agendados</p>
-            
-            <div class="containerdeservicos">
-                <!-- Adicionar o tabela de serviços agendados -->
-                
+            <div class="table-responsive container">
+                <table class="table-user">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nome</td>
+                            <td>Serviços</td>
+                            <td>Preço</td>
+                        </tr>
+                    </thead>
+                    <tbody class="list-servicos-usuario">
+                        <!-- Os serviços do usuário serão inseridos aqui -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>

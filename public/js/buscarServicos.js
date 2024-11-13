@@ -13,7 +13,6 @@ async function buscarServicos() {
         console.log('Serviços recebidos:', servicos); // Log para ver os serviços recebidos
 
         const container = document.querySelector('.list-services');
-        // container.innerHTML = ''; // Limpar qualquer conteúdo pré-existente
 
         servicos.forEach(servico => {
             const servicoElement = document.createElement('tr');
