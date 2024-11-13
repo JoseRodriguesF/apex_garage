@@ -15,7 +15,7 @@
             <a href="/index.html"><img class="imgLogo" src="/public/images/Ícones/Frame 1.png" alt=""></a>
             <p class="p-login">Crie sua conta</p>
             <div class="container-form p-4">
-                <form action="http://localhost:3000/register" method="POST" id="form-registro">
+                <form class="form-registro" action="http://localhost:3000/register" method="POST" id="form-registro">
                     <div class="mb-3">
                       <p for="nome" class="form-label text-left p-label">Usuário</p>
                       <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome de usuário">
@@ -38,10 +38,6 @@
                             <p class="form-label text-left p-label">Confirme sua senha</p>
                             <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha">
                         </div>
-                        <div class="mb-3 checks">
-                            <input class="form-check-input checkbox-1" type="checkbox" value="" id="" />
-                            <label class="form-check-label checkbox-2" for="">Aceito os Termos de Serviço...</label>
-                          </div>
                           <div class="mb-2">
                               <button class="btn-entrar text-center" type="submit">Criar conta</button>
                               <p class="text-left" style="margin-top: -35px; color: #fff; font-size: 0.8rem; text-wrap: wrap;">Já é usuário?<br><a style="color: #fff; text-decoration: underline;" href="/src/pages/login.html">Faça login</a></p>

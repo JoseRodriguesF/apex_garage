@@ -49,38 +49,67 @@ footer{
     align-items: center;
 }
 
-@media (max-width: 767px){
+@media (max-width: 768px){
     footer{
         width: 100%;
-        margin-top: 225px;
         height: 220px;
-    }
-
-    #logoFooter{
-        width: 180px;
-        height: 60px;
-        margin-top: 45px;
     }
 
     .listadecontatos{
         display: none;
     }
 
-    .copy{
-        margin-top: 50px;
-        margin: auto;
-        text-align: center;
+    .footer-text {
+        text-align: center; /* Centraliza o texto horizontalmente */
+        width: 100%; /* Define a largura como 100% do contêiner pai */
+        margin: 0 auto; /* Centraliza a div dentro do footer */
+        padding: 10px 0; /* Adiciona um espaço em cima e embaixo do texto */
+        height: 10px;
+        margin-left: -3%;
     }
     
     .linhaFooter{
         width: 85vw;
         height: 0.4px;
-        margin-top: 20px;
+        margin-top: 120px;
         background-color: #fff;
         align-items: center;
     }
 
     #logoFooter{
         display: none;
+    }
+}
+
+@media screen and (min-width: 389px) and (max-width: 398px) {
+    .footer-text {
+        text-align: center; /* Centraliza o texto horizontalmente */
+        width: 100%; /* Define a largura como 100% do contêiner pai */
+        margin: 0 auto; /* Centraliza a div dentro do footer */
+        padding: 10px 0; /* Adiciona um espaço em cima e embaixo do texto */
+        height: 10px;
+        margin-left: -7%;
+    }
+}
+
+@media screen and (min-width: 414px) and (max-width: 420px) {
+    .footer-text {
+        text-align: center; /* Centraliza o texto horizontalmente */
+        width: 100%; /* Define a largura como 100% do contêiner pai */
+        margin: 0 auto; /* Centraliza a div dentro do footer */
+        padding: 10px 0; /* Adiciona um espaço em cima e embaixo do texto */
+        height: 10px;
+        margin-left: -10%;
+    }
+}
+
+@media screen and (min-width: 427px) and (max-width: 428px) {
+    .footer-text {
+        text-align: center; /* Centraliza o texto horizontalmente */
+        width: 100%; /* Define a largura como 100% do contêiner pai */
+        margin: 0 auto; /* Centraliza a div dentro do footer */
+        padding: 10px 0; /* Adiciona um espaço em cima e embaixo do texto */
+        height: 10px;
+        margin-left: -11%;
     }
 }
