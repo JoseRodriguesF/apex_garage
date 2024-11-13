@@ -142,7 +142,7 @@ hr.linhaQuatro {
 .container2 {
     display: flex;
     gap: 7px;
-    margin-top: 120.6vw;
+    margin-top: 124vw;
     margin-left: 1.51%;
     height: 50vh;
     width: 65vw;
@@ -315,7 +315,7 @@ hr.linhaQuatro {
     gap: 4%;
     align-items: center;
     padding: 0% -1%;
-    margin-top: -0.4vh;
+    margin-top: -0.41vh;
 }
 
 .bmw{
