@@ -11,7 +11,7 @@
     font-size: 2.5rem;
     color: #fff;
     position: absolute;
-    top: 35%;
+    top: 32%;
     left: 5%;
 }
 
@@ -19,24 +19,24 @@
     font-size: 1.845rem;
     color: #fff;
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 5%;
 }
 
 .container-form{
     background-color: #1f1f1f;
     width: 40%;
-    height: 280px;
+    height: 275px;
     border-radius: 7px;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 5%;
     padding: 20px 35px;
     color: #fff;
 }
 
 .escolha-date-horario{
-    font-size: 1.745rem;
+    font-size: 1.545rem;
     line-height: 2.5rem;
 }
 
@@ -67,6 +67,7 @@
     border-radius: 7px;
     transition: 0.5s;
     font-size: 1.2em;
+    margin-top: 1.245em;
 }
 
 .btn-agendar:hover{
@@ -77,4 +78,99 @@
 input::placeholder{
     font-size: 1.3rem;
     color: #fff;
+}
+
+@media screen and (max-width: 1280px) {
+    .container-form{
+        width: 50%;
+        top: 50%;
+    }
+    
+    .agendar{
+        top: 28%;
+    }
+    
+    .service{
+        top: 39%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-form{
+        width: 80%;
+        left: 10%;
+        top: 38%;
+        height: 53%;
+    }
+    
+    .agendar{
+        top: 22%;
+        text-align: center;
+        font-size: 2.050em;
+    }
+    
+    .service{
+        top: 30%;
+        text-align: center;
+        font-size: 1.035em;
+    }
+    
+    .escolha-date-horario{
+        text-align: left;
+        font-size: 1.245rem;
+        line-height: 1.65rem;
+    }
+
+    .input-1{
+        margin-bottom: 15px;
+    }
+
+    .input-2{
+        margin-bottom: 15px;
+    }
+
+    .btn-agendar{
+        margin-top: 0.345em;
+    }
+}
+
+@media screen and (min-width: 834px) and (max-width: 880px) {
+    .container-form{
+        width: 80%;
+        left: 10%;
+        top: 50%;
+        height: 22.5%;
+    }
+    
+    .agendar{
+        top: 36%;
+        text-align: center;
+        left: 10%;
+        font-size: 3.250em;
+    }
+    
+    .service{
+        top: 43%;
+        left: 10%;
+        text-align: center;
+        font-size: 2.0em;
+    }
+    
+    .escolha-date-horario{
+        text-align: left;
+        font-size: 1.245rem;
+        line-height: 1.65rem;
+    }
+
+    .input-1{
+        margin-bottom: 15px;
+    }
+
+    .input-2{
+        margin-bottom: 15px;
+    }
+
+    .btn-agendar{
+        margin-top: 0.345em;
+    }
 }

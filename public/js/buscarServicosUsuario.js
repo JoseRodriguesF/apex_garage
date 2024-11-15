@@ -15,8 +15,6 @@ async function buscarServicosUsuario() {
             servicoElement.classList.add('servico');
 
             servicoElement.innerHTML = `
-                <td class="td-body">${servico.id_servico}</td>
-                <td class="td-body">${servico.nome}</td>
                 <td class="td-body">${servico.servicos}</td>
                 <td class="td-body">${servico.preco}</td>
             `;

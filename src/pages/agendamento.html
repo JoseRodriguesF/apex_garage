@@ -45,9 +45,9 @@
     </header>
     <main>
         <div class="img-main"></div>
-        <div>
+        <div class="div-agenda">
             <p class="agendar">Agendar</p>
-            <p class="service">(Serviço selecionado)</p>
+            <p class="service">$(servico.selecionado)</p>
         </div>
         <div class="container-form">
             <p class="escolha-date-horario">
@@ -57,20 +57,33 @@
             </p>
             <form class="form-agenda mt-4" action="" method="post">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 input-1">
                       <!-- Campo de Data com Flatpickr -->
                       <input type="text" id="data" class="form-1" placeholder="Data">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 input-2">
                       <!-- Campo de Hora com Flatpickr -->
                       <input type="text" id="hora" class="form-2" placeholder="Hora">
                     </div>
                   </div>
-                  <button class="btn-agendar mt-4">Agendar</button>
+                  <button class="btn-agendar">Agendar</button>
             </form>
             
         </div>
     </main>
+    <footer>
+        <img id="logoFooter" src="/public/images/Ícones/Frame 1.png" alt="logoApexGarage">
+        <ul class="listadecontatos">
+            <li><a href="https://facebook.com"><img src="/public/images/Ícones/facebook.svg" alt=""></a></li>
+            <li><a href="https://instagram.com"><img src="/public/images/Ícones/instagram.svg" alt=""></a></li>
+            <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
+            <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
+        </ul>
+            <div class="footer-text">
+                <p class="copy">&copy 2024 ApexGarage</p>
+            </div>
+            <hr class="linhaFooter">
+    </footer>
     
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
