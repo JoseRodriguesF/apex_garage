@@ -11,7 +11,7 @@
     font-size: 2.5rem;
     color: #fff;
     position: absolute;
-    top: 35%;
+    top: 32%;
     left: 5%;
 }
 
@@ -19,24 +19,24 @@
     font-size: 1.845rem;
     color: #fff;
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 5%;
 }
 
 .container-form{
     background-color: #1f1f1f;
     width: 40%;
-    height: 280px;
+    height: 275px;
     border-radius: 7px;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 5%;
     padding: 20px 35px;
     color: #fff;
 }
 
 .escolha-date-horario{
-    font-size: 1.745rem;
+    font-size: 1.545rem;
     line-height: 2.5rem;
 }
 
@@ -99,20 +99,20 @@ input::placeholder{
     .container-form{
         width: 80%;
         left: 10%;
-        top: 42%;
+        top: 38%;
         height: 53%;
     }
     
     .agendar{
         top: 22%;
         text-align: center;
-        font-size: 2.250em;
+        font-size: 2.050em;
     }
     
     .service{
-        top: 33%;
+        top: 30%;
         text-align: center;
-        font-size: 1.100em;
+        font-size: 1.035em;
     }
     
     .escolha-date-horario{
@@ -134,7 +134,7 @@ input::placeholder{
     }
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (min-width: 834px) and (max-width: 880px) {
     .container-form{
         width: 80%;
         left: 10%;
