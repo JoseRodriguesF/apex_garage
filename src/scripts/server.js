@@ -1,28 +1,18 @@
-// Requisições do Node.js
-require('dotenv').config({ path: __dirname + '/../../config/.env' });// Puxa as variáveis presentes no .ENV
-const express = require('express'); // Importa o express para facilitar as conexões e requisições HTTP
-const cors = require('cors'); // Importa o cors
-const mysql = require('mysql'); // Importa o módulo de conexão MySQL
-const bodyParser = require('body-parser'); // Body parser ajuda a extrair as informações presentes nos arquivos JSON
-const session = require('express-session');
 
-// Iniciação do server.js
-const app = express(); // Adiciona os valores do express na variável app
-const porta = process.env.PORTA || 3000; // Variável que puxa do .ENV a porta do server.js ou armazena o valor da porta onde o server.js rodará 
+require('dotenv').config({ path: __dirname + '/../../config/.env' });
+const express = require('express');
+const cors = require('cors'); 
+const mysql = require('mysql'); 
+const bodyParser = require('body-parser'); 
 
-// Middleware
-app.use(cors()); // Habilita o CORS para todas as origens
-app.use(bodyParser.urlencoded({ extended: true })); // Usar os valores de express para manipulação de HTTP e body parser para ler URL codificada
-app.use(bodyParser.json()); // Usa os valores de body parser para ler valores JSON
+const app = express(); 
+const porta = process.env.PORTA || 3000;
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); 
 app.use(express.static(__dirname + '/public/js/buscarServicos.js'));
-app.use(session({
-    secret: ' ', // Altere para um segredo forte
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Altere para true se usar HTTPS
-}));
 
-// Importação das informações do DB presentes no .ENV
 const banco = mysql.createConnection({
     host: process.env.BD_HOST,
     user: process.env.BD_USER,
@@ -30,30 +20,25 @@ const banco = mysql.createConnection({
     database: process.env.BD_NAME
 }); 
 
-// Verifica conexão com o banco
-banco.connect(err => { // err é um valor que representa um erro na conexão 
+banco.connect(err => { 
     if (err) {
         return console.error('Erro ao conectar ao banco de dados:', err);
     }
     console.log('Conectado ao banco de dados MySQL');   
 });
 
-// Resgata os valores do formulário de registro 
 app.get('/register', (req, res) => res.sendFile(`${__dirname}/registro.html`));
 
 // Resgata os valores do formulário de login
 app.get('/login', (req, res) => res.sendFile(`${__dirname}/login.html`));
 
-// Registro de usuários no banco
 app.post('/register', (req, res) => {
     const { nome, email, telefone, senha, confirmarSenha} = req.body;
 
-    // Verificar se a senha e a confirmação de senha estão iguais
     if (senha !== confirmarSenha) {
         return res.status(400).send('As senhas não coincidem');
     }
 
-    // Verificar se o usuário já existe no banco
     const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE nome = ? OR email = ?';
     banco.query(verificaExistenciaUser, [nome, email], (err, results) => {
         if (err) {
@@ -64,7 +49,6 @@ app.post('/register', (req, res) => {
             return res.status(400).send('Usuário ou email já registrado');
         }
 
-        // Registrar o usuário 
         const registroUser = 'INSERT INTO usuarios (nome, email, telefone, senha) VALUES (?, ?, ?, ?)';
         banco.query(registroUser, [nome, email, telefone, senha], (err) => {
             if (err) {
@@ -75,17 +59,13 @@ app.post('/register', (req, res) => {
     });
 });
 
-// Autenticação de login
 app.post('/login', (req, res) => {
     const { email, senha } = req.body;
 
-    // Verifica se é o login de administrador
     if (email === 'admin@admin' && senha === 'admin') {
-        req.session.user = { nome: 'admin', email }; // Armazena informações na sessão
         return res.json({ success: true, redirectUrl: '/src/pages/admin.html' });
     }
 
-    // Caso não seja o login de administrador, verifica no banco de dados
     const verificaExistenciaUser  = 'SELECT * FROM usuarios WHERE email = ?';
     banco.query(verificaExistenciaUser , [email], (err, results) => {
         if (err) {
@@ -102,12 +82,10 @@ app.post('/login', (req, res) => {
             return res.status(400).json({ success: false, message: 'Senha incorreta' });
         }
 
-        // Se tudo estiver correto, armazena o usuário na sessão
-        req.session.user = { id: user.id_usuario, nome: user.nome, email: user.email };
         res.json({ success: true, redirectUrl: '/src/pages/home.html' });
     });
 });
-// resgata as informações de serviço
+
 app.get('/api/servicos', (req, res) => {
     const queryServicos = 'SELECT id_servico, nome, servicos, preco FROM servicos';
     
@@ -119,25 +97,26 @@ app.get('/api/servicos', (req, res) => {
         res.json(results);
     });
 });
-//para buscar os servicos de usurio
-app.get('/api/servicos-usuario', (req, res) => {
-    if (!req.session.user) {
-        return res.status(401).json({ message: 'Usuário não autenticado' });
+
+app.get('/api/servicos/usuario', (req, res) => {
+    const { email } = req.query;
+
+    if (!email) {
+        return res.status(400).json({ message: 'Email é obrigatório para acessar os serviços.' });
     }
 
-    // Seleciona serviços onde o nome corresponde ao nome do usuário logado
-    const queryServicosUsuario = 'SELECT id_servico, nome, servicos, preco FROM servicos WHERE nome = ?';
-    
-    banco.query(queryServicosUsuario, [req.session.user.nome], (err, results) => {
+    const query = 'SELECT * FROM servicos WHERE email = ?';
+    banco.query(query, [email], (err, results) => {
         if (err) {
-            console.error('Erro ao buscar serviços do usuário:', err);
-            return res.status(500).json({ message: 'Erro ao buscar serviços do usuário' });
+            console.error('Erro ao buscar serviços:', err);
+            return res.status(500).json({ message: 'Erro no servidor.' });
         }
-        res.json(results);
+
+        res.json(results); // Retorna os resultados da consulta
     });
 });
 
-// Inicializar o servidor
+
 app.listen(porta, () => {
     console.log(`Servidor rodando na porta ${porta}`);
 });
