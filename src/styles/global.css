@@ -21,7 +21,21 @@ html, body{
 
 body{
     color: #000;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        
+    }
 }

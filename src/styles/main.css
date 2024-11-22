@@ -378,8 +378,7 @@ hr.linhaQuatro {
 
 
 
-@media screen and (max-width: 760px) {
-    main { padding: 50px 0; height: auto; }
+@media (max-width: 768px) {
     
     .imgInicio, .text-overlay, .titleMain, .pMain, .pMainFrase, .textServicesTitle, .textSobreTitle {
         font-size: 1em;
@@ -411,4 +410,26 @@ hr.linhaQuatro {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+@media (max-width: 480px) {
+    .titleMain {
+        font-size: 1.3rem;
+        margin-top: 30%;
+        text-align: left;
+    }
+
+    .pMain {
+        font-size: 0.945rem;
+        text-align: left;
+        margin-left: 7.5%;
+    }
+
+    .pMainFrase {
+        font-size: 1.05rem;
+        margin-bottom: 20%;
+        white-space: normal;
+        text-align: right;
+    }
+
 }

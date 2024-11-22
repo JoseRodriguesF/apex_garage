@@ -165,7 +165,7 @@ nav a{
 @media (max-width: 768px) {
     header{
         background-color: #000;
-        width: 100vw;
+        width: 100vh;
         height: 15vh;
         position: relative;
         position: fixed;
@@ -311,4 +311,11 @@ nav a{
         display: none;
     }
 
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 100%;
+        height: 11vh;
+    }
 }
