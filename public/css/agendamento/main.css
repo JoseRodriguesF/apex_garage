@@ -26,7 +26,7 @@
 .container-form{
     background-color: #1f1f1f;
     width: 40%;
-    height: 275px;
+    height: 340px;
     border-radius: 7px;
     position: absolute;
     top: 50%;
@@ -67,7 +67,7 @@
     border-radius: 7px;
     transition: 0.5s;
     font-size: 1.2em;
-    margin-top: 1.245em;
+    margin-top: 1.205em;
 }
 
 .btn-agendar:hover{
@@ -78,6 +78,30 @@
 input::placeholder{
     font-size: 1.3rem;
     color: #fff;
+}
+
+.select{
+    width: 211%;
+    height: 50px;
+    margin-top: 1em;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    transition: 0.5s;
+}
+
+.select:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+option{
+    border: none;
 }
 
 @media screen and (max-width: 1280px) {
@@ -95,22 +119,22 @@ input::placeholder{
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 390px) and (max-width: 414px) {
     .container-form{
         width: 80%;
         left: 10%;
-        top: 38%;
-        height: 53%;
+        top: 32%;
+        height: 55%;
     }
     
     .agendar{
-        top: 22%;
+        top: 17%;
         text-align: center;
         font-size: 2.050em;
     }
     
     .service{
-        top: 30%;
+        top: 25%;
         text-align: center;
         font-size: 1.035em;
     }
@@ -132,14 +156,161 @@ input::placeholder{
     .btn-agendar{
         margin-top: 0.345em;
     }
+
+    .select{
+        width: 100%;
+        font-size: 0.6em;
+        font-weight: bold;
+
+    }
+
 }
+@media screen and (max-width: 389px) {
+    .container-form{
+        width: 80%;
+        left: 10%;
+        top: 32%;
+        height: 66%;
+    }
+    
+    .agendar{
+        top: 17%;
+        text-align: center;
+        font-size: 2.050em;
+    }
+    
+    .service{
+        top: 25%;
+        text-align: center;
+        font-size: 1.035em;
+    }
+    
+    .escolha-date-horario{
+        text-align: left;
+        font-size: 1.245rem;
+        line-height: 1.65rem;
+    }
+
+    .input-1{
+        margin-bottom: 15px;
+    }
+
+    .input-2{
+        margin-bottom: 15px;
+    }
+
+    .btn-agendar{
+        margin-top: 0.345em;
+    }
+
+    .select{
+        width: 100%;
+        font-size: 0.6em;
+        font-weight: bold;
+
+    }
+
+}
+
+
+@media screen and (min-width: 414px) and (max-width: 428px) {
+    .container-form{
+        width: 80%;
+        left: 10%;
+        top: 35%;
+        height: 60%;
+    }
+    
+    .agendar{
+        top: 18%;
+        text-align: center;
+        font-size: 2.050em;
+    }
+    
+    .service{
+        top: 26%;
+        text-align: center;
+        font-size: 1.035em;
+    }
+    
+    .escolha-date-horario{
+        text-align: left;
+        font-size: 1.245rem;
+        line-height: 1.65rem;
+    }
+
+    .input-1{
+        margin-bottom: 15px;
+    }
+
+    .input-2{
+        margin-bottom: 15px;
+    }
+
+    .btn-agendar{
+        margin-top: 0.345em;
+    }
+
+    .select{
+        width: 100%;
+        font-size: 0.6em;
+        font-weight: bold;
+        
+    }
+    
+}
+
+/* Tablet */
 
 @media screen and (min-width: 834px) and (max-width: 880px) {
     .container-form{
         width: 80%;
         left: 10%;
         top: 50%;
-        height: 22.5%;
+        height: 29.5%;
+    }
+    
+    .agendar{
+        top: 36%;
+        text-align: center;
+        left: 10%;
+        font-size: 3.250em;
+    }
+    
+    .service{
+        top: 43%;
+        left: 10%;
+        text-align: center;
+        font-size: 2.0em;
+    }
+    
+    .escolha-date-horario{
+        text-align: left;
+        font-size: 1.245rem;
+        line-height: 1.65rem;
+    }
+
+    .input-1{
+        margin-bottom: 15px;
+    }
+
+    .input-2{
+        margin-bottom: 15px;
+    }
+
+    .btn-agendar{
+        margin-top: 0.345em;
+    }
+}
+
+/* Tablet */
+
+@media screen and (max-width: 820px)  {
+    .container-form{
+        width: 80%;
+        left: 10%;
+        top: 50%;
+        height: 29.5%;
     }
     
     .agendar{
