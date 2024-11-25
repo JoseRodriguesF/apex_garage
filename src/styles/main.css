@@ -10,7 +10,6 @@ main{
     width: 100vw;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Garante que nenhum conteúdo "vaze" para fora */
 }
 
 /* Imagem de serviços */
@@ -420,16 +419,204 @@ hr.linhaQuatro {
     }
 
     .pMain {
-        font-size: 0.945rem;
+        font-size: 0.770rem;
         text-align: left;
-        margin-left: 7.5%;
+        margin-left: 10%;
     }
 
     .pMainFrase {
-        font-size: 1.05rem;
-        margin-bottom: 20%;
+        font-size: 0.985rem;
+        margin-bottom: 19%;
         white-space: normal;
         text-align: right;
     }
+
+    .liqui{
+        width: 45px;
+        height: 31px;
+        margin-top: -14%;
+        margin-left: 10%;
+
+    }
+    .pirelli{
+        width: 75px;
+        height: 51.5px;
+        margin-top: -14%;
+        margin-left: 5%;
+    }
+    
+    .motul{
+        width: 75px;
+        height: 75px;
+        margin-top: -14%;
+        margin-left: 5%;
+    }
+    
+    .brid{
+        width: 27.5px;
+        height: 27.5px;
+        margin-top: 14%;
+        margin-left: -90%;
+    }
+    
+    .good{
+        width: 92.5px;
+        height: 22px;
+        margin-top: 14%;
+        margin-left: 3%;
+    }
+    
+    .cofab{
+        width: 85px;
+        height: 21px;
+        margin-top: 14%;
+        margin-left: 3%;
+    }
+
+    .containerImgMarcas {
+        background-color: #000;
+        width: 100vw;
+        height: 16vh;
+        display: flex;
+        gap: 2%;
+        align-items: center;
+    }
+
+    .imgFull {
+        width: 100%;
+        height: 765px;
+        margin: 0;
+    }
+
+    .imgServices {
+        width: 101%;
+        height: 765px;
+        margin: 3.7px 0px 0px 0.5px;        
+    }
+
+    .textServicesTitle {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 9%;
+        left: 49.2%;
+        color: rgb(255, 255, 255)
+    }
+    
+    .service-item {
+        color: #fff;
+        text-align: center;
+        font-size: 0.85rem;
+        width: 140px;
+    }
+
+    .service-list {
+        position: absolute;
+        top: 17%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 96px 25px;
+        width: 100vw;
+    }
+
+    .service-icones img {
+        width: 75px;
+        height: 75px;
+        object-fit: contain;
+    }
+
+    .service-icones {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0px;
+        height: 0px;
+    }
+
+    .service-icons {
+        position: absolute;
+        top: 27%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 125px 171.21px;
+        width: 80%;
+    }
+
+    .containerImgMarcasDeCarro {
+        background-color: #000;
+        width: 100vw;
+        height: 16vh;
+        display: flex;
+        gap: 4%;
+        align-items: center;
+        margin-top: 0.1%;
+    }
+
+    .audi {
+        width: 55px;
+        height: 55px;
+        margin-top: -14%;
+        margin-left: 10%;
+
+    }
+
+    .mercedes {
+        width: 33.5px;
+        height: 33.5px;
+        margin-top: -14%;
+        margin-left: -31%;
+        transform: translateX(58px);
+
+    }
+
+    .maserati {
+        width: 87.5px;
+        height: 38.995px;
+        margin-top: -14%;
+        margin-left: -25%;
+        transform: translateX(86%);
+
+    }
+
+    .jaguar {
+        width: 87.5px;
+        height: 33.5px;
+        margin-top: 14%;
+        margin-left: -100%;
+        transform: translateX(-3px);
+
+    }
+    
+    .aston {
+        width: 87.5px;
+        height: 33.995px;
+        margin-top: 14%;
+        margin-left: -20%;
+
+
+    }
+
+    .bmw{
+        width: 42.288px;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+        height: 41.4045px;
+        margin-top: 14%;
+        margin-left: -20%;
+
+    }
+
+    .imgSobre{
+        width: 100%;
+        height: 104.67vh;
+        position: relative;
+        text-align: center;
+        margin-top: 14%;
+    }
+
+    
 
 }
