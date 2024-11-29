@@ -2,11 +2,12 @@ footer{
     position: absolute;
     width: 100%;
     height: 24vh;
-    margin-top: 30.1vh;
+    margin: auto;
     background-color: #000;
 }
 
 #logoFooter{
+    margin: auto;
     padding: 10px 35px;
     width: 22.5vw;
     height: 15vh;
@@ -155,66 +156,6 @@ footer{
     }
 }
 
-/* Smartphones pequenos (ex: dispositivos com até 360px de largura) */
-@media (max-width: 360px) {
-    footer {
-        height: 200px;
-        margin-top: 210px;
-    }
-
-    #logoFooter {
-        width: 150px;
-        height: 50px;
-        margin-top: 35px;
-    }
-
-    .copy {
-        margin-top: 40px;
-        text-align: center;
-        margin: 0;
-    }
-
-    .linhaFooter {
-        width: 80vw;
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 767px){
-    footer{
-        width: 100%;
-        margin-top: 225px;
-        height: 220px;
-    }
-
-    #logoFooter{
-        width: 180px;
-        height: 60px;
-        margin-top: 45px;
-    }
-
-    .listadecontatos{
-        display: none;
-    }
-
-    .copy{
-        margin-top: 50px;
-        margin: auto;
-        text-align: center;
-    }
-    
-    .linhaFooter{
-        width: 85vw;
-        height: 0.4px;
-        margin-top: 20px;
-        background-color: #fff;
-        align-items: center;
-    }
-
-    #logoFooter{
-        display: none;
-    }
-}
 
 @media (max-width: 480px){
     footer{
@@ -249,4 +190,36 @@ footer{
     #logoFooter{
         display: none;
     }
+}
+
+@media (max-width: 360px) {
+        footer{
+            width: 100%;
+            height: 20vh;
+            margin-top: 0%;
+        }
+    
+        #logoFooter{
+            margin: auto;
+            width: 180px;
+            height: 60px;
+        }
+    
+        .listadecontatos{
+            margin: auto;
+        }
+    
+        .copy{
+            font-size: 0.7rem;
+            margin-top: 15%;
+            text-align: center;
+        }
+        
+        .linhaFooter{
+            width: 92vw;
+            height: 0.3px;
+            margin-top: 15px;
+            background-color: #fff;
+        }
+       
 }
