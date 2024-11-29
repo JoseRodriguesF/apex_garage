@@ -2,27 +2,49 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="/src/styles/style.css">
     <link class="iconImg" rel="icon" href="/public/images/Ícones/logoBarraNavegacao.png" type="image/x-icon">
     <title>ApexGarage</title>
+    <script src="/src/scripts/menu.js" defer></script>
 </head>
 <body>
+
     <header>
         <a href="home.html"><img class="logo" src="/public/images/Ícones/logoApexGarage.jpeg" alt="Logo ApexGarage" draggable="false"></a>
-        <nav>
-            <ul>
-                <li><a href="home.html"><p class="inicio">Início</p></a></li>
-                <li><a href="./agendamento.html"><p class="servicos">Agendamento</p></a></li>
-                <li><a href="#contato"><p class="contato">Contato</p></a></li>
-                <li><a class="globo" href="google.com"><img src="/public/images/Ícones/globo.svg" draggable="false" alt=""></a></li>
-                <li><a class="user" href="./user.html"><img src="/public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
+        
+        <nav class="nav-desktop">
+            <ul class="ul-desktop">
+                <li class="li-desktop"><a href="/index.html"><p class="inicio">Início</p></a></li>
+                <li class="li-desktop"><a href="#rolagem"><p class="servicos">Agendamento</p></a></li>
+                <li class="li-desktop"><a href="/src/pages/contato.html"><p class="contato">Contato</p></a></li>
+                <li class="li-desktop"><a href="user.html" class="text-decoration-none"><img src="/public/images/Ícones/user.svg" draggable="false" alt=""></a></li>
             </ul>
         </nav>
+
+	<div class="btn-abrir-menu right" id="btn-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30.25" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+    </div>
+        <div class="menu-mobile" id="menu-mobile">
+    <div class="btn-fechar">
+            <svg xmlns="http://www.w3.org/2000/svg" height="90" width="30" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>            
+    </div>
+
+	<nav class="nav-mobile">
+                <ul class="ul-mobile" style="color: #fff;">
+                    <li><a href="/index.html"><p class="inicio">Início</p></a></li>
+                    <li><a href="#rolagem"><p class="servicos">Agendamento</p></a></li>
+                    <li><a href="/src/pages/contato.html"><p class="contato">Contato</p></a></li>
+                    <li class="li-desktop"><a href="/src/pages/login.html"><p class="botao_login">Fazer Login</p></a></li>
+                    <li><a href="/src/pages/user.html"><p>Perfil</p></a></li>
+                </ul>
+            </nav>
+	    <div class="overlay-menu" id="overlay-menu"></div>
     </header>
+
     <main>
         <div>
-            <img class="imgInicio" src="/public/images/ImagensMecanica/TelaInicial.png" alt="imagem principal" draggable="false">
+            <img class="imgInicio imgFull" src="/public/images/ImagensMecanica/TelaInicial.png" alt="imagem principal" draggable="false">
         </div>
         <div class="text-overlay">
             <h1 class="titleMain">Agende seu<br> serviço agora</h1>
@@ -36,7 +58,7 @@
         <p class="pMainFrase"><strong>Um <span class="red">carro bem</span> 
             cuidado<br> é um reflexo do seu <span class="red">dono</span></strong></p>
         </div>
-        <div class="containerImgMarcas">
+        <div id="rolagem" class="containerImgMarcas">
                 <img draggable="false" class="liqui" src="/public/images/LogosDeMarcas/pngwing.com.png" alt="">
                 <img draggable="false" class="pirelli" src="/public/images/LogosDeMarcas/pngwing.com (1).png" alt="">
                 <img draggable="false" class="motul" src="/public/images/LogosDeMarcas/motul.png" alt="">
@@ -47,10 +69,98 @@
 
         <div class="services">
             <div class="containerImgServices">
-                <img class="imgServices" src="/public/images/ImagensMecanica/FundoServices.png" alt="Fundo serviços">
-            </div>
+                <img class="imgServices imgFull" src="/public/images/ImagensMecanica/FundoServices.png" alt="Fundo serviços" draggable="false">
+
                 <p class="textServicesTitle">Serviços</p>
+                
+                <div class="service-list">
+                    <div class="service-item">Troca de Bateria</div>
+                    <div class="service-item">Troca de Óleo</div>
+                    <div class="service-item">Diagnóstico</div>
+                    <div class="service-item">Revisão & Inspeção</div>
+                    <div class="service-item">Retífica</div>
+                    <div class="service-item">Escapamento</div>
+                    <div class="service-item">Troca de Filtro de Ar</div>
+                    <div class="service-item">Troca de Pneus</div>
+                    <div class="service-item">Amortecedores</div>
+                    <div class="service-item">Caixa de Direção</div>
+                </div>
+
+                <div class="service-icons">
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_bateria.png" alt="Troca de Bateria">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_oleo.png" alt="Troca de Óleo">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_diagnostico.png" alt="Diagnóstico">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_inspecao.png" alt="Revisão & Inspeção">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_retifica.png" alt="Retífica">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_escapamento.png" alt="Escapamento">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_filtro_de_ar.png" alt="Troca de Filtro de Ar">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_pneus.png" alt="Troca de Pneus">
+                    </div>
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_amortecedor.png" alt="Troca de Amortecedores">
+                    </div>                
+                    
+                    <div class="service-icones" onclick="location.href='/src/pages/login.html'">
+                        <img src="/public/images/Ícones/icone_direcao.png" alt="Caixa de Direção">
+                    </div>
+                </div>               
+            </div> 
+        <div class="containerImgMarcasDeCarro">
+
+                <img draggable="false" class="audi" src="/public/images/LogosMarcasDeCarros/audi.svg" alt="Logo audi">
+                <img draggable="false" class="mercedes" src="/public/images/LogosMarcasDeCarros/mercedes.svg" alt="Logo Mercedes">
+                <img draggable="false" class="maserati" src="/public/images/LogosMarcasDeCarros/maserati.svg" alt="Logo maserati">
+                <img draggable="false" class="jaguar" src="/public/images/LogosMarcasDeCarros/jaguar.svg" alt="Logo jaguar">
+                <img draggable="false" class="aston" src="/public/images/LogosMarcasDeCarros/AstonMartin.svg" alt="Logo Aston Martin">
+                <img draggable="false" class="bmw" src="/public/images/LogosMarcasDeCarros/bwm.svg" alt="Logo bmw">
+        </div>       
         </div>
-    </main>
+        <div>
+            <img class="imgSobre imgFull" src="/public/images/ImagensMecanica/FundoSobre.png" alt="Fundo serviços" draggable="false">
+        </div>
+        <p class="textSobreTitle">Sobre</p>
+        <h1 class="titleMain1"><strong><span class="red">Nossa</span> história</strong></h1>
+        <h2 class="historia_empresa">Historia da empresaHistoria da empresaHistoria da empresaHistoria<br> da empresaHistoria da empresaHistoria da empresaHistoria da empresaHistoria da empresaH<br>istoria da empresaHistoria da empresaHistoria da empresa</h2>
+        <div class="text-overlay-2">
+            <div class="container2">
+                <hr class="linhaTres">
+                <hr class="linhaQuatro">
+            </div>
+        </div>    
+    </main>         
+    <footer>
+        <img id="logoFooter" src="/public/images/Ícones/Frame 1.png" alt="logoApexGarage">
+        <ul class="listadecontatos">
+            <li><a href="https://facebook.com"><img src="/public/images/Ícones/facebook.svg" alt=""></a></li>
+            <li><a href="https://instagram.com"><img src="/public/images/Ícones/instagram.svg" alt=""></a></li>
+            <li><a href="https://call.com"><img src="/public/images/Ícones/call.svg" alt=""></a></li>
+            <li><a href="https://apexgarage@contato.com"><img class="mail" src="/public/images/Ícones/mail.svg" alt=""></a></li>
+        </ul>
+            <p class="copy">&copy 2024 ApexGarage</p>
+            <hr class="linhaFooter">
+    </footer>   
 </body>
 </html>
