@@ -215,3 +215,38 @@ footer{
         display: none;
     }
 }
+
+@media (max-width: 480px){
+    footer{
+        width: 100%;
+        height: 220px;
+    }
+
+    #logoFooter{
+        width: 180px;
+        height: 60px;
+        margin-top: 45px;
+    }
+
+    .listadecontatos{
+        display: none;
+    }
+
+    .copy{
+        margin-top: 50px;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .linhaFooter{
+        width: 85vw;
+        height: 0.4px;
+        margin-top: 20px;
+        background-color: #fff;
+        align-items: center;
+    }
+
+    #logoFooter{
+        display: none;
+    }
+}
