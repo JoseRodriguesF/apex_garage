@@ -3,11 +3,53 @@ main{
     height: 2911px;
 }
 
-.imgInicio {
-    max-width: 100vw;
+/* Contêiner da imagem de serviços */
+.containerImgServices {
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Imagem de serviços */
+.imgServices {
+    width: 100vw;
     height: auto;
+    object-fit: cover;
+    filter: brightness(0.25);
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Classe genérica para imagens de largura total */
+.imgFull {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.25);
+    display: block;
+}
+
+/* Outras configurações específicas */
+.imgInicio {
+    position: relative;
+    z-index: 1;
+}
+
+.imgServices {
+    margin: 4px;
+    z-index: 1;
+}
+
+.imgInicio {
+    width: 100vw; /* Garante que a imagem ocupe toda a largura da viewport */
+    height: 100vh; /* Ajusta a altura para ocupar toda a viewport */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorção */
     filter: brightness(0.25);
     z-index: 1;
+    position: relative; /* Para controlar sobreposições */    
 }
 
 .text-overlay{
@@ -27,6 +69,7 @@ main{
     margin-right: 180px;
 }
 
+
 .pMain{
     font-size: 1em;
     margin-left: 40px;
@@ -34,15 +77,16 @@ main{
     white-space: nowrap
 }
 
-.pMainFrase{
-    text-align: right;
-    margin-left: 870px;
-    margin-top: -190px;
+.pMainFrase {
     font-size: 1.7em;
+    color: #fff;
+    position: absolute; /* Posiciona o texto em relação ao contêiner da imagem */
+    bottom: 190px; /* Ajusta a posição vertical para ficar dentro da imagem */
+    right: 60px; /* Ajusta a posição horizontal para ficar no canto direito */
+    white-space: nowrap; /* Mantém o texto em uma única linha */
     z-index: 2;
-    position: absolute;
-    white-space: nowrap
 }
+
 
 .red{
     color: #FF0000;
@@ -56,28 +100,72 @@ main{
     margin-right: 15px;
 }
 
-hr {
-    border: none; /* Remove as bordas padrões */
-    height: 50vh; /* Altura da linha */
-    background-color: #FF0000; /* Cor da linha */
-    width: 4px; /* Largura da linha */
-    margin: 5px; /* Centraliza e adiciona margens */
+
+/* Estilos para as linhas verticais */
+hr.linhaUm {
+    border: none;           /* Remove as bordas padrão */
+    width: 0.2vw;             /* Largura da linha */
+    background-color: #FF0000; /* Cor vermelha */
+    margin: 5px;            /* Espaçamento */
+    height: 50vh; 
 }
 
-.container .linhaDois{
-    background-color: #fff;
-    height: 40vh;
+hr.linhaDois {
+    border: none;           /* Remove as bordas padrão */
+    width: 0.2vw;             /* Largura da linha */
+    background-color: #fff; /* Cor vermelha */
+    margin: 5px;            /* Espaçamento */
+    height: 40vh;   
+}
+
+
+hr.linhaTres {
+    border: none;          /* Remove as bordas padrão */
+    position: absolute;
+    border-top: 1px solid #fff; /* Cor vermelha e espessura */
+    width: 65vh;
+    height: 0vh;            /* Largura total da tela */
+    margin: 20px 0;
+    margin-top: 0vh;             /* Espaçamento */
+}
+/* Estilos para as linhas horizontais */
+hr.linhaQuatro {
+    border: none;          /* Remove as bordas padrão */
+    position: absolute;
+    border-top: 1px solid #fff; /* Cor vermelha e espessura */
+    width: 45vh;            /* Largura total da tela *        /* Espaçamento vertical entre as linhas */
+    height: 0%;
+}
+
+/* Para garantir que a linha não se sobreponha ao conteúdo ao redor */
+.container2 {
+    display: flex;
+    gap: 7px;
+    margin-top: 124vw;
+    margin-left: 1.51%;
+    height: 50vh;
+    width: 65vw;
+}
+
+.linhaQuatro {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    margin: 10px 0px;
 }
 
 .containerImgMarcas{
-    margin-top: -4px;
     background-color: #000;
     width: 100vw;
-    height: 173px;
+    height: 18.82vh;
     display: flex;
-    gap: 140px;
+    gap: 4%;
     align-items: center;
-    padding: 0px 35px;
+    padding: 0% -1%;
 }
 
 .liqui{
@@ -114,9 +202,7 @@ hr {
     height: 872px;
 }
 
-.containerImgServices{
-    margin-top: -4px;
-}
+
 
 .services{
     position: relative;
@@ -137,33 +223,469 @@ hr {
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
-    margin-top: -650px;
+    margin-top: -15px;
     left: 40%;
     right: 41%;
     z-index: 3;
     white-space: nowrap; 
 }
 
-.ulButtonsServices{
-    list-style: none;
+/* Estilização da imagem de fundo e contêiner */
+.containerImgServices {
+    position: relative;
+    text-align: center;
+    margin-left: -4px;
+}
+
+.imgServices {
+    width: 100%;
+    margin: 4px;
+    height: 962px;
+}
+
+.containerImgServices{
+    margin-top: -4px;
+    
+}
+
+/* Título "Serviços" posicionado na imagem */
+.textServicesTitle {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 32px;
+}
+
+/* Lista de serviços posicionada dentro da imagem */
+.service-list {
+    position: absolute;
+    top: 26%; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 140px;
-}
-
-.ulButtonsServices li{
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 270px 140px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    width: 80%;
 }
 
-@media screen and (max-width: 760px) {
+/* Estilização de cada item de serviço como texto simples */
+.service-item {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    width: 140px; /* Define uma largura fixa para melhor alinhamento */
+}
 
-    main{
-        margin: 0 auto;
-        padding: 100px 0px;
-        height: 2911px;
+.service-icones {
+    display: flex;               /* Usamos flexbox para alinhar o conteúdo */
+    justify-content: center;     /* Alinha as imagens horizontalmente ao centro */
+    align-items: center;         /* Alinha as imagens verticalmente ao centro */
+    width: 150px;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+    height: 150px;               /* Define uma altura fixa para as divs (ajuste conforme necessário) */
+    cursor: pointer;            /* Adiciona um cursor de ponteiro para indicar que é clicável */
+    transition: transform 0.3s ease;           /* Adiciona um cursor de ponteiro para indicar que é clicável */
+}
+
+.service-icones:hover {
+    transform: scale(1.1);       /* Aumenta o tamanho da div em 10% quando o mouse passa sobre ela */
+}
+
+.service-icones:hover img {
+    transform: scale(1.1);        /* Aumenta o tamanho da imagem em 10% quando o mouse passa sobre ela */
+}
+
+.service-icones img {
+    width: 130px;                  /* Define o tamanho das imagens em relação ao tamanho da div */
+    height: 130px;                 /* Mantém a proporção e ajusta a altura */
+    object-fit: contain;
+    transform: scale(1.1);
+}
+
+.service-icons {
+    position: absolute;
+    top: 31%; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 190px 191px; /* Controla o espaçamento entre itens (horizontal e vertical) */
+    width: 80%;
+}
+
+.containerImgMarcasDeCarro{
+    background-color: #000;
+    width: 100vw;
+    height: 18.82vh;
+    display: flex;
+    gap: 4%;
+    align-items: center;
+    padding: 0% -1%;
+    margin-top: -0.41vh;
+}
+
+.bmw{
+    width: 4.16vw;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+    height: 8.70vh;
+    margin-right: 4.3%;
+}
+
+
+.imgSobre{
+    width: 100%;
+    height: 104.67vh;
+    position: relative;
+    text-align: center;
+    margin-top: 14%;
+}
+
+
+.Sobre{
+    width: 100vw;
+    height: 94.88vh;
+}
+
+.textSobreTitle{
+    text-align: center;
+    position: absolute;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: -46.5%;
+    left: 40%;
+    right: 35%;
+    z-index: 3;
+    white-space: nowrap; 
+}
+
+.text-overlay-2{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 2; /* Coloca o texto sobre a imagem */
+    height: 2px;
+}
+
+.titleMain1{
+    font-size: 2.25em;
+    color: #fff;
+    position: absolute;
+    margin-top: -740px;
+    margin-left: 10.7%;
+}
+.historia_empresa{
+    font-size: 1rem;
+    margin-top: -35.1%;
+    margin-left: 10.9%;
+    position:absolute;
+    color: #fff;
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    
+    .imgInicio, .text-overlay, .titleMain, .pMain, .pMainFrase, .textServicesTitle, .textSobreTitle {
+        font-size: 1em;
+        text-align: center;
     }
     
-    .imgInicio {
-        max-width: 100vw;
+    .text-overlay { top: 10%; left: 5%; transform: translate(0, -10%); max-width: 100%; }
+    
+    .titleMain { font-size: 1.8em; margin: 20px 0 0; }
+    
+    .pMain { font-size: 0.9em; margin: 10px 0 0; }
+    
+    .pMainFrase {
+        font-size: 1.3em;
+        bottom: 30px;
+        right: 10px;
+        white-space: normal;
+    }
+    
+    .textServicesTitle {
+        font-size: 1.8em;
+        top: -300px;
+        left: 10%;
+        right: 10%;
+        white-space: normal;
+    }
+    
+    .ulButtonsServices {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    main{
         height: auto;
+    }
+    
+    .titleMain {
+        font-size: 1.3rem;
+        margin-top: 30%;
+        text-align: left;
+    }
+
+    .pMain {
+        font-size: 0.770rem;
+        text-align: left;
+        margin-left: 10%;
+    }
+
+    .pMainFrase {
+        font-size: 0.985rem;
+        margin-bottom: 19%;
+        white-space: normal;
+        text-align: right;
+    }
+
+    .liqui{
+        width: 45px;
+        height: 31px;
+        margin-top: -14%;
+        margin-left: 10%;
+
+    }
+    .pirelli{
+        width: 75px;
+        height: 51.5px;
+        margin-top: -14%;
+        margin-left: 5%;
+    }
+    
+    .motul{
+        width: 75px;
+        height: 75px;
+        margin-top: -14%;
+        margin-left: 5%;
+    }
+    
+    .brid{
+        width: 27.5px;
+        height: 27.5px;
+        margin-top: 14%;
+        margin-left: -90%;
+    }
+    
+    .good{
+        width: 92.5px;
+        height: 22px;
+        margin-top: 14%;
+        margin-left: 3%;
+        transform: translateX(11%);
+    }
+    
+    .cofab{
+        width: 85px;
+        height: 21px;
+        margin-top: 14%;
+        margin-left: 3%;
+    }
+
+    .containerImgMarcas {
+        background-color: #000;
+        width: 100vw;
+        height: 16vh;
+        display: flex;
+        gap: 2%;
+        align-items: center;
+    }
+
+    .imgFull {
+        width: 100%;
+        height: 765px;
+        margin: 0;
+    }
+
+    .imgServices {
+        width: 100%;
+        height: 765px;
+        margin: 3.7px 0px 0px 3.5px;        
+    }
+
+    .textServicesTitle {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 9%;
+        left: 49.2%;
+        color: rgb(255, 255, 255)
+    }
+    
+    .service-item {
+        color: #fff;
+        text-align: center;
+        font-size: 0.85rem;
+        width: 140px;
+    }
+
+    .service-list {
+        position: absolute;
+        width: 100%;
+        top: 17%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 96px 25px;
+        width: 100vw;
+    }
+
+    .service-icones img {
+        width: 75px;
+        height: 75px;
+        object-fit: contain;
+    }
+
+    .service-icones {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0px;
+        height: 0px;
+    }
+
+    .service-icons {
+        position: absolute;
+        top: 27%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 125px 171.21px;
+        width: 80%;
+    }
+
+    .containerImgMarcasDeCarro {
+        background-color: #000;
+        width: 100vw;
+        height: 16vh;
+        display: flex;
+        gap: 4%;
+        align-items: center;
+        margin-top: 0.1%;
+    }
+
+    .audi {
+        width: 55px;
+        height: 55px;
+        margin-top: -14%;
+        margin-left: 10%;
+
+    }
+
+    .mercedes {
+        width: 33.5px;
+        height: 33.5px;
+        margin-top: -14%;
+        margin-left: -31%;
+        transform: translateX(58px);
+
+    }
+
+    .maserati {
+        width: 87.5px;
+        height: 38.995px;
+        margin-top: -14%;
+        margin-left: -25%;
+        transform: translateX(86%);
+
+    }
+
+    .jaguar {
+        width: 87.5px;
+        height: 33.5px;
+        margin-top: 14%;
+        margin-left: -100%;
+        transform: translateX(-3px);
+
+    }
+    
+    .aston {
+        width: 87.5px;
+        height: 33.995px;
+        margin-top: 14%;
+        margin-left: -20%;
+        transform: translateX(-31%);
+    }
+
+    .bmw{
+        width: 42.288px;                /* Define uma largura fixa para as divs (pode ajustar conforme necessário) */
+        height: 41.4045px;
+        margin-top: 14%;
+        margin-left: -20%;
+        transform: translateX(-75%);
+    }
+
+    .imgSobre{
+        width: 100%;
+        height: 765px;
+        position: relative;
+        text-align: center;
+        margin: 4.5% 0px 0px 0px;
+    }
+
+    .textSobreTitle {
+        font-size: 1.5rem;
+        text-align: center;
+        position: absolute;
+        font-weight: bold;
+        color: #fff;
+        margin-top: -196%;
+        left: 35%;
+        white-space: nowrap;
+    }
+
+    .titleMain1 {
+        font-size: 1.3em;
+        color: #fff;
+        position: absolute;
+        margin-top: -175%;
+        margin-left: 4%;
+    }
+
+    .container2 {
+        display: flex;
+        gap: 7px;
+        margin-top: 761%;
+        margin-left: -7.5%;
+        height: 50vh;
+        width: 65vw;
+    }
+
+    hr.linhaTres {
+        border: none;
+        position: absolute;
+        border-top: 1px solid #fff;
+        width: 34.5vh;
+        height: 0vh;
+        margin: 20px 0;
+        margin-top: 0vh;
+    }
+
+    hr.linhaQuatro {
+        border: none;
+        position: absolute;
+        border-top: 1px solid #fff;
+        width: 23vh;
+        height: 0%;
+    }
+    
+    .historia_empresa {
+        width: 86.111vw;
+        font-size: 0.7rem;
+        margin-top: -160.1%;
+        margin-left: 4.9%;
+        position: absolute;
+        color: #fff;
     }
 }
