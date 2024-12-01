@@ -19,17 +19,42 @@ async function buscarServicos() {
             servicoElement.classList.add('servico');
 
             servicoElement.innerHTML = `
-                        <td class="td-body">${servico.id_servico}</td>
-                        <td class="td-body">${servico.nome}</td>
-                        <td class="td-body">${servico.servicos}</td>
-                        <td class="td-body">${servico.preco}</td>
-                        <td class="td-body"><button class="button-img-check"><img class="check-services" src="/public/images/ícones/circle-check-regular.svg" alt="check"></img></button></td>
+                <td class="td-body">${servico.id_servico}</td>
+                <td class="td-body">${servico.nome}</td>
+                <td class="td-body">${servico.servicos}</td>
+                <td class="td-body">${servico.preco}</td>
+                <td class="td-body">
+                    <button class="button-img-check">
+                        <img class="check-services" src="/public/images/ícones/circle-check-regular.svg" alt="check">
+                    </button>
+                </td>
             `;
-
+            
             container.appendChild(servicoElement);
+
+            // Adicionar event listener para o botão de check
+            const checkButton = servicoElement.querySelector('.button-img-check');
+            checkButton.addEventListener('click', async () => {
+                try {
+                    const serviceId = servico.id_servico;
+                    const response = await fetch(`http://localhost:3000/api/excluirServico/${serviceId}`, {
+                        method: 'DELETE',
+                    });
+
+                    if (response.ok) {
+                        servicoElement.remove();
+                    } else {
+                        alert('Erro ao excluir o serviço.');
+                    }
+                } catch (error) {
+                    console.error('Erro ao excluir serviço:', error);
+                    alert('Erro ao tentar excluir o serviço.');
+                }
+            });
         });
     } catch (error) {
-        console.error('Erro ao carregar serviços:', error);
+        console.error('Erro ao buscar os serviços:', error);
+        alert('Erro ao buscar os serviços.');
     }
 }
 

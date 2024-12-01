@@ -16,9 +16,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         if (data.success) {
             // Salva apenas o email no sessionStorage
             sessionStorage.setItem('email', email);
-            
-            // Redireciona para a página user.html
-            window.location.href = 'user.html';
+
+            // Redireciona para a URL especificada pelo servidor
+            window.location.href = data.redirectUrl;
         } else {
             alert('Erro: ' + (data.message || 'Falha no login'));
         }

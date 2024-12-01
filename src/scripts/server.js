@@ -66,8 +66,8 @@ app.post('/login', (req, res) => {
         return res.json({ success: true, redirectUrl: '/src/pages/admin.html' });
     }
 
-    const verificaExistenciaUser  = 'SELECT * FROM usuarios WHERE email = ?';
-    banco.query(verificaExistenciaUser , [email], (err, results) => {
+    const verificaExistenciaUser = 'SELECT * FROM usuarios WHERE email = ?';
+    banco.query(verificaExistenciaUser, [email], (err, results) => {
         if (err) {
             return res.status(500).json({ success: false, message: 'Erro ao buscar o usuário' });
         }
@@ -87,7 +87,9 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/api/servicos', (req, res) => {
-    const queryServicos = 'SELECT id_servico, nome, servicos, preco FROM servicos';
+    const queryServicos = `SELECT id_servico, nome, servicos, preco 
+                           FROM servicos 
+                           ORDER BY FIELD(preco, 'R$ 4.000', 'R$ 2.500', 'R$ 1.000', 'R$ 600', 'R$ 500', 'R$ 350', 'R$ 300', 'R$ 200', 'R$ 150')`;
     
     banco.query(queryServicos, (err, results) => {
         if (err) {
@@ -95,6 +97,20 @@ app.get('/api/servicos', (req, res) => {
             return res.status(500).json({ message: 'Erro ao buscar serviços' });
         }
         res.json(results);
+    });
+});
+
+app.get('/api/historico', (req, res) => {
+    const queryHistorico = `SELECT id, nome, servicos, preco 
+                            FROM historico 
+                            ORDER BY FIELD(preco, 'R$ 4.000', 'R$ 2.500', 'R$ 1.000', 'R$ 600', 'R$ 500', 'R$ 350', 'R$ 300', 'R$ 200', 'R$ 150')`;
+    
+    banco.query(queryHistorico, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar histórico:', err);
+            return res.status(500).json({ message: 'Erro ao buscar histórico' });
+        }
+        res.json(results); // Envia os resultados como JSON
     });
 });
 
@@ -116,6 +132,31 @@ app.get('/api/servicos/usuario', (req, res) => {
     });
 });
 
+app.delete('/api/excluirServico/:id', (req, res) => {
+    const { id } = req.params;
+
+    // Mover o serviço para a tabela 'historico'
+    const moverParaHistorico = `
+        INSERT INTO historico (id_servico, nome, servicos, preco, email)
+        SELECT id_servico, nome, servicos, preco, email FROM servicos WHERE id_servico = ?;
+    `;
+    banco.query(moverParaHistorico, [id], (err, result) => {
+        if (err) {
+            console.error('Erro ao mover para histórico:', err);
+            return res.status(500).json({ message: 'Erro ao mover para histórico' });
+        }
+
+        // Excluir o serviço da tabela 'servicos'
+        const excluirServico = 'DELETE FROM servicos WHERE id_servico = ?';
+        banco.query(excluirServico, [id], (err) => {
+            if (err) {
+                console.error('Erro ao excluir o serviço:', err);
+                return res.status(500).json({ message: 'Erro ao excluir o serviço' });
+            }
+            res.status(200).json({ message: 'Serviço movido e excluído com sucesso' });
+        });
+    });
+});
 
 app.listen(porta, () => {
     console.log(`Servidor rodando na porta ${porta}`);
