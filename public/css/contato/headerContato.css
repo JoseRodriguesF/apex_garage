@@ -83,6 +83,12 @@ p{
     .btn-abrir-menu{
         display: none;
     }
+    .config-list{
+        gap: 1.2em;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
 }
 
 @media (max-width: 568px){
@@ -91,6 +97,12 @@ p{
         height: 50px;
     }
     
+    .config-list{
+        gap: 1.2em;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
 }
 
 @media (max-width: 779px) {
@@ -160,6 +172,12 @@ p{
         
         z-index: 80;
         display: none;
+    }
+    .config-list{
+        gap: 1.2em;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
     }
 
 }

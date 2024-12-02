@@ -160,5 +160,18 @@ p{
         display: none;
     }
 
+    .title-redes{
+        text-align: center;
+        font-size: 0.845rem;
+    }
+
+    .config-list{
+        gap: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
 }
 

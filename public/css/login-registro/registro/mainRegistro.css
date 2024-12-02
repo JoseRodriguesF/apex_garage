@@ -73,53 +73,19 @@
     box-shadow: 0 0px 8px rgba(255, 255, 255, 0.904);
 }
 
-@media (max-width: 768px){
+@media screen and (min-width: 420px) and (max-width: 428px){
     .imgLogo{
-        width: 215px;
-        height: 72px;
-    }
-
-    .imgFundo{
-        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
-        background-size: cover;
-        width: 100vw;
-        height: 100vh;
+        top: 15%;
     }
 
     .p-login{
-        font-size: 1.325rem;
-        margin-left: -15px;
+        text-wrap: nowrap;
+        top: 24%;
         text-align: center;
-        color: #fff;
-        position: absolute;
+        left: 14%;
     }
 
-    .container-form{
-        position: absolute;
-        margin: auto;
-        width: 83%;
-        height: 59%;
-        background-color: #1f1f1f;
-        top: 40%;
-        left: 8%;
-        border-radius: 7px;
-    }
-
-    .btn-entrar{
-        background-color: #484848;
-        color: #fff;
-        border-radius: 7px;
-        border: none;
-        margin-right: 75%;
-        margin-top: 1px;
-        font-size: 0.7rem;
-    }
     
-    .btn-entrar:hover{
-        transition: 0.5s;
-        background-color: #fff;
-        color: #484848;
-    }
 }
 
 @media (max-width: 1280px){

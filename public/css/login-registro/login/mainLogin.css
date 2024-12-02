@@ -361,8 +361,8 @@
 /* Tablet */
 @media screen and (min-width: 800px) and (max-width: 885px){
     .imgLogo{
-        width: 215px;
-        height: 72px;
+        width: 325px;
+        height: 102px;
     }
 
     .imgFundo{
@@ -373,7 +373,7 @@
     }
 
     .p-login{
-        font-size: 1.525rem;
+        font-size: 2rem;
         top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -391,11 +391,11 @@
     .container-form{
         position: absolute;
         margin: auto;
-        width: 83%;
-        height: 32%;
+        width: 70%;
+        height: 32.2%;
         background-color: #1f1f1f;
         top: 40%;
-        left: 7.5%;
+        left: 15%;
         border-radius: 7px;
     }
 
@@ -405,7 +405,7 @@
         border-radius: 7px;
         border: none;
         margin-left: 60%;
-        margin-top: -5px;
+        margin-top: 0.5em;
         font-size: 1.245rem;
         width: 40%;
     }
