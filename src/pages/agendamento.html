@@ -12,7 +12,9 @@
     <!-- Link para o CSS do Flatpickr -->
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
     <script src="/public/js/agendamento.js" defer></script>
+    <script src="/public/js/agendar.js"></script>
     <script src="/public/js/menu.js" defer></script>
+    <script src="/public/js/exibirAgendamento.js"></script>
 </head>
 <body>
     <header>
@@ -47,7 +49,7 @@
         <div class="img-main"></div>
         <div class="div-agenda">
             <p class="agendar">Agendar</p>
-            <p class="service">$(servico.selecionado)</p>
+            <p class="service"></p>
         </div>
         <div class="container-form">
             <p class="escolha-date-horario">
@@ -55,29 +57,27 @@
                 e<br> horário 
                 de atendimento
             </p>
-            <form class="form-agenda mt-4" action="" method="post">
+            <form class="form-agenda" action="http://localhost:3000/agendar" method="POST">
                 <div class="row">
                     <div class="col-md-6 input-1">
-                      <!-- Campo de Data com Flatpickr -->
-                      <input type="text" id="data" class="form-1" placeholder="Data">
+                        <input type="text" id="data" name="data" class="form-1" placeholder="Data">
                     </div>
                     <div class="col-md-6 input-2">
-                      <!-- Campo de Hora com Flatpickr -->
-                      <input type="text" id="hora" class="form-2" placeholder="Hora">
+                        <input type="text" id="hora" name="hora" class="form-2" placeholder="Hora">
                     </div>
                     <div class="col-md-6 input-2">
                         <select class="select" id="car-brand" name="car-brand">
                             <option value="" disabled selected>Selecionar Marca do Carro</option>
-                            <option value="marca1">Audi</option>
-                            <option value="marca2">Mercedes-Benz</option>
-                            <option value="marca3">Maserati</option>
-                            <option value="marca4">Jaguar</option>
-                            <option value="marca4">Aston Martin</option>
-                            <option value="marca4">BWM</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="Maserati">Maserati</option>
+                            <option value="Jaguar">Jaguar</option>
+                            <option value="Aston Martin">Aston Martin</option>
+                            <option value="BMW">BMW</option>
                         </select>
                     </div>
-                  </div>
-                  <button class="btn-agendar">Agendar</button>
+                </div>
+                <button type="submit" class="btn-agendar">Agendar</button>
             </form>
             
         </div>

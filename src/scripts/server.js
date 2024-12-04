@@ -82,7 +82,7 @@ app.post('/login', (req, res) => {
             return res.status(400).json({ success: false, message: 'Senha incorreta' });
         }
 
-        res.json({ success: true, redirectUrl: '/src/pages/home.html' });
+        res.json({ success: true, redirectUrl: '/src/pages/user.html' });
     });
 });
 
@@ -155,6 +155,49 @@ app.delete('/api/excluirServico/:id', (req, res) => {
             }
             res.status(200).json({ message: 'Serviço movido e excluído com sucesso' });
         });
+    });
+});
+
+app.get('/api/usuario', (req, res) => {
+    const email = req.query.email;
+
+    if (!email) {
+        return res.status(400).json({ success: false, message: 'Email não fornecido' });
+    }
+
+    const query = 'SELECT nome FROM usuarios WHERE email = ?';
+    banco.query(query, [email], (err, results) => {
+        if (err) {
+            return res.status(500).json({ success: false, message: 'Erro ao buscar o nome do usuário' });
+        }
+
+        if (results.length === 0) {
+            return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+        }
+
+        res.json({ success: true, nome: results[0].nome });
+    });
+});
+
+
+app.post('/agendar', (req, res) => {
+
+    const { dataHora, carBrand, email, nome, servico } = req.body;
+
+    if (!dataHora || !carBrand || !email || !nome || !servico) {
+        return res.status(400).json({ success: false, message: 'Todos os campos são obrigatórios' });
+    }
+
+    const sql = 'INSERT INTO servicos (data_hora, veiculo, nome, email, servico) VALUES (?, ?, ?, ?, ?)';
+
+    banco.query(sql, [dataHora, carBrand, nome, email, servico], (err, result) => {
+        if (err) {
+            console.error('Erro ao inserir no banco:', err);
+            return res.status(500).json({ success: false, message: 'Erro ao processar o agendamento' });
+        }
+
+        console.log('Agendamento registrado:', result);
+        res.status(200).json({ success: true, message: 'Agendamento realizado com sucesso!' });
     });
 });
 
