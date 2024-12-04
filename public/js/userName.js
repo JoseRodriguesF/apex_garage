@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Armazena o nome do usuário no sessionStorage
                     sessionStorage.setItem('nome', data.nome);
+                    localStorage.setItem('nome', data.nome);
                 } else {
                     console.error('Erro ao buscar o nome do usuário:', data.message);
                 }

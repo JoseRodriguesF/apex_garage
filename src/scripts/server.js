@@ -179,8 +179,8 @@ app.get('/api/usuario', (req, res) => {
     });
 });
 
-
 app.post('/agendar', (req, res) => {
+    console.log('Corpo da requisição:', req.body); // Verifique se os dados estão chegando corretamente
 
     const { dataHora, carBrand, email, nome, servico } = req.body;
 

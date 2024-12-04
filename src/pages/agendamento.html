@@ -58,6 +58,10 @@
                 de atendimento
             </p>
             <form class="form-agenda" action="http://localhost:3000/agendar" method="POST">
+                <input type="hidden" id="email" name="email">
+                <input type="hidden" id="nome" name="nome">
+                <input type="hidden" id="servico" name="servico">
+            
                 <div class="row">
                     <div class="col-md-6 input-1">
                         <input type="text" id="data" name="data" class="form-1" placeholder="Data">

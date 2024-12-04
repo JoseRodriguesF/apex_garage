@@ -16,6 +16,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         if (data.success) {
             // Salva apenas o email no sessionStorage
             sessionStorage.setItem('email', email);
+            localStorage.setItem('email', email);
 
             // Redireciona para a URL especificada pelo servidor
             window.location.href = data.redirectUrl;
