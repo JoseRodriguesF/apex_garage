@@ -57,20 +57,20 @@
                 e<br> horário 
                 de atendimento
             </p>
-            <form class="form-agenda" action="http://localhost:3000/agendar" method="POST">
+            <form class="form-agenda" id="form-agenda" action="http://localhost:3000/agendar" method="POST">
                 <input type="hidden" id="email" name="email">
                 <input type="hidden" id="nome" name="nome">
                 <input type="hidden" id="servico" name="servico">
             
                 <div class="row">
                     <div class="col-md-6 input-1">
-                        <input type="text" id="data" name="data" class="form-1" placeholder="Data">
+                        <input type="text" id="data" name="data" class="form-1" placeholder="Data" required>
                     </div>
                     <div class="col-md-6 input-2">
-                        <input type="text" id="hora" name="hora" class="form-2" placeholder="Hora">
+                        <input type="text" id="hora" name="hora" class="form-2" placeholder="Hora" required>
                     </div>
                     <div class="col-md-6 input-2">
-                        <select class="select" id="car-brand" name="car-brand">
+                        <select class="select" id="car-brand" name="carBrand" required>
                             <option value="" disabled selected>Selecionar Marca do Carro</option>
                             <option value="Audi">Audi</option>
                             <option value="Mercedes-Benz">Mercedes-Benz</option>
@@ -81,8 +81,34 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn-agendar">Agendar</button>
+                <button type="button" class="btn-agendar" id="btn-agendar">Agendar</button>
             </form>
+            
+            <script>
+                document.getElementById('btn-agendar').addEventListener('click', function() {
+                    // Resgatar valores do sessionStorage
+                    const email = sessionStorage.getItem('email') || '';
+                    const nome = sessionStorage.getItem('nome') || '';
+                    const servico = sessionStorage.getItem('servicoSelecionado') || '';
+            
+                    // Preencher os campos ocultos com os valores do sessionStorage
+                    document.getElementById('email').value = email;
+                    document.getElementById('nome').value = nome;
+                    document.getElementById('servico').value = servico;
+            
+                    // Verificar se os campos de data e hora estão preenchidos
+                    const data = document.getElementById('data').value;
+                    const hora = document.getElementById('hora').value;
+            
+                    if (!data || !hora) {
+                        alert('Por favor, preencha todos os campos obrigatórios.');
+                        return;
+                    }
+            
+                    // Enviar o formulário
+                    document.getElementById('form-agenda').submit();
+                });
+            </script>
             
         </div>
     </main>

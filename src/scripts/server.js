@@ -182,13 +182,16 @@ app.get('/api/usuario', (req, res) => {
 app.post('/agendar', (req, res) => {
     console.log('Corpo da requisição:', req.body); // Verifique se os dados estão chegando corretamente
 
-    const { dataHora, carBrand, email, nome, servico } = req.body;
+    const { data, hora, carBrand, email, nome, servico } = req.body;
+
+    // Combine data e hora em uma única variável
+    const dataHora = `${data} ${hora}`;
 
     if (!dataHora || !carBrand || !email || !nome || !servico) {
         return res.status(400).json({ success: false, message: 'Todos os campos são obrigatórios' });
     }
 
-    const sql = 'INSERT INTO servicos (data_hora, veiculo, nome, email, servico) VALUES (?, ?, ?, ?, ?)';
+    const sql = 'INSERT INTO servicos (data_hora, veiculo, nome, email, servicos) VALUES (?, ?, ?, ?, ?)';
 
     banco.query(sql, [dataHora, carBrand, nome, email, servico], (err, result) => {
         if (err) {
@@ -197,7 +200,7 @@ app.post('/agendar', (req, res) => {
         }
 
         console.log('Agendamento registrado:', result);
-        res.status(200).json({ success: true, message: 'Agendamento realizado com sucesso!' });
+        res.json({ success: true, redirectUrl: '/src/pages/user.html'});
     });
 });
 
