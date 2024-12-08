@@ -204,7 +204,7 @@ option{
 }
 
 /* Mobile */
-@media screen and (min-width: 320px) and (max-width: 395px)  {
+@media screen and (min-width: 320px) and (max-width: 390px)  {
     .container-form{
         width: 90%;
         left: 5%;
@@ -242,6 +242,31 @@ option{
 
     .service{
         top: 28%;
+        font-size: 1em;
+    }
+
+    .select{
+        width: 100%;
+        font-size: 0.640em;
+
+    }
+}
+
+@media screen and (max-width: 391px) {
+    .container-form{
+        width: 90%;
+        left: 5%;
+        top: 30%;
+        height: 63%;
+    }
+
+    .agendar{
+        top: 16%;
+        font-size: 2.245em;
+    }
+
+    .service{
+        top: 24%;
         font-size: 1em;
     }
 

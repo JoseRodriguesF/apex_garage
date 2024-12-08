@@ -13,35 +13,24 @@
         <div class="container-img">
             <div class="imgFundo" alt="Mecanica"></div>
             <a href="/index.html"><img class="imgLogo" src="/public/images/Ícones/Frame 1.png" alt=""></a>
-            <p class="p-login">Crie sua conta</p>
-            <div class="container-form p-4">
+            <p class="crie-conta">Crie sua conta</p>
+
+            <div class="container-form">
                 <form class="form-registro" action="http://localhost:3000/register" method="POST" id="form-registro">
-                    <div class="mb-3">
-                      <p for="nome" class="form-label text-left p-label">Usuário</p>
-                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome de usuário">
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <p for="email" class="form-label text-left p-label">Email</p>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Seu email">
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <p for="telefone" class="form-label text-left p-label">Telefone</p>
-                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(11) 99999-8888">
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                            <p class="form-label text-left p-label">Senha</p>
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
-                        </div>
-                        <div class="mb-3">
-                            <p class="form-label text-left p-label">Confirme sua senha</p>
-                            <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha">
-                        </div>
-                          <div class="mb-2">
-                              <button class="btn-entrar text-center" type="submit">Criar conta</button>
-                              <p class="text-left" style="margin-top: -35px; color: #fff; font-size: 0.8rem; text-wrap: wrap;">Já é usuário?<br><a style="color: #fff; text-decoration: underline;" href="/src/pages/login.html">Faça login</a></p>
-                        </div>
+                    <label for="nome" class="user form-label">Usuário</label>
+                    <input type="text" id="nome" class="form-control" placeholder="Digite seu usuário">
+
+                    <label for="email" class="form-label email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Digite seu email">
+
+                    <label for="senha" class="form-label pass">Senha</label>
+                    <input type="password" id="senha" class="form-control" placeholder="Digite sua senha">
+
+                    <label for="confirmar-senha" class="form-label pass">Confirme sua senha</label>
+                    <input type="password"  id="confirmarSenha"  class="form-control" placeholder="Confirme sua senha">
+                    
+                    <p class="p-user">Já é um usuário? <a href="login.html" class="link-new">Faça login</a></p>
+                    <button class="btn-criar">Criar conta</button>
                 </form>
             </div>
         </div>
