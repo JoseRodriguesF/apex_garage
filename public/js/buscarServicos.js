@@ -18,11 +18,18 @@ async function buscarServicos() {
             const servicoElement = document.createElement('tr');
             servicoElement.classList.add('servico');
 
+            const dataHoraFormatada = new Date(servico.data_hora).toLocaleString('pt-BR', {
+                dateStyle: 'short',
+                timeStyle: 'short',
+            });
+
             servicoElement.innerHTML = `
                 <td class="td-body">${servico.id_servico}</td>
                 <td class="td-body">${servico.nome}</td>
+                <td class="td-body">${servico.veiculo}</td>
                 <td class="td-body">${servico.servicos}</td>
                 <td class="td-body">${servico.preco}</td>
+                <td class="td-body">${dataHoraFormatada}</td>
                 <td class="td-body">
                     <button class="button-img-check">
                         <img class="check-services" src="/public/images/ícones/circle-check-regular.svg" alt="check">

@@ -22,12 +22,19 @@ async function buscarHistorico() {
             const historicoElement = document.createElement('tr');
             historicoElement.classList.add('servico');
 
+            const dataHoraFormatada = new Date(item.data_hora).toLocaleString('pt-BR', {
+                dateStyle: 'short',
+                timeStyle: 'short',
+            });
+
             // Preenche o HTML de cada linha com as informações do histórico
             historicoElement.innerHTML = `
                 <td class="td-body">${item.id}</td>
                 <td class="td-body">${item.nome}</td>
+                <td class="td-body">${item.veiculo}</td>
                 <td class="td-body">${item.servicos}</td>
                 <td class="td-body">${item.preco}</td>
+                <td class="td-body">${dataHoraFormatada}</td>
             `;
 
             container.appendChild(historicoElement);

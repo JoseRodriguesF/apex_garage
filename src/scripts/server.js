@@ -33,7 +33,7 @@ app.get('/register', (req, res) => res.sendFile(`${__dirname}/registro.html`));
 app.get('/login', (req, res) => res.sendFile(`${__dirname}/login.html`));
 
 app.post('/register', (req, res) => {
-    const { nome, email, telefone, senha, confirmarSenha} = req.body;
+    const { nome, email, senha, confirmarSenha} = req.body;
 
     if (senha !== confirmarSenha) {
         return res.status(400).send('As senhas não coincidem');
@@ -49,8 +49,8 @@ app.post('/register', (req, res) => {
             return res.status(400).send('Usuário ou email já registrado');
         }
 
-        const registroUser = 'INSERT INTO usuarios (nome, email, telefone, senha) VALUES (?, ?, ?, ?)';
-        banco.query(registroUser, [nome, email, telefone, senha], (err) => {
+        const registroUser = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?, ?)';
+        banco.query(registroUser, [nome, email, senha], (err) => {
             if (err) {
                 return res.status(500).send('Erro ao registrar o usuário');
             }
@@ -87,7 +87,7 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/api/servicos', (req, res) => {
-    const queryServicos = `SELECT id_servico, nome, servicos, preco 
+    const queryServicos = `SELECT id_servico, nome, servicos, preco, veiculo, data_hora
                            FROM servicos 
                            ORDER BY FIELD(preco, 'R$ 4.000', 'R$ 2.500', 'R$ 1.000', 'R$ 600', 'R$ 500', 'R$ 350', 'R$ 300', 'R$ 200', 'R$ 150')`;
     
@@ -101,7 +101,7 @@ app.get('/api/servicos', (req, res) => {
 });
 
 app.get('/api/historico', (req, res) => {
-    const queryHistorico = `SELECT id, nome, servicos, preco 
+    const queryHistorico = `SELECT id, nome, servicos, preco, data_hora, veiculo
                             FROM historico 
                             ORDER BY FIELD(preco, 'R$ 4.000', 'R$ 2.500', 'R$ 1.000', 'R$ 600', 'R$ 500', 'R$ 350', 'R$ 300', 'R$ 200', 'R$ 150')`;
     
@@ -137,8 +137,8 @@ app.delete('/api/excluirServico/:id', (req, res) => {
 
     // Mover o serviço para a tabela 'historico'
     const moverParaHistorico = `
-        INSERT INTO historico (id_servico, nome, servicos, preco, email)
-        SELECT id_servico, nome, servicos, preco, email FROM servicos WHERE id_servico = ?;
+        INSERT INTO historico (id_servico, nome, servicos, preco, email, veiculo, data_hora)
+        SELECT id_servico, nome, servicos, preco, email, veiculo, data_hora FROM servicos WHERE id_servico = ?;
     `;
     banco.query(moverParaHistorico, [id], (err, result) => {
         if (err) {
@@ -199,8 +199,6 @@ app.post('/agendar', (req, res) => {
             return res.status(500).json({ success: false, message: 'Erro ao processar o agendamento' });
         }
 
-        console.log('Agendamento registrado:', result);
-        res.json({ success: true, redirectUrl: '/src/pages/user.html'});
     });
 });
 

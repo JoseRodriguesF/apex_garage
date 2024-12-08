@@ -25,10 +25,16 @@ async function buscarServicosUsuario() {
             const servicoElement = document.createElement('tr');
             servicoElement.classList.add('servico');
 
+            const dataHoraFormatada = new Date(servico.data_hora).toLocaleString('pt-BR', {
+                dateStyle: 'short',
+                timeStyle: 'short',
+            });
+
             // Preenche o HTML de cada linha com as informações do serviço
             servicoElement.innerHTML = `
                 <td class="td-body">${servico.servicos}</td>
                 <td class="td-body">${servico.preco}</td>
+                <td class="td-body">${dataHoraFormatada}</td>
             `;
 
             container.appendChild(servicoElement);

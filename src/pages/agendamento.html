@@ -81,33 +81,40 @@
                         </select>
                     </div>
                 </div>
-                <button type="button" class="btn-agendar" id="btn-agendar">Agendar</button>
+                <button type="button" class="btn-agendar" id="btn-agendar" onclick="redirectToUserPage()">Agendar</button>
             </form>
             
             <script>
-                document.getElementById('btn-agendar').addEventListener('click', function() {
+                document.getElementById('btn-agendar').addEventListener('click', function () {
                     // Resgatar valores do sessionStorage
                     const email = sessionStorage.getItem('email') || '';
                     const nome = sessionStorage.getItem('nome') || '';
                     const servico = sessionStorage.getItem('servicoSelecionado') || '';
-            
-                    // Preencher os campos ocultos com os valores do sessionStorage
+
+                    // Preencher os campos ocultos do formulário
                     document.getElementById('email').value = email;
                     document.getElementById('nome').value = nome;
                     document.getElementById('servico').value = servico;
-            
-                    // Verificar se os campos de data e hora estão preenchidos
+
+                    // Verificar se os campos obrigatórios estão preenchidos
                     const data = document.getElementById('data').value;
                     const hora = document.getElementById('hora').value;
-            
+
                     if (!data || !hora) {
                         alert('Por favor, preencha todos os campos obrigatórios.');
-                        return;
+                        return; // Impede o envio se os campos estiverem vazios
                     }
-            
-                    // Enviar o formulário
+                
                     document.getElementById('form-agenda').submit();
                 });
+            </script>
+            <script>
+                function redirectToUserPage() {
+                    // Redirecionar para a página user.html
+                    setTimeout(() => {
+                        window.location.href = 'user.html';
+                    }, 500); // Tempo suficiente para o formulário ser enviado
+                }
             </script>
             
         </div>
