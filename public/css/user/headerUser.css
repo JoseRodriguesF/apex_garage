@@ -89,6 +89,12 @@ p{
         height: 50px;
     }
     
+    .config-list{
+        gap: 1.2em;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -168,6 +174,13 @@ p{
     .config-list{
         gap: 1.2em;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
+    .config-list{
+        gap: 1.2em;
         align-items: center;
         justify-content: center;
         margin-right: 1rem;

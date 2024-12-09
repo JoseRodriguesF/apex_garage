@@ -204,7 +204,7 @@ option{
 }
 
 /* Mobile */
-@media screen and (min-width: 320px) and (max-width: 390px)  {
+@media screen and (max-width: 360px)  {
     .container-form{
         width: 90%;
         left: 5%;
@@ -227,7 +227,8 @@ option{
         font-size: 0.640em;
     }
 }
-@media screen and (min-width: 410px) and (max-width: 480px)  {
+
+@media screen and (max-width: 428px)  {
     .container-form{
         width: 90%;
         left: 5%;
@@ -257,7 +258,7 @@ option{
         width: 90%;
         left: 5%;
         top: 30%;
-        height: 63%;
+        height: 68%;
     }
 
     .agendar{
