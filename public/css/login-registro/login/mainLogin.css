@@ -72,6 +72,21 @@
     box-shadow: 0 0px 8px rgba(255, 255, 255, 0.904);
 }
 
+@media screen and (max-width: 1280px){
+    .imgLogo{
+        width: 250px;
+    }
+    .p-login{
+        font-size: 1.5em;
+        top: 25%;
+    }
+    .container-form{
+        top: 35%;
+        font-size: .825em;
+        height: 55%;
+    }
+}
+
 /* Mobile screen */
 @media (max-width: 768px){
     .imgLogo{

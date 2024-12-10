@@ -99,9 +99,33 @@ input:focus {
     gap: 10px;
 }
 
+@media screen and (max-width: 1440px) {
+    .divisao-colunm-1{
+        display: flex;
+        margin-left: -15%;
+        font-size: .745em;
+        gap: 10px;
+    }
+
+    .divisao-colunm-2{
+        display: flex;
+        margin-left: -15%;
+        font-size: .745em;
+        gap: 10px;
+    }
+    
+    .text-apex{
+        margin-left: -15%;
+        font-size: .725em;
+    }
+
+    .fale-apex{
+        font-size: 1.5em;
+    }
+}
 
 
-@media (max-width: 1340px){
+@media (max-width: 1140px){
     #cont{
         font-size: 2.745rem;
     }
@@ -145,7 +169,88 @@ input:focus {
     }
 }
 
-/*  */
+@media (max-width: 888px){
+    #cont{
+        font-size: 2.745rem;
+    }
+
+    .form-contato{
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    .fale-apex{
+        font-size: 1.080rem;
+        text-wrap: wrap;
+    }
+
+    .text-apex{
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .container-colunm{
+        margin-bottom: 60px;
+    }
+
+    .divisao-colunm-1{
+        margin-top: 10px;
+    }
+
+    .container-main{
+        grid-template-columns: 1fr;
+    }
+
+    .form-contato{
+        margin-top: 0%;
+        margin-left: 4%;
+        margin: auto;
+    }
+
+    .form-contato input{
+        width: 90%;
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    .divisao-colunm-1, .divisao-colunm-2{
+        font-size: 0.7rem;
+    }
+
+    /* Ajeitar a parte de caso */
+
+    .img-telefone{
+        display: none;
+    }
+    .img-email{
+        display: none;
+    }
+    .img-gps{
+        display: none;
+    }
+
+    .btn-enviar{
+        margin-right: 100%;
+    }
+
+    .divisao-colunm-1{
+        display: flex;
+        margin-left: 0%;
+        font-size: 1em;
+        gap: 10px;
+    }
+    .divisao-colunm-2{
+        display: flex;
+        margin-left: 0%;
+        font-size: 1em;
+        gap: 10px;
+    }
+    
+    .text-apex{
+        margin-left: 0%;
+    }
+}
+
 @media (max-width: 768px){
     #cont{
         font-size: 2.745rem;
@@ -210,5 +315,22 @@ input:focus {
 
     .btn-enviar{
         margin-right: 100%;
+    }
+
+    .divisao-colunm-1{
+        display: flex;
+        margin-left: 0%;
+        font-size: .680em;
+        gap: 10px;
+    }
+    .divisao-colunm-2{
+        display: flex;
+        margin-left: 0%;
+        font-size: .680em;
+        gap: 10px;
+    }
+    
+    .text-apex{
+        margin-left: 0%;
     }
 }

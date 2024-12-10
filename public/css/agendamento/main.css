@@ -104,18 +104,32 @@ option{
     border: none;
 }
 
-@media screen and (min-width: 1080px) and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
     .container-form{
         width: 50%;
-        top: 50%;
+        top: 40%;
+        height: 57%;
     }
     
     .agendar{
-        top: 28%;
+        top: 20%;
     }
     
     .service{
-        top: 39%;
+        top: 30%;
+    }
+
+    .escolha-date-horario{
+        font-size: 1.245rem;
+    }
+
+    .btn-agendar{
+        font-size: 1em;
+    }
+
+    input::placeholder{
+        font-size: 1rem;
+        color: #fff;
     }
 }
 
@@ -204,36 +218,13 @@ option{
 }
 
 /* Mobile */
-@media screen and (max-width: 360px)  {
-    .container-form{
-        width: 90%;
-        left: 5%;
-        top: 32%;
-        height: 62%;
-    }
-
-    .agendar{
-        top: 17.5%;
-        font-size: 2.245em;
-    }
-
-    .service{
-        top: 25%;
-        font-size: 1em;
-    }
-
-    .select{
-        width: 100%;
-        font-size: 0.640em;
-    }
-}
 
 @media screen and (max-width: 428px)  {
     .container-form{
         width: 90%;
         left: 5%;
         top: 35%;
-        height: 55%;
+        height: 56%;
     }
 
     .agendar{
@@ -275,5 +266,29 @@ option{
         width: 100%;
         font-size: 0.640em;
 
+    }
+}
+
+@media screen and (max-width: 360px)  {
+    .container-form{
+        width: 90%;
+        left: 5%;
+        top: 32%;
+        height: 63%;
+    }
+
+    .agendar{
+        top: 17.5%;
+        font-size: 2.245em;
+    }
+
+    .service{
+        top: 25%;
+        font-size: 1em;
+    }
+
+    .select{
+        width: 100%;
+        font-size: 0.640em;
     }
 }

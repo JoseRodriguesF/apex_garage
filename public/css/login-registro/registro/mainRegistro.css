@@ -89,14 +89,175 @@
     color: #000;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1920px) {
+    .imgLogo{
+        width: 330px;
+        height: auto;
+        top: 13.5%;
+    }
+
     .crie-conta{
-        left: 45%;
+        left: 42%;
+        top: 25%;
+        font-size: 2em;
+    }
+
+    .container-form{
+        height: 53%;
+        top: 30%;
+    }
+    .user{
+        font-size: 1em;
+     }
+ 
+     .email{
+         font-size: 1em;
+     }
+     
+     .pass{
+         font-size: 1em;
+     }
+
+     .p-user{
+        font-size: 1em;
+     }
+
+     .btn-criar{
+        font-size: 1em;
+     }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1770px) {
+    .crie-conta{
+        left: 42.5%;
+        font-size: 1.745em;
     }
 
     .container-form{
         height: 63%;
     }
+}
+
+@media screen and (max-width: 1480px) {
+    .imgLogo{
+        width: 230px;
+        height: auto;
+        top: 8.5%;
+    }
+
+    .crie-conta{
+        left: 41.9%;
+        top: 20%;
+        font-size: 1.345em;
+    }
+
+    .container-form{
+        height: 65.5%;
+        top: 24%;
+    }
+    .user{
+        font-size: 0.925em;
+     }
+ 
+     .email{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+     
+     .pass{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+
+     .p-user{
+        font-size: .845em;
+     }
+
+     .btn-criar{
+        font-size: .845em;
+     }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .imgLogo{
+        width: 230px;
+        height: auto;
+        top: 8.5%;
+    }
+
+    .crie-conta{
+        left: 41.9%;
+        top: 20%;
+        font-size: 1.345em;
+    }
+
+    .container-form{
+        height: 72.5%;
+        top: 24%;
+    }
+    .user{
+        font-size: 0.925em;
+     }
+ 
+     .email{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+     
+     .pass{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+
+     .p-user{
+        font-size: .845em;
+     }
+
+     .btn-criar{
+        font-size: .845em;
+     }
+}
+
+@media screen and (max-width: 1024px) {
+    .imgLogo{
+        width: 150px;
+        height: auto;
+        top: 8%;
+    }
+
+    .crie-conta{
+        left: 41.9%;
+        top: 15.5%;
+        font-size: .945em;
+    }
+
+    .container-form{
+        height: 78%;
+        top: 20%;
+    }
+    .user{
+        font-size: 0.725em;
+     }
+ 
+     .email{
+         margin-top: .10em;
+         font-size: 0.725em;
+     }
+     
+     .pass{
+         margin-top: .10em;
+         font-size: 0.725em;
+        }
+        
+    .p-user{
+        margin-top: .5em;
+        font-size: .645em;
+     }
+
+     .btn-criar{
+        font-size: .645em;
+     }
 }
 
 @media screen and (max-width: 884px) {
