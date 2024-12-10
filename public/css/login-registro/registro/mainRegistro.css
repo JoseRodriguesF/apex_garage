@@ -138,6 +138,18 @@
     }
 }
 
+@media screen and (max-width: 1536px) {
+    .crie-conta{
+        left: 43%;
+        font-size: 1.745em;
+    }
+
+    .container-form{
+        height: 63%;
+    }
+
+}
+
 @media screen and (max-width: 1480px) {
     .imgLogo{
         width: 230px;
