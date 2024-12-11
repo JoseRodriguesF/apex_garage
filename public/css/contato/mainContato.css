@@ -56,6 +56,25 @@
     font-size: 1rem;
 }
 
+.form-contato textarea{
+    display: block;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 70%;
+    height: auto;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 10px 0;
+    outline: none;
+    font-size: 1rem;
+}
+
+textarea:focus {
+    width: 85%;
+    transition: 0.5s;
+    border-bottom: 3.5px solid #ff0909; /* Muda a cor da linha para branco */
+}
 .form-contato .btn-enviar{
     background-color: #333;
     color: #fff;
@@ -191,6 +210,17 @@ input:focus {
         text-align: left;
         margin-top: 25px;
     }
+
+    .form-contato textarea{
+        width: 90%;
+        border-bottom: 2.5px solid #fff;
+    }
+    
+    textarea:focus {
+        width: 90%;
+        transition: 0.5s;
+        border-bottom: 3.5px solid #ff0909; /* Muda a cor da linha para branco */
+    }    
 
     .divisao-colunm-1, .divisao-colunm-2{
         font-size: 0.7rem;

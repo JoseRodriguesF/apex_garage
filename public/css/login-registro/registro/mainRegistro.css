@@ -17,107 +17,624 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    width: 350px;
+    height: auto;
 }
 
 .container-form{
     position: absolute;
     margin: auto;
     width: 35%;
-    height: 510px;
+    height: 66%;
     background-color: #1f1f1f;
-    top: 27%;
+    top: 28%;
     left: 32%;
     border-radius: 7px;
 }
 
-.p-login{
-    font-size: 2rem;
-    text-align: left;
-    color: #fff;
+.crie-conta{
     position: absolute;
-    top: 20%;
-    left: 32%;
+    top: 23%;
+    margin: 0 auto;
+    text-align: center;
+    left: 42.7%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.745rem;
+    padding: 2em;
 }
 
-.p-label{
+.form-registro{
+    padding: .825em 2em;
+    text-align: start;
+}
+
+.user{
     color: #fff;
 }
 
-.checks{
-    margin-right: 35px;
+.email{
     color: #fff;
+    margin-top: 1em;
 }
 
-.linkConta{
+.pass{
+    color: #fff;
+    margin-top: 1em;
+}
+
+.p-user{
+    color: #fff;
+    text-align: start;
+    margin-top: 1em;
+}
+
+.link-new{
     text-decoration: underline;
-    color: #d9d9d9;
+    color: #fff;
 }
 
-.btn-entrar{
+.btn-criar{
+    width: 100%;
+    height: 2.5em;
+    border: none;
+    border-radius: 5px;
     background-color: #484848;
     color: #fff;
-    border-radius: 7px;
-    border: none;
-    margin-left: 50%;
-    
-    width: 45%;
-    font-size: 0.745rem;
-    padding: 10px 5px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-.btn-entrar:hover{
-    width: 50%;
+.btn-criar:hover{
     background-color: #fff;
-    color: #484848;
-    box-shadow: 0 0px 8px rgba(255, 255, 255, 0.904);
+    color: #000;
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 1920px) {
     .imgLogo{
-        width: 215px;
-        height: 72px;
+        width: 330px;
+        height: auto;
+        top: 13.5%;
     }
 
-    .imgFundo{
-        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
-        background-size: cover;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .p-login{
-        font-size: 1.325rem;
-        margin-left: -15px;
-        text-align: center;
-        color: #fff;
-        position: absolute;
+    .crie-conta{
+        left: 42%;
+        top: 25%;
+        font-size: 2em;
     }
 
     .container-form{
-        position: absolute;
-        margin: auto;
-        width: 83%;
-        height: 59%;
-        background-color: #1f1f1f;
-        top: 40%;
-        left: 8%;
-        border-radius: 7px;
+        height: 49%;
+        top: 30%;
+    }
+    .user{
+        font-size: 1em;
+     }
+ 
+     .email{
+         font-size: 1em;
+     }
+     
+     .pass{
+         font-size: 1em;
+     }
+
+     .p-user{
+        font-size: 1em;
+     }
+
+     .btn-criar{
+        font-size: 1em;
+     }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1770px) {
+    .crie-conta{
+        left: 42.5%;
+        font-size: 1.745em;
     }
 
-    .btn-entrar{
-        background-color: #484848;
-        color: #fff;
-        border-radius: 7px;
-        border: none;
-        margin-right: 75%;
-        margin-top: 1px;
-        font-size: 0.7rem;
+    .container-form{
+        height: 63%;
+    }
+}
+
+@media screen and (max-width: 1536px) {
+    .crie-conta{
+        left: 43%;
+        font-size: 1.745em;
+    }
+
+    .container-form{
+        height: 63%;
+    }
+
+}
+
+@media screen and (max-width: 1480px) {
+    .imgLogo{
+        width: 230px;
+        height: auto;
+        top: 8.5%;
+    }
+
+    .crie-conta{
+        left: 41.9%;
+        top: 20%;
+        font-size: 1.345em;
+    }
+
+    .container-form{
+        height: 65.5%;
+        top: 24%;
+    }
+    .user{
+        font-size: 0.925em;
+     }
+ 
+     .email{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+     
+     .pass{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+
+     .p-user{
+        font-size: .845em;
+     }
+
+     .btn-criar{
+        font-size: .845em;
+     }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .imgLogo{
+        width: 230px;
+        height: auto;
+        top: 8.5%;
+    }
+
+    .crie-conta{
+        left: 41.9%;
+        top: 20%;
+        font-size: 1.345em;
+    }
+
+    .container-form{
+        height: 72.5%;
+        top: 24%;
+    }
+    .user{
+        font-size: 0.925em;
+     }
+ 
+     .email{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+     
+     .pass{
+         margin-top: .5em;
+         font-size: 0.925em;
+     }
+
+     .p-user{
+        font-size: .845em;
+     }
+
+     .btn-criar{
+        font-size: .845em;
+     }
+}
+
+@media screen and (max-width: 1024px) {
+    .imgLogo{
+        width: 150px;
+        height: auto;
+        top: 8%;
+    }
+
+    .crie-conta{
+        left: 41.9%;
+        top: 15.5%;
+        font-size: .945em;
+    }
+
+    .container-form{
+        height: 78%;
+        top: 20%;
+    }
+    .user{
+        font-size: 0.725em;
+     }
+ 
+     .email{
+         margin-top: .10em;
+         font-size: 0.725em;
+     }
+     
+     .pass{
+         margin-top: .10em;
+         font-size: 0.725em;
+        }
+        
+    .p-user{
+        margin-top: .5em;
+        font-size: .645em;
+     }
+
+     .btn-criar{
+        font-size: .645em;
+     }
+}
+
+@media screen and (max-width: 884px) {
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 325px;
+        top: 15%;
     }
     
-    .btn-entrar:hover{
-        transition: 0.5s;
-        background-color: #fff;
-        color: #484848;
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 27%;
+        left: 50%;
+        font-size: 2em;
+    }
+    
+    .container-form{
+        width: 70%;
+        height: 38.5%;
+        top: 35%;
+        left: 15%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
+    }
+}
+
+@media screen and (max-width: 428px){
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 225px;
+    }
+
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 21%;
+        left: 50%;
+        font-size: 1.25em;
+    }
+
+    .container-form{
+        width: 80%;
+        height: 60%;
+        top: 26%;
+        left: 10%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 225px;
+        top: 12%;
+    }
+
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 23.5%;
+        left: 50%;
+        font-size: 1.35em;
+    }
+
+    .container-form{
+        width: 80%;
+        height: 60.5%;
+        top: 30%;
+        left: 10%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
+    }
+}
+
+@media screen and (max-width: 412px){
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 225px;
+    }
+
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 21%;
+        left: 50%;
+        font-size: 1.25em;
+    }
+
+    .container-form{
+        width: 80%;
+        height: 55%;
+        top: 26%;
+        left: 10%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
+    }
+}
+
+@media screen and (max-width: 391px){
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 225px;
+    }
+
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 21%;
+        left: 50%;
+        font-size: 1.25em;
+    }
+
+    .container-form{
+        width: 80%;
+        height: 65%;
+        top: 26%;
+        left: 10%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
+    }
+}
+
+@media screen and (max-width: 376px){
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 225px;
+        top: 12%;
+    }
+
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 22%;
+        left: 50%;
+        font-size: 1.35em;
+    }
+
+    .container-form{
+        width: 80%;
+        height: 71%;
+        top: 26%;
+        left: 10%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .imgFundo{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/public/images/ImagensMecanica/login-registro-tela-mobile.jpg');
+        background-size: cover;
+        filter: brightness(0.25);
+    }
+
+    .imgLogo{
+        width: 225px;
+    }
+    
+    .crie-conta{
+        text-wrap: nowrap;
+        top: 21%;
+        left: 50%;
+        font-size: 1.25em;
+    }
+    
+    .container-form{
+        width: 80%;
+        height: 65%;
+        top: 26%;
+        left: 10%;
+    }
+
+    .user{
+       font-size: 0.925em;
+    }
+
+    .email{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+    
+    .pass{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .p-user{
+        margin-top: .5em;
+        font-size: 0.925em;
+    }
+
+    .btn-criar{
+        height: 2.5em;
+        font-size: .925em;
     }
 }

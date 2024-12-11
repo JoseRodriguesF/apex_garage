@@ -86,7 +86,7 @@ app.post('/register', (req, res) => {
             if (err) {
                 return res.status(500).send('Erro ao registrar o usuário');
             }
-            res.json({ success: true, redirectUrl: '/src/pages/user.html' });
+            res.json({ success: true, redirectUrl: '/src/pages/login.html' });
         });
     });
 });

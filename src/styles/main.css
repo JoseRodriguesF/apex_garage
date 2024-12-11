@@ -142,7 +142,7 @@ hr.linhaQuatro {
     display: flex;
     gap: 7px;
     margin-top: 124vw;
-    margin-left: 1.51%;
+    margin-left: -7.49%;
     height: 50vh;
     width: 65vw;
 }
@@ -373,12 +373,13 @@ hr.linhaQuatro {
     color: #fff;
     position: absolute;
     margin-top: -740px;
-    margin-left: 10.7%;
+    margin-left: 4.7%;
 }
 .historia_empresa{
     font-size: 1rem;
     margin-top: -35.1%;
-    margin-left: 10.9%;
+    margin-left: 5%;
+    line-height: 200%;
     position:absolute;
     color: #fff;
 
