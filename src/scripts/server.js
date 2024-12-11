@@ -3,7 +3,8 @@ require('dotenv').config({ path: __dirname + '/../../config/.env' });
 const express = require('express');
 const cors = require('cors'); 
 const mysql = require('mysql'); 
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer'); 
 
 const app = express(); 
 const porta = process.env.PORTA || 3000;
@@ -19,6 +20,37 @@ const banco = mysql.createConnection({
     password: process.env.BD_PASSWORD,
     database: process.env.BD_NAME
 }); 
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail', // ou outro provedor, como Outlook, Yahoo
+    auth: {
+        user: 'contato.apex.garage.br@gmail.com', // Seu e-mail
+        pass: 'oxpa phii nqvc rsyl' // Senha ou senha de app (para maior segurança)
+    }
+});
+
+// Endpoint para receber os dados do formulário
+app.post('/enviar-email', (req, res) => {
+    const { nome, email, mensagem } = req.body;
+
+    // Configuração do e-mail
+    const mailOptions = {
+        from: email,
+        to: 'contato.apex.garage.br@gmail.com', // E-mail de destino
+        subject: `Mensagem de ${nome}`,
+        text: `
+        Mensagem: ${mensagem}
+        `,
+    };
+
+    // Enviar o e-mail
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error('Erro ao enviar o e-mail:', error);
+            return res.status(500).json({ success: false, message: 'Erro ao enviar o e-mail.' });
+        }
+    });
+});
 
 banco.connect(err => { 
     if (err) {
@@ -49,12 +81,12 @@ app.post('/register', (req, res) => {
             return res.status(400).send('Usuário ou email já registrado');
         }
 
-        const registroUser = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?, ?)';
+        const registroUser = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)';
         banco.query(registroUser, [nome, email, senha], (err) => {
             if (err) {
                 return res.status(500).send('Erro ao registrar o usuário');
             }
-            res.json({ success: true, redirectUrl: '/src/pages/home.html' });
+            res.json({ success: true, redirectUrl: '/src/pages/user.html' });
         });
     });
 });

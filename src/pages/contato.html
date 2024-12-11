@@ -43,12 +43,20 @@
         <div class="container-main mt-5">
             <div class="container-colunm container-form">
                 <h1 class="fale-apex">Fale com a Apex<span style="color:#ff0909;">Garage</span></h1>
-                <form class="form-contato">
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="Email">
-                    <input type="text" placeholder="Mensagem">
-                    <button class="btn-enviar">Enviar</button>
-                </form> 
+                <form class="form-contato" action="http://localhost:3000/enviar-email" method="POST">
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+                    <button type="submit" class="btn-enviar" onclick="redirectToUserPage()">Enviar</button>
+                </form>
+                <script>
+                    function redirectToUserPage() {
+                        // Redirecionar para a página user.html
+                        setTimeout(() => {
+                            window.location.href = 'contato.html';
+                        }, 500); // Tempo suficiente para o formulário ser enviado
+                    }
+                </script>
             </div>
             <div class="container-colunm">
                 <p class="text-left line-height-2 ml-2 mt-3 text-apex">
