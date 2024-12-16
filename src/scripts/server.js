@@ -1,4 +1,3 @@
-
 require('dotenv').config({ path: __dirname + '/../../config/.env' });
 const express = require('express');
 const cors = require('cors'); 
@@ -22,28 +21,24 @@ const banco = mysql.createConnection({
 }); 
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // ou outro provedor, como Outlook, Yahoo
+    service: 'gmail',
     auth: {
-        user: 'contato.apex.garage.br@gmail.com', // Seu e-mail
-        pass: 'oxpa phii nqvc rsyl' // Senha ou senha de app (para maior segurança)
+        user: 'contato.apex.garage.br@gmail.com', 
+        pass: 'oxpa phii nqvc rsyl' 
     }
 });
 
-// Endpoint para receber os dados do formulário
 app.post('/enviar-email', (req, res) => {
     const { nome, email, mensagem } = req.body;
-
-    // Configuração do e-mail
     const mailOptions = {
         from: email,
-        to: 'contato.apex.garage.br@gmail.com', // E-mail de destino
+        to: 'contato.apex.garage.br@gmail.com',
         subject: `Mensagem de ${nome}`,
         text: `
         Mensagem: ${mensagem}
         `,
     };
 
-    // Enviar o e-mail
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error('Erro ao enviar o e-mail:', error);
@@ -61,7 +56,6 @@ banco.connect(err => {
 
 app.get('/register', (req, res) => res.sendFile(`${__dirname}/registro.html`));
 
-// Resgata os valores do formulário de login
 app.get('/login', (req, res) => res.sendFile(`${__dirname}/login.html`));
 
 app.post('/register', (req, res) => {
@@ -142,7 +136,7 @@ app.get('/api/historico', (req, res) => {
             console.error('Erro ao buscar histórico:', err);
             return res.status(500).json({ message: 'Erro ao buscar histórico' });
         }
-        res.json(results); // Envia os resultados como JSON
+        res.json(results);
     });
 });
 
@@ -160,14 +154,13 @@ app.get('/api/servicos/usuario', (req, res) => {
             return res.status(500).json({ message: 'Erro no servidor.' });
         }
 
-        res.json(results); // Retorna os resultados da consulta
+        res.json(results); 
     });
 });
 
 app.delete('/api/excluirServico/:id', (req, res) => {
     const { id } = req.params;
 
-    // Mover o serviço para a tabela 'historico'
     const moverParaHistorico = `
         INSERT INTO historico (id_servico, nome, servicos, preco, email, veiculo, data_hora)
         SELECT id_servico, nome, servicos, preco, email, veiculo, data_hora FROM servicos WHERE id_servico = ?;
@@ -178,7 +171,6 @@ app.delete('/api/excluirServico/:id', (req, res) => {
             return res.status(500).json({ message: 'Erro ao mover para histórico' });
         }
 
-        // Excluir o serviço da tabela 'servicos'
         const excluirServico = 'DELETE FROM servicos WHERE id_servico = ?';
         banco.query(excluirServico, [id], (err) => {
             if (err) {
@@ -212,20 +204,37 @@ app.get('/api/usuario', (req, res) => {
 });
 
 app.post('/agendar', (req, res) => {
-    console.log('Corpo da requisição:', req.body); // Verifique se os dados estão chegando corretamente
+    console.log('Corpo da requisição:', req.body);
 
     const { data, hora, carBrand, email, nome, servico } = req.body;
 
-    // Combine data e hora em uma única variável
     const dataHora = `${data} ${hora}`;
+
+    const servicoPrecos = {
+        'Troca de Bateria': 'R$ 600',
+        'Troca de Óleo': 'R$ 350',
+        'Diagnóstico': 'R$ 200',
+        'Revisão e Inspeção': 'R$ 500',
+        'Retífica': 'R$ 4.000',
+        'Caixa de Direção': 'R$ 2.500',
+        'Troca de Filtro de Ar': 'R$ 150',
+        'Troca de Pneus': 'R$ 200',
+        'Amortecedores': 'R$ 300',
+        'Escapamento': 'R$ 1.000'
+    };
 
     if (!dataHora || !carBrand || !email || !nome || !servico) {
         return res.status(400).json({ success: false, message: 'Todos os campos são obrigatórios' });
     }
 
-    const sql = 'INSERT INTO servicos (data_hora, veiculo, nome, email, servicos) VALUES (?, ?, ?, ?, ?)';
+    const preco = servicoPrecos[servico];
+    if (!preco) {
+        return res.status(400).json({ success: false, message: 'Serviço inválido' });
+    }
 
-    banco.query(sql, [dataHora, carBrand, nome, email, servico], (err, result) => {
+    const sql = 'INSERT INTO servicos (data_hora, veiculo, nome, email, servicos, preco) VALUES (?, ?, ?, ?, ?, ?)';
+
+    banco.query(sql, [dataHora, carBrand, nome, email, servico, preco], (err, result) => {
         if (err) {
             console.error('Erro ao inserir no banco:', err);
             return res.status(500).json({ success: false, message: 'Erro ao processar o agendamento' });
