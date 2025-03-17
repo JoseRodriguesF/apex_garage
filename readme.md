@@ -1,100 +1,87 @@
-# ApexGarage
+# Apex Garage
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+Apex Garage é um sistema de gerenciamento de agendamentos para uma oficina mecânica. O sistema permite que usuários agendem serviços e verifiquem seus agendamentos, enquanto administradores podem gerenciar e concluir serviços.
 
-<img src="imagem.png" alt="Exemplo imagem">
+## Funcionalidades
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+### Usuário
+- **Login de Usuário:** Os usuários podem fazer login para acessar suas funcionalidades personalizadas.
+- **Agendamento de Serviços:** Os usuários podem agendar serviços diretamente da página inicial.
+- **Perfil de Usuário:** Os usuários podem verificar seus serviços agendados na página de perfil.
 
-### Ajustes e melhorias
+### Administrador
+- **Login de Administrador:** Os administradores têm uma interface de login separada.
+- **Gerenciamento de Serviços:** Os administradores podem ver todos os serviços agendados.
+- **Concluir Serviços:** Os administradores podem marcar serviços como concluídos.
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
+## Tecnologias Utilizadas
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- **CSS:** 54.7%
+- **HTML:** 33.7%
+- **JavaScript:** 11.6%
 
-## 💻 Pré-requisitos
+## Instalação
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+Para instalar e rodar o projeto localmente, siga os seguintes passos:
 
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/JoseRodriguesF/apex_garage.git
+    ```
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd apex_garage
+    ```
+3. Instale as dependências necessárias:
+    ```bash
+    # Comando de exemplo, ajuste conforme necessário
+    npm install
+    ```
+4. Inicie o servidor local:
+    ```bash
+    # Comando de exemplo, ajuste conforme necessário
+    npm start
+    ```
 
-## 🚀 Instalando ApexGarage
+## Uso
 
-Para instalar o ApexGarage, siga estas etapas:
+### Usuário
 
-```
-<comando_de_instalação>
-```
+1. Acesse a página inicial.
+2. Faça login com suas credenciais.
+3. Agende um serviço na página inicial.
+4. Verifique seus serviços agendados na página de perfil.
 
-## ☕ Usando ApexGarage
+### Administrador
 
-Para usar <nome_do_projeto>, siga estas etapas:
+1. Acesse a página de login do administrador.
+2. Faça login com suas credenciais de administrador.
+3. Visualize todos os serviços agendados.
+4. Marque os serviços como concluídos conforme necessário.
 
-```
-<exemplo_de_uso>
-```
+## Contribuição
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
+Se você deseja contribuir com o projeto, siga os seguintes passos:
 
-## 📫 Contribuindo para <nome_do_projeto>
+1. Fork este repositório.
+2. Crie uma branch para sua feature ou correção de bug:
+    ```bash
+    git checkout -b minha-feature
+    ```
+3. Faça commit das suas alterações:
+    ```bash
+    git commit -m 'Adicionei uma nova feature'
+    ```
+4. Faça push para a branch:
+    ```bash
+    git push origin minha-feature
+    ```
+5. Abra um Pull Request.
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+## Licença
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+## Contato
 
-## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
-        <sub>
-          <b>Iuri Silva</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
-        <sub>
-          <b>Mark Zuckerberg</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-## 😄 Seja um dos contribuidores
-
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+Para mais informações, entre em contato com [Jose Rodrigues](https://github.com/JoseRodriguesF).
